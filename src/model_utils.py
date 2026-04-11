@@ -24,6 +24,8 @@ class GenomeModel:
     # Organisms: 0=human, 1=mouse
     ORGANISM_MAP = {"human": 0, "mouse": 1}
     RESOLUTIONS = [1, 128]  # Base pair resolutions
+    INPUT_LENGTH_MULTIPLE = 128
+    MIN_INPUT_LENGTH = 2048
 
     def __init__(
         self,
@@ -68,10 +70,35 @@ class GenomeModel:
         self._is_loaded = True
         print("Model loaded successfully")
 
+    @staticmethod
+    def prepare_sequence_for_model(
+        sequence: str,
+        minimum_length: int = MIN_INPUT_LENGTH,
+        multiple: int = INPUT_LENGTH_MULTIPLE,
+    ) -> tuple[str, int]:
+        """Pad a sequence so AlphaGenome can process it safely."""
+        if minimum_length < 1:
+            raise ValueError("minimum_length must be positive")
+        if multiple < 1:
+            raise ValueError("multiple must be positive")
+
+        sequence = sequence.strip().upper()
+        target_length = max(minimum_length, len(sequence))
+        remainder = target_length % multiple
+        if remainder:
+            target_length += multiple - remainder
+
+        pad_length = target_length - len(sequence)
+        if pad_length <= 0:
+            return sequence, 0
+
+        return sequence + ("N" * pad_length), pad_length
+
     def predict_on_sequence(
         self,
         sequence: str,
         tracks: Optional[List[str]] = None,
+        ontology_terms: Optional[List[str]] = None,
         resolution: int = 1,
     ) -> Dict[str, np.ndarray]:
         """
@@ -93,6 +120,7 @@ class GenomeModel:
             raise ValueError(f"Resolution must be 1 or 128, got {resolution}")
 
         requested_outputs = tracks if tracks is not None else list(self.AVAILABLE_TRACKS.keys())
+        sequence, _ = self.prepare_sequence_for_model(sequence)
 
         # Run prediction directly on the raw DNA string.
         preds = self.model.predict(
@@ -100,6 +128,7 @@ class GenomeModel:
             organism=self.organism,
             no_grad=True,
             requested_outputs=requested_outputs,
+            ontology_terms=ontology_terms,
         )
 
         # Unwrap the organism level if present.
