@@ -26,6 +26,7 @@ notebooks/           # Jupyter notebooks for exploration
 results/             # Predictions, metrics, and visualizations
 
 preprocess_data.py      # Data preprocessing and formatting
+generate_tracks.py      # Generate and save AlphaGenome track outputs
 zero_shot_inference.py  # Zero-shot prediction script
 example_inference.py    # Example script to verify setup
 setup.sh               # Setup script (macOS/Linux)
@@ -162,6 +163,31 @@ chmod +x setup-gpu.sh
 ### Workflow
 
 This project uses a two-step pipeline:
+
+#### 0. Generate AlphaGenome Tracks
+
+Run the base AlphaGenome model on a single DNA sequence and save track outputs:
+
+```bash
+python generate_tracks.py \
+   --sequence ACGTACGTACGTACGT \
+   --output-dir results/tracks/sample_run \
+   --tracks atac,dnase,rna_seq
+```
+
+This defaults to mouse embryonic stem cell filtering (`CL:0002322`) internally.
+
+This saves:
+- `tracks.npz`
+- one `.npy` file per requested track
+- one `.png` plot per requested track in `plots/`
+- `tracks_overview.png`
+- `metadata.json`
+- `sequence.txt`
+
+The `metadata.json` file also records the ontology terms used for filtering.
+
+The script automatically pads sequences with `N` characters to the next multiple of 128, and it enforces a minimum length of 2048 bp so AlphaGenome's internal pooling and relative-position layers stay valid.
 
 #### 1. Data Preprocessing
 
