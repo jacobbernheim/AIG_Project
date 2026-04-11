@@ -1,0 +1,25 @@
+# Core dependencies
+numpy>=1.21.0
+pandas>=1.3.0
+scipy>=1.7.0
+pyyaml>=5.4.0
+
+# AlphaFold and related
+# Note: Install as needed based on your system
+# alphafold @ git+https://github.com/deepmind/alphafold.git
+# dm-tree>=0.1.6
+# jax>=0.3.0
+# jaxlib>=0.3.0
+
+# ML/Data
+scikit-learn>=1.0.0
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Jupyter (optional, for notebooks)
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Development
+pytest>=6.2.0
+black>=21.0

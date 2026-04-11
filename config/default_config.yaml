@@ -1,0 +1,40 @@
+# Default configuration for Sox2 expression prediction
+
+# Data settings
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  sequence_min_length: 50
+  train_test_split: 0.8
+
+# Model settings
+model:
+  name: "alphafold"
+  use_pretrained: true
+  model_checkpoint: null
+  
+# Zero-shot settings
+zero_shot:
+  use_pretrained_embeddings: true
+  embedding_dim: 768
+  
+# Training settings (for fine-tuning later)
+training:
+  batch_size: 32
+  learning_rate: 1e-4
+  epochs: 100
+  early_stopping_patience: 10
+  
+# Evaluation settings
+evaluation:
+  metrics:
+    - rmse
+    - pearson_correlation
+    - classification_accuracy
+  tolerance: 0.1
+
+# Output settings
+output:
+  results_dir: "results/"
+  save_predictions: true
+  save_model: true
