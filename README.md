@@ -258,3 +258,16 @@ This project uses [AlphaGenome PyTorch](https://github.com/genomicsxai/alphageno
 - [ ] Set up fine-tuning training loop for Sox2 expression
 - [ ] Add visualization and analysis tools
 - [ ] Evaluate on benchmark datasets
+
+## Feedback to Consider
+Grade 100/100
+
+Excellent in scope and precision. Your question is very well defined and you already have internal data to evaluate your findings, making this quite a novel proposal with quantitative groudning. We also liked the structure, albeit the formatting was at points a little hard to parse.
+
+Some minor comments on the project itself:
+
+Finetuning such large models can require a ton of memory. You should think about whether that is tractable to fine tune the whole thing or to use any kind of methods that make fine-tuning less computationally intensive. Depending on the groups' preferences, the Kundaje group also recently published a Pytorch port of Alphagenome.
+
+It would be great to have some discussion on potential overfitting, especially if you plan to test on synthetic DHS sequences to reduce the space that will be tested in the lab.
+
+AlphaGenome predicts a large amount of tracks. Will you use all of those as features to predict Sox2 expression? If time permits, it would be great to understand if the tracks that provide the most predictive performance are the ones that would be expected by intuition.
