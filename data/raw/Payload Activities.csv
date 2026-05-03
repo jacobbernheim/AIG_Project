@@ -1,0 +1,998 @@
+﻿Project,groups,PL,MenDel.Name,Clone.ID,Sox2 (CAST),Sox2 (BL6),Fold Change,Activity,Paper
+Controls,controls,LP167,dLCR,Bl6/C LP167(Sox2_6g_5g)_D11,5.026,12.571,0.005,0.003,EnhancerCluster
+Controls,controls,LP305,dLCR,Bl6/C LP305(Sox2_6g_7g)_20210326_C01,5.237,12.855,0.005,0.002,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL188,Sox2_DistalLCR_DHS19andDHS23,BL6/C PL188(Sox2_6_7)_20221222_E01,5.463,10.077,0.041,0.028,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL188,Sox2_DistalLCR_DHS19andDHS23,BL6/C PL188(Sox2_6_7)_20221222_E02,5.42,9.807,0.048,0.033,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL188,Sox2_DistalLCR_DHS19andDHS23,BL6/C PL188(Sox2_6_7)_20221222_E05,6.633,9.647,0.124,0.087,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL188,Sox2_DistalLCR_DHS19andDHS23,BL6/C PL188(Sox2_6_7)_20221222_E06,5.53,10.483,0.032,0.022,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL188,Sox2_DistalLCR_DHS19andDHS23,BL6/C PL188(Sox2_6_7)_20221222_E09,5.41,9.823,0.047,0.032,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL189,Sox2_DistalLCR_DHS20andDHS23,BL6/C PL189(Sox2_6_7)_20230203_A01,5.91,8.843,0.131,0.092,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL189,Sox2_DistalLCR_DHS20andDHS23,BL6/C PL189(Sox2_6_7)_20230203_A07,6.417,9.043,0.162,0.114,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL189,Sox2_DistalLCR_DHS20andDHS23,BL6/C PL189(Sox2_6_7)_20230203_A09,6.02,8.837,0.142,0.1,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL189,Sox2_DistalLCR_DHS20andDHS23,BL6/C PL189(Sox2_6_7)_20230203_A10,6.96,9.75,0.145,0.101,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL189,Sox2_DistalLCR_DHS20andDHS23,BL6/C PL189(Sox2_6_7)_20230203_A11,6.05,8.663,0.163,0.115,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL190,Sox2_DistalLCR_DHS19andDHS24,BL6/C PL190(Sox2_6_7)_20221118_A04,5.767,5.943,0.885,0.627,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL190,Sox2_DistalLCR_DHS19andDHS24,BL6/C PL190(Sox2_6_7)_20221118_A10,5.593,5.84,0.843,0.597,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL190,Sox2_DistalLCR_DHS19andDHS24,BL6/C PL190(Sox2_6_7)_20221118_A11,5.96,6.09,0.914,0.648,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL190,Sox2_DistalLCR_DHS19andDHS24,BL6/C PL190(Sox2_6_7)_20221118_A12,5.853,5.963,0.927,0.657,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL190,Sox2_DistalLCR_DHS19andDHS24,BL6/C PL190(Sox2_6_7)_20221118_B02,5.767,5.993,0.855,0.605,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL190,Sox2_DistalLCR_DHS19andDHS24,BL6/C PL190(Sox2_6_7)_20221118_B04,6.03,6.16,0.914,0.648,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL191,Sox2_DistalLCR_DHS20andDHS24,BL6/C PL191(Sox2_6_7)_20221118_C01,5.923,6.533,0.655,0.464,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL191,Sox2_DistalLCR_DHS20andDHS24,BL6/C PL191(Sox2_6_7)_20221118_C02,6.013,6.71,0.617,0.437,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL191,Sox2_DistalLCR_DHS20andDHS24,BL6/C PL191(Sox2_6_7)_20221118_C03,5.95,6.537,0.666,0.472,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL191,Sox2_DistalLCR_DHS20andDHS24,BL6/C PL191(Sox2_6_7)_20221118_C06,6.217,6.783,0.675,0.478,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL191,Sox2_DistalLCR_DHS20andDHS24,BL6/C PL191(Sox2_6_7)_20221118_C08,6.43,6.797,0.776,0.549,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL191,Sox2_DistalLCR_DHS20andDHS24,BL6/C PL191(Sox2_6_7)_20221118_C11,5.743,6.31,0.675,0.478,EnhancerCluster
+DistalLCR,syn23 & 24,PL192,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL192(Sox2_6_7)_20221104_A02,5.533,6.12,0.666,0.472,EnhancerCluster
+DistalLCR,syn23 & 24,PL192,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL192(Sox2_6_7)_20221104_A04,5.437,6.2,0.589,0.417,EnhancerCluster
+DistalLCR,syn23 & 24,PL192,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL192(Sox2_6_7)_20221104_A05,5.383,6.107,0.606,0.429,EnhancerCluster
+DistalLCR,syn23 & 24,PL192,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL192(Sox2_6_7)_20221104_A07,5.103,5.647,0.686,0.486,EnhancerCluster
+DistalLCR,syn23 & 24,PL192,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL192(Sox2_6_7)_20221104_A11,5.347,6.06,0.61,0.432,EnhancerCluster
+DistalLCR,syn23 & 24,PL195,Sox2_DistalLCR_DHS23dC~dHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL195(Sox2_6_7)_20221104_B02,5.663,6.187,0.696,0.493,EnhancerCluster
+DistalLCR,syn23 & 24,PL195,Sox2_DistalLCR_DHS23dC~dHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL195(Sox2_6_7)_20221104_B03,5.61,6.107,0.709,0.502,EnhancerCluster
+DistalLCR,syn23 & 24,PL195,Sox2_DistalLCR_DHS23dC~dHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL195(Sox2_6_7)_20221104_B06,5.82,6.217,0.76,0.538,EnhancerCluster
+DistalLCR,syn23 & 24,PL195,Sox2_DistalLCR_DHS23dC~dHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL195(Sox2_6_7)_20221104_B07,5.473,5.837,0.777,0.551,EnhancerCluster
+DistalLCR,syn23 & 24,PL195,Sox2_DistalLCR_DHS23dC~dHOXC11andLhx8andZIC4andTFAP2CandDHS24dT,BL6/C PL195(Sox2_6_7)_20221104_B09,6.067,6.447,0.768,0.544,EnhancerCluster
+DistalLCR,syn23 & 24,PL196,Sox2_DistalLCR_truncDHS23~dTBX21andESRRAandFoxc1andZIC3andDHS24dT,BL6/C PL196(Sox2_6_7)_20221104_D05,5.097,5.703,0.657,0.465,EnhancerCluster
+DistalLCR,syn23 & 24,PL196,Sox2_DistalLCR_truncDHS23~dTBX21andESRRAandFoxc1andZIC3andDHS24dT,BL6/C PL196(Sox2_6_7)_20221104_D10,5.83,6.97,0.454,0.321,EnhancerCluster
+DistalLCR,syn23 & 24,PL196,Sox2_DistalLCR_truncDHS23~dTBX21andESRRAandFoxc1andZIC3andDHS24dT,BL6/C PL196(Sox2_6_7)_20221104_D11,5.373,6.483,0.463,0.328,EnhancerCluster
+DistalLCR,syn23 & 24,PL196,Sox2_DistalLCR_truncDHS23~dTBX21andESRRAandFoxc1andZIC3andDHS24dT,BL6/C PL196(Sox2_6_7)_20221104_D12,5.333,6.27,0.522,0.37,EnhancerCluster
+DistalLCR,syn23 & 24,PL197,Sox2_DistalLCR_truncDHS23~dTBX21andESRRAandFoxc1andDHS24dT,BL6/C PL197(Sox2_6_7)_20221104_F03,5.103,5.71,0.657,0.465,EnhancerCluster
+DistalLCR,syn23 & 24,PL197,Sox2_DistalLCR_truncDHS23~dTBX21andESRRAandFoxc1andDHS24dT,BL6/C PL197(Sox2_6_7)_20221104_F07,5.013,5.867,0.554,0.392,EnhancerCluster
+DistalLCR,syn23 & 24,PL198,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andDHS24dT,BL6/C PL198(Sox2_6_7)_20221104_C02,5.487,5.733,0.843,0.597,EnhancerCluster
+DistalLCR,syn23 & 24,PL198,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andDHS24dT,BL6/C PL198(Sox2_6_7)_20221104_C03,5.687,5.857,0.889,0.63,EnhancerCluster
+DistalLCR,syn23 & 24,PL198,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andDHS24dT,BL6/C PL198(Sox2_6_7)_20221104_C04,5.583,5.833,0.841,0.596,EnhancerCluster
+DistalLCR,syn23 & 24,PL198,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andDHS24dT,BL6/C PL198(Sox2_6_7)_20221104_C05,5.655,5.79,0.911,0.645,EnhancerCluster
+DistalLCR,syn23 & 24,PL198,Sox2_DistalLCR_DHS23dC~dFoxc1andZIC3andDHS24dT,BL6/C PL198(Sox2_6_7)_20221104_C06,5.17,5.61,0.737,0.522,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL199,Sox2_DistalLCR_DHS19andDHS20andDHS23,BL6/C PL199(Sox2_6_7)_20230203_B02,6.147,7.76,0.327,0.231,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL199,Sox2_DistalLCR_DHS19andDHS20andDHS23,BL6/C PL199(Sox2_6_7)_20230203_B04,5.907,7.427,0.349,0.246,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL199,Sox2_DistalLCR_DHS19andDHS20andDHS23,BL6/C PL199(Sox2_6_7)_20230203_B07,8.257,9.737,0.358,0.253,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL199,Sox2_DistalLCR_DHS19andDHS20andDHS23,BL6/C PL199(Sox2_6_7)_20230203_B12,5.693,7.243,0.342,0.241,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL199,Sox2_DistalLCR_DHS19andDHS20andDHS23,BL6/C PL199(Sox2_6_7)_20230203_C01,5.647,7.18,0.345,0.244,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL199,Sox2_DistalLCR_DHS19andDHS20andDHS23,BL6/C PL199(Sox2_6_7)_20230203_C02,6.927,8.56,0.322,0.228,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL200,Sox2_DistalLCR_DHS19andDHS20andDHS24,BL6/C PL200(Sox2_6_7)_20230203_D02,6.633,6.677,0.97,0.688,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL200,Sox2_DistalLCR_DHS19andDHS20andDHS24,BL6/C PL200(Sox2_6_7)_20230203_D03,6.44,6.577,0.91,0.645,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL200,Sox2_DistalLCR_DHS19andDHS20andDHS24,BL6/C PL200(Sox2_6_7)_20230203_D06,6.083,6.21,0.916,0.649,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL200,Sox2_DistalLCR_DHS19andDHS20andDHS24,BL6/C PL200(Sox2_6_7)_20230203_D08,6.24,6.35,0.927,0.657,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL200,Sox2_DistalLCR_DHS19andDHS20andDHS24,BL6/C PL200(Sox2_6_7)_20230203_E04,6.33,6.493,0.893,0.633,EnhancerCluster
+DistalLCR,DHSs 19 & 20,PL200,Sox2_DistalLCR_DHS19andDHS20andDHS24,BL6/C PL200(Sox2_6_7)_20230203_E06,7.003,7.02,0.989,0.701,EnhancerCluster
+Pair,Pair,PL210,EnhancerCluster_Pair_Sox2DHS23andSox2DHS24,BL6/C_Pair_pool1(Sox2_6_7)_20230508_D01,6.223,6.56,0.792,0.561,EnhancerCluster
+Pair,Pair,PL212,EnhancerCluster_Pair_Sox2DHS23andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_D05,5.887,11.637,0.019,0.012,EnhancerCluster
+Pair,Pair,PL214,EnhancerCluster_Pair_Sox2DHS23andNanogDHS58dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_D06,5.47,8.513,0.121,0.085,EnhancerCluster
+Pair,Pair,PL212,EnhancerCluster_Pair_Sox2DHS23andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_D09,5.98,11.143,0.028,0.019,EnhancerCluster
+Pair,Pair,PL219,EnhancerCluster_Pair_Sox2DHS24andNanogDHS57dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E01,5.59,6.38,0.578,0.409,EnhancerCluster
+Pair,Pair,PL219,EnhancerCluster_Pair_Sox2DHS24andNanogDHS57dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E02,5.457,6.223,0.588,0.416,EnhancerCluster
+Pair,Pair,PL215,EnhancerCluster_Pair_Sox2DHS23andNanogDHS55dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E03,5.453,10.26,0.036,0.024,EnhancerCluster
+Pair,Pair,PL212,EnhancerCluster_Pair_Sox2DHS23andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E06,5.76,13.56,0.004,0.002,EnhancerCluster
+Pair,Pair,PL212,EnhancerCluster_Pair_Sox2DHS23andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E06,5.793,13.36,0.005,0.003,EnhancerCluster
+Pair,DHS19 TFs,PL234,EnhancerCluster_Pair_Sox2DHS19extAndSox2DHS24,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E08,5.81,6.49,0.624,0.442,EnhancerCluster
+Pair,Pair,PL221,EnhancerCluster_Pair_Sox2DHS24andNanogDHS55dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E09,5.577,7.66,0.236,0.166,EnhancerCluster
+Pair,Pair,PL215,EnhancerCluster_Pair_Sox2DHS23andNanogDHS55dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E10,5.573,10.603,0.031,0.021,EnhancerCluster
+Pair,DHS19 TFs,PL234,EnhancerCluster_Pair_Sox2DHS19extAndSox2DHS24,BL6/C_Pair_pool1(Sox2_6_7)_20230508_E11,5.66,6.367,0.613,0.434,EnhancerCluster
+Pair,Pair,PL221,EnhancerCluster_Pair_Sox2DHS24andNanogDHS55dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_F10,5.707,7.52,0.285,0.201,EnhancerCluster
+Pair,Pair,PL221,EnhancerCluster_Pair_Sox2DHS24andNanogDHS55dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_G03,5.657,7.477,0.283,0.2,EnhancerCluster
+Pair,Pair,PL214,EnhancerCluster_Pair_Sox2DHS23andNanogDHS58dn,BL6/C_Pair_pool1(Sox2_6_7)_20230508_G10,5.753,9.06,0.101,0.071,EnhancerCluster
+Pair,Pair,PL218,EnhancerCluster_Pair_Sox2DHS24andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_H04,5.623,8.147,0.174,0.122,EnhancerCluster
+Pair,Pair,PL218,EnhancerCluster_Pair_Sox2DHS24andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_H05,6.313,7.953,0.321,0.227,EnhancerCluster
+Pair,Pair,PL218,EnhancerCluster_Pair_Sox2DHS24andNanogDHS48up,BL6/C_Pair_pool1(Sox2_6_7)_20230508_H09,5.8,8.253,0.183,0.128,EnhancerCluster
+Prdm14,Prdm14,PL173,Prdm14_Prdm14_DHS52~31~22,BL6/C_PL173(Sox2_6_7)_20220908_C03,4.92,7.53,0.164,0.115,EnhancerCluster
+Prdm14,Prdm14,PL173,Prdm14_Prdm14_DHS52~31~22,BL6/C_PL173(Sox2_6_7)_20220908_C05,4.723,7.187,0.181,0.128,EnhancerCluster
+Prdm14,Prdm14,PL173,Prdm14_Prdm14_DHS52~31~22,BL6/C_PL173(Sox2_6_7)_20220908_C09,4.88,7.137,0.209,0.147,EnhancerCluster
+Prdm14,Prdm14,PL173,Prdm14_Prdm14_DHS52~31~22,BL6/C_PL173(Sox2_6_7)_20220908_C10,5.657,8.277,0.163,0.114,EnhancerCluster
+Prdm14,Prdm14,PL180,Prdm14_Prdm14_DHS52~48~41~31short~30~22,BL6/C_PL180(Sox2_6_7)_20220908_E01,5.063,7.093,0.245,0.173,EnhancerCluster
+Prdm14,Prdm14,PL180,Prdm14_Prdm14_DHS52~48~41~31short~30~22,BL6/C_PL180(Sox2_6_7)_20220908_E03,6.547,8.637,0.235,0.166,EnhancerCluster
+Prdm14,Prdm14,PL180,Prdm14_Prdm14_DHS52~48~41~31short~30~22,BL6/C_PL180(Sox2_6_7)_20220908_E06,5.09,7.083,0.251,0.177,EnhancerCluster
+Prdm14,Prdm14,PL180,Prdm14_Prdm14_DHS52~48~41~31short~30~22,BL6/C_PL180(Sox2_6_7)_20220908_E07,5.073,7.047,0.255,0.18,EnhancerCluster
+Prdm14,Prdm14,PL182,Prdm14_Prdm14_DHS66~41~22,BL6/C_PL182(Sox2_6_7)_20220908_G01,5.183,8.453,0.104,0.072,EnhancerCluster
+Prdm14,Prdm14,PL182,Prdm14_Prdm14_DHS66~41~22,BL6/C_PL182(Sox2_6_7)_20220908_G06,4.913,7.903,0.126,0.088,EnhancerCluster
+Prdm14,Prdm14,PL182,Prdm14_Prdm14_DHS66~41~22,BL6/C_PL182(Sox2_6_7)_20220908_G10,4.92,7.83,0.133,0.093,EnhancerCluster
+Prdm14,Prdm14,PL182,Prdm14_Prdm14_DHS66~41~22,BL6/C_PL182(Sox2_6_7)_20220908_G12,4.953,7.96,0.124,0.087,EnhancerCluster
+Prdm14,Prdm14,PL182,Prdm14_Prdm14_DHS66~41~22,BL6/C_PL182(Sox2_6_7)_20220908_H01,4.937,8.05,0.116,0.081,EnhancerCluster
+Prdm14,Prdm14,PL182,Prdm14_Prdm14_DHS66~41~22,BL6/C_PL182(Sox2_6_7)_20220908_H06,4.97,8.07,0.117,0.082,EnhancerCluster
+HPRT1Rspacer,spacer,PL201,EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer,BL6/C_PL201(Sox2_6_7)_20230112_H01,5.527,6.057,0.693,0.49,EnhancerCluster
+HPRT1Rspacer,spacer,PL201,EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer,BL6/C_PL201(Sox2_6_7)_20230112_H02,5.633,6.17,0.689,0.488,EnhancerCluster
+HPRT1Rspacer,spacer,PL201,EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer,BL6/C_PL201(Sox2_6_7)_20230112_H03,5.487,6.293,0.572,0.405,EnhancerCluster
+HPRT1Rspacer,spacer,PL201,EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer,BL6/C_PL201(Sox2_6_7)_20230112_H04,5.817,6.437,0.651,0.461,EnhancerCluster
+HPRT1Rspacer,spacer,PL201,EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer,BL6/C_PL201(Sox2_6_7)_20230112_H05,5.527,6.22,0.618,0.438,EnhancerCluster
+HPRT1Rspacer,spacer,PL201,EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer,BL6/C_PL201(Sox2_6_7)_20230112_H06,5.25,5.903,0.636,0.45,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A02,5.403,5.813,0.753,0.533,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A03,5.663,6.13,0.724,0.513,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A05,5.32,6.063,0.597,0.423,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A06,5.1,6.59,0.356,0.252,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A09,5.487,6.257,0.586,0.415,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A10,5.233,6.387,0.45,0.318,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_A11,5.19,5.85,0.633,0.448,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_B01,5.197,6.37,0.443,0.314,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_B05,5.613,6.427,0.569,0.403,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_C01,5.313,6.277,0.513,0.363,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_C02,5.387,6.183,0.576,0.407,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_C03,5.49,7.733,0.211,0.149,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_C06,5.115,5.935,0.566,0.401,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_C09,5.33,5.847,0.699,0.495,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_D02,5.2,6.013,0.569,0.403,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_D07,5.283,6.093,0.57,0.404,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_D10,5.223,6.753,0.346,0.245,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_D11,5.633,6.123,0.712,0.504,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_E04,4.667,6.437,0.293,0.207,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_E05,5.207,6.087,0.543,0.385,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_E09,5.33,5.91,0.669,0.474,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_E12,5.597,6.47,0.546,0.386,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_F05,5.127,6.263,0.455,0.322,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_F11,5.223,5.93,0.613,0.434,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_G03,5.313,6.807,0.355,0.251,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,BL6/C_PL202(Sox2_6_7)_20230112_G04,5.23,5.91,0.624,0.442,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,Bl6/C_PL202(Sox2_6_7)_20230327_A02,5.2,6.39,0.438,0.31,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,Bl6/C_PL202(Sox2_6_7)_20230327_B03,5.57,6.563,0.502,0.355,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,Bl6/C_PL202(Sox2_6_7)_20230327_C01,5.523,7.623,0.233,0.164,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,Bl6/C_PL202(Sox2_6_7)_20230327_C07,5.443,6.013,0.674,0.477,EnhancerCluster
+HPRT1Rspacer,spacer,PL202,EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24,Bl6/C_PL202(Sox2_6_7)_20230327_D07,5.88,6.553,0.627,0.444,EnhancerCluster
+Single,Single,PL203,EnhancerCluster_Single_Sox2DHS23,BL6/C_PL203(Sox2_6_7)_20230324_A07,5.683,10.293,0.041,0.028,EnhancerCluster
+Pair,Pair,PL222,EnhancerCluster_Pair_2xSox2DHS23,BL6/C_PL203(Sox2_6_7)_20230324_B09,5.713,9.37,0.079,0.055,EnhancerCluster
+Single,Single,PL204,EnhancerCluster_Single_Sox2DHS24,BL6/C_PL204(Sox2_6_7)_20230324_B05,7.15,9.223,0.238,0.167,EnhancerCluster
+Single,Single,PL204,EnhancerCluster_Single_Sox2DHS24,BL6/C_PL204(Sox2_6_7)_20230324_B06,5.73,7.43,0.308,0.217,EnhancerCluster
+Pair,Pair,PL210,EnhancerCluster_Pair_Sox2DHS23andSox2DHS24,BL6/C_PL210(Sox2_6_7)_20230324_C07,5.927,6.433,0.704,0.498,EnhancerCluster
+Pair,Pair,PL211,EnhancerCluster_Pair_Sox2DHS23andNanogDHS47up,BL6/C_PL211(Sox2_6_7)_20230324_B01,8.78,12.87,0.059,0.04,EnhancerCluster
+Pair,Pair,PL211,EnhancerCluster_Pair_Sox2DHS23andNanogDHS47up,BL6/C_PL211(Sox2_6_7)_20230324_B07,6.47,11.323,0.035,0.023,EnhancerCluster
+Pair,Pair,PL211,EnhancerCluster_Pair_Sox2DHS23andNanogDHS47up,BL6/C_PL211(Sox2_6_7)_20230324_B12,7.853,12.95,0.029,0.02,EnhancerCluster
+Pair,Pair,PL222,EnhancerCluster_Pair_2xSox2DHS23,BL6/C_PL222(Sox2_6_7)_20230324_B02,5.503,8.98,0.09,0.063,EnhancerCluster
+Pair,Pair,PL222,EnhancerCluster_Pair_2xSox2DHS23,BL6/C_PL222(Sox2_6_7)_20230324_B04,6.353,9.963,0.082,0.057,EnhancerCluster
+Pair,Pair,PL222,EnhancerCluster_Pair_2xSox2DHS23,BL6/C_PL222(Sox2_6_7)_20230324_B10,5.907,9.553,0.08,0.055,EnhancerCluster
+TF,TF,PL223,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRB,BL6/C_PL223(Sox2_6_7)_20230324_D02,6.003,6.857,0.554,0.392,EnhancerCluster
+TF,TF,PL223,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRB,BL6/C_PL223(Sox2_6_7)_20230324_D06,5.89,6.787,0.537,0.38,EnhancerCluster
+TF,TF,PL223,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRB,BL6/C_PL223(Sox2_6_7)_20230324_D07,6.623,7.597,0.509,0.36,EnhancerCluster
+TF,TF,PL224,EnhancerCluster_TF_Sox2DHS23andDHS24~dNuclearreceptorAndSOX,BL6/C_PL224(Sox2_6_7)_20230324_F03,5.94,7.47,0.346,0.245,EnhancerCluster
+TF,TF,PL227,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB,BL6/C_PL227(Sox2_6_7)_20230324_D03,6.027,8.177,0.225,0.159,EnhancerCluster
+TF,TF,PL227,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB,BL6/C_PL227(Sox2_6_7)_20230324_D05,5.893,8.123,0.213,0.15,EnhancerCluster
+TF,TF,PL227,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB,BL6/C_PL227(Sox2_6_7)_20230324_D08,6.51,8.73,0.215,0.151,EnhancerCluster
+TF,TF,PL228,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandForkhead,BL6/C_PL228(Sox2_6_7)_20230324_D04,6.303,7.423,0.46,0.325,EnhancerCluster
+TF,TF,PL228,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandForkhead,BL6/C_PL228(Sox2_6_7)_20230324_E01,6.23,7.287,0.481,0.34,EnhancerCluster
+TF,TF,PL228,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandForkhead,BL6/C_PL228(Sox2_6_7)_20230324_E04,5.693,6.497,0.573,0.406,EnhancerCluster
+TF,TF,PL230,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandForkhead,BL6/C_PL230(Sox2_6_7)_20230324_D11,6.28,7.627,0.393,0.278,EnhancerCluster
+TF,TF,PL230,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandForkhead,BL6/C_PL230(Sox2_6_7)_20230324_F10,6.253,7.267,0.495,0.35,EnhancerCluster
+TF,TF,PL230,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandForkhead,BL6/C_PL230(Sox2_6_7)_20230324_G08,5.917,6.977,0.48,0.339,EnhancerCluster
+TF,TF,PL231,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandESRRAandForkhead,BL6/C_PL231(Sox2_6_7)_20230324_G09,6.027,8.037,0.248,0.175,EnhancerCluster
+Single,DHS19 TFs,PL233,EnhancerCluster_Single_Sox2DHS19ext,BL6/C_PL233(Sox2_6_7)_20230324_H02,5.813,10.487,0.039,0.027,EnhancerCluster
+Single,DHS19 TFs,PL233,EnhancerCluster_Single_Sox2DHS19ext,BL6/C_PL233(Sox2_6_7)_20230324_H03,6.053,10.537,0.045,0.031,EnhancerCluster
+Single,DHS19 TFs,PL233,EnhancerCluster_Single_Sox2DHS19ext,BL6/C_PL233(Sox2_6_7)_20230324_H04,5.747,10.203,0.046,0.031,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_A07,6.147,6.867,0.607,0.43,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_A09,6.36,7.17,0.57,0.404,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_A12,6.247,7.713,0.362,0.256,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B04,6.243,7.547,0.405,0.286,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B05,6.16,7.19,0.49,0.346,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B06,6.427,7.687,0.418,0.295,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B07,8.893,10.63,0.3,0.212,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B08,5.893,7.393,0.354,0.25,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B10,5.86,7.43,0.337,0.238,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_B11,6.223,7.197,0.509,0.36,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C02,6.06,7.21,0.451,0.319,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C03,6.15,7.677,0.347,0.245,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C04,6.273,7.66,0.382,0.27,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C05,6.007,7.403,0.38,0.268,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C07,6.903,8.213,0.403,0.285,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C09,6.49,7.433,0.52,0.368,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C11,6.58,7.457,0.545,0.385,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_C12,5.933,6.877,0.52,0.368,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_D02,6.31,7.427,0.461,0.326,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_D03,6.03,7.033,0.499,0.353,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_D07,6.18,7.17,0.503,0.356,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_D09,6.247,7.443,0.436,0.309,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_D11,6.453,7.35,0.537,0.38,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E02,6.087,7.01,0.527,0.373,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E03,6.31,7.367,0.481,0.34,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E04,6.193,7.117,0.527,0.373,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E06,6.063,7.193,0.457,0.323,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E07,5.77,10.03,0.052,0.036,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E09,6.493,7.69,0.436,0.309,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E10,6.183,10.287,0.058,0.04,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E11,6.4,7.663,0.417,0.295,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_E12,6.153,7.277,0.459,0.325,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_F04,6.093,7.893,0.287,0.203,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_F08,6.057,7.14,0.472,0.334,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_F09,6.233,10.113,0.068,0.047,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_F11,6.153,9.84,0.078,0.054,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_F12,6.007,7.577,0.337,0.238,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_G04,6.087,8.173,0.235,0.166,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_G07,6.167,10.367,0.054,0.037,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_G08,6.16,7.36,0.435,0.308,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_G10,6.397,7.607,0.432,0.306,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_G11,5.873,10.11,0.053,0.036,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_H02,6.017,7.38,0.389,0.275,EnhancerCluster
+HPRT1Rspacer,spacer,PL269,EnhancerCluster_HPRT1Rspacer_Sox2DHS19andSox2DHS24,BL6/C_PL269(Sox2_6_7)_20230620_H05,6.303,10.447,0.057,0.039,EnhancerCluster
+Nanog,Nanog,PL270,EnhancerCluster_Nanog_DHS48upToDHS37up,Bl6/C_PL270(Sox2_6_7)_20250903_A06,6.197,11.973,0.018,0.012,EnhancerCluster
+Nanog,Nanog,PL270,EnhancerCluster_Nanog_DHS48upToDHS37up,Bl6/C_PL270(Sox2_6_7)_20250903_A08,5.037,10.327,0.026,0.017,EnhancerCluster
+Nanog,Nanog,PL270,EnhancerCluster_Nanog_DHS48upToDHS37up,Bl6/C_PL270(Sox2_6_7)_20250903_A09,4.74,11.72,0.008,0.004,EnhancerCluster
+Nanog,Nanog,PL270,EnhancerCluster_Nanog_DHS48upToDHS37up,Bl6/C_PL270(Sox2_6_7)_20250903_A10,5.377,10.703,0.025,0.016,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_A06,7.553,9.72,0.223,0.157,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_A10,5.767,8.51,0.149,0.105,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_A11,5.617,7.497,0.272,0.192,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_A12,5.467,7.47,0.249,0.176,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_B02,8.12,9.947,0.282,0.199,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_B05,6.433,8.307,0.273,0.193,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_B10,6.047,8.003,0.258,0.182,EnhancerCluster
+Nanog,Nanog,PL271,EnhancerCluster_Nanog_DHS20upToDHS3up,Bl6/C_PL271(Sox2_6_7)_20241125_B11,5.793,7.883,0.235,0.166,EnhancerCluster
+Prdm14,Prdm14,PL273,Prdm14_Prdm14_DHS66dnToDHS22dn,Bl6/C_PL273(Sox2_6_7)_20250903_D04,5.86,9.58,0.076,0.053,EnhancerCluster
+Prdm14,Prdm14,PL273,Prdm14_Prdm14_DHS66dnToDHS22dn,Bl6/C_PL273(Sox2_6_7)_20250903_D05,5.257,8.917,0.079,0.055,EnhancerCluster
+Prdm14,Prdm14,PL273,Prdm14_Prdm14_DHS66dnToDHS22dn,Bl6/C_PL273(Sox2_6_7)_20250903_D07,5.453,9.083,0.081,0.056,EnhancerCluster
+Prdm14,Prdm14,PL273,Prdm14_Prdm14_DHS66dnToDHS22dn,Bl6/C_PL273(Sox2_6_7)_20250903_D08,6.493,9.403,0.133,0.093,EnhancerCluster
+Sall1,Sall1,PL274,EnhancerCluster_Sall1_DHS55dnToDHS27dn,Bl6/C_PL274(Sox2_6_7)_20241125_C07,7.733,9.457,0.303,0.214,EnhancerCluster
+Sall1,Sall1,PL274,EnhancerCluster_Sall1_DHS55dnToDHS27dn,Bl6/C_PL274(Sox2_6_7)_20241125_D01,5.737,7.977,0.212,0.149,EnhancerCluster
+Sall1,Sall1,PL274,EnhancerCluster_Sall1_DHS55dnToDHS27dn,Bl6/C_PL274(Sox2_6_7)_20241125_D04,7.28,9,0.304,0.214,EnhancerCluster
+Sall1,Sall1,PL274,EnhancerCluster_Sall1_DHS55dnToDHS27dn,Bl6/C_PL274(Sox2_6_7)_20241125_D05,6.7,8.55,0.277,0.196,EnhancerCluster
+Sall1,Sall1,PL274,EnhancerCluster_Sall1_DHS55dnToDHS27dn,Bl6/C_PL274(Sox2_6_7)_20241125_E05,7.25,9.137,0.27,0.191,EnhancerCluster
+Sall1,Sall1,PL274,EnhancerCluster_Sall1_DHS55dnToDHS27dn,Bl6/C_PL274(Sox2_6_7)_20241125_E09,6.34,8.333,0.251,0.177,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250613_A11,7.883,9.64,0.296,0.209,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250613_B05,8.177,9.227,0.483,0.342,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250613_B12,6.847,8.5,0.318,0.224,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250912_G01,5.87,7.68,0.285,0.201,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250912_G02,6.14,7.26,0.46,0.325,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250912_G08,5.883,7.74,0.276,0.195,EnhancerCluster
+Sall1,Sall1,PL275,EnhancerCluster_Sall1_DHS53~52~46~42~40~39~37~36~32~28~27,Bl6/C_PL275(Sox2_6_7)_20250912_G09,5.853,7.343,0.356,0.252,EnhancerCluster
+Single,Single,PL279,EnhancerCluster_Single_Sall1DHS39dnAndSall1DHS40dn,Bl6/C_PL290(Sox2_6_7)_20231011_A01,4.657,10.418,0.018,0.012,EnhancerCluster
+TF,DHS24.2,PL254,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxF,Bl6/C_PL290(Sox2_6_7)_20231011_A02,6.097,5.897,1.149,0.814,EnhancerCluster
+TF,DHS24.2,PL254,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxF,Bl6/C_PL290(Sox2_6_7)_20231011_A03,5.897,5.867,1.021,0.724,EnhancerCluster
+Pair,Pair,PL286,EnhancerCluster_Pair_Sox2DHS24andSall1DHS39dnAndSall1DHS40dn,Bl6/C_PL290(Sox2_6_7)_20231011_A06,6.333,7.12,0.58,0.41,EnhancerCluster
+Single,Single,PL279,EnhancerCluster_Single_Sall1DHS39dnAndSall1DHS40dn,Bl6/C_PL290(Sox2_6_7)_20231011_A07,6.132,11.517,0.024,0.016,EnhancerCluster
+Single,Single,PL256,EnhancerCluster_Single_Prdm14DHS52dn,Bl6/C_PL290(Sox2_6_7)_20231011_B12,5.72,11.147,0.023,0.015,EnhancerCluster
+Single,Single,PL256,EnhancerCluster_Single_Prdm14DHS52dn,Bl6/C_PL290(Sox2_6_7)_20231011_C02,5.612,11.528,0.017,0.011,EnhancerCluster
+Pair,Pair,PL286,EnhancerCluster_Pair_Sox2DHS24andSall1DHS39dnAndSall1DHS40dn,Bl6/C_PL290(Sox2_6_7)_20231011_C10,6.242,6.61,0.775,0.549,EnhancerCluster
+Pair,Pair,PL289,EnhancerCluster_Pair_Sox2DHS24andSall1DHS27dnAndSall1DHS28dn,Bl6/C_PL290(Sox2_6_7)_20231011_C12,6.13,7.122,0.503,0.356,EnhancerCluster
+Pair,Pair,PL286,EnhancerCluster_Pair_Sox2DHS24andSall1DHS39dnAndSall1DHS40dn,Bl6/C_PL290(Sox2_6_7)_20231011_E03,5.847,6.323,0.719,0.509,EnhancerCluster
+Pair,Pair,PL288,EnhancerCluster_Pair_Sox2DHS24andSall1DHS32dn,Bl6/C_PL299(Sox2_6_7)_20231011_E10,5.69,7.2,0.351,0.248,EnhancerCluster
+TF,TF,PL224,EnhancerCluster_TF_Sox2DHS23andDHS24~dNuclearreceptorAndSOX,Bl6/C_PL299(Sox2_6_7)_20231011_E11,5.553,6.95,0.38,0.268,EnhancerCluster
+Pair,Pair,PL287,EnhancerCluster_Pair_Sox2DHS24andSall1DHS36dnAndSall1DHS37dn,Bl6/C_PL299(Sox2_6_7)_20231011_F07,5.573,7.15,0.335,0.237,EnhancerCluster
+Pair,Pair,PL287,EnhancerCluster_Pair_Sox2DHS24andSall1DHS36dnAndSall1DHS37dn,Bl6/C_PL299(Sox2_6_7)_20231011_G05,7.467,8.777,0.403,0.285,EnhancerCluster
+Pair,Pair,PL264,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS52dn,Bl6/C_PL299(Sox2_6_7)_20231011_H05,6.477,7.377,0.536,0.379,EnhancerCluster
+Pair,Pair,PL300,EnhancerCluster_Pair_Sox2DHS23andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL313(Sox2_6_7)_20231220_A01,5.8,8.773,0.127,0.089,EnhancerCluster
+Pair,Pair,PL300,EnhancerCluster_Pair_Sox2DHS23andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL313(Sox2_6_7)_20231220_A02,5.603,8.397,0.144,0.101,EnhancerCluster
+Pair,Pair,PL304,EnhancerCluster_Pair_Sox2DHS23andSall1DHS36dnAndSall1DHS37dn,Bl6/C_PL313(Sox2_6_7)_20231220_A05,6.043,9.8,0.074,0.051,EnhancerCluster
+Pair,Pair,PL303,EnhancerCluster_Pair_Sox2DHS23andSall1DHS39dnAndSall1DHS40dn,Bl6/C_PL313(Sox2_6_7)_20231220_A06,5.723,8.603,0.136,0.095,EnhancerCluster
+Pair,Pair,PL305,EnhancerCluster_Pair_Sox2DHS23andSall1DHS32dn,Bl6/C_PL313(Sox2_6_7)_20231220_A08,5.847,10.64,0.036,0.024,EnhancerCluster
+Pair,Pair,PL303,EnhancerCluster_Pair_Sox2DHS23andSall1DHS39dnAndSall1DHS40dn,Bl6/C_PL313(Sox2_6_7)_20231220_A10,6.19,9.113,0.132,0.092,EnhancerCluster
+TF,DHS24.2,PL250,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxE,Bl6/C_PL313(Sox2_6_7)_20231220_A11,5.647,7.3,0.318,0.224,EnhancerCluster
+Pair,Pair,PL264,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS52dn,Bl6/C_PL313(Sox2_6_7)_20231220_A12,6.41,7.483,0.475,0.336,EnhancerCluster
+Pair,Pair,PL284,EnhancerCluster_Pair_Sox2DHS24andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_B03,5.69,8.93,0.106,0.074,EnhancerCluster
+Pair,Pair,PL302,EnhancerCluster_Pair_Sox2DHS23andSall1DHS42dn,Bl6/C_PL313(Sox2_6_7)_20231220_B04,6.073,11.62,0.021,0.014,EnhancerCluster
+Pair,Pair,PL301,EnhancerCluster_Pair_Sox2DHS23andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_B07,5.98,10.677,0.039,0.026,EnhancerCluster
+Pair,Pair,PL304,EnhancerCluster_Pair_Sox2DHS23andSall1DHS36dnAndSall1DHS37dn,Bl6/C_PL313(Sox2_6_7)_20231220_B08,8.7,12.11,0.094,0.066,EnhancerCluster
+Pair,Pair,PL284,EnhancerCluster_Pair_Sox2DHS24andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_B10,6.057,9.227,0.111,0.078,EnhancerCluster
+Pair,Pair,PL302,EnhancerCluster_Pair_Sox2DHS23andSall1DHS42dn,Bl6/C_PL313(Sox2_6_7)_20231220_B11,5.733,11.107,0.024,0.016,EnhancerCluster
+Pair,Pair,PL264,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS52dn,Bl6/C_PL313(Sox2_6_7)_20231220_C01,7.487,8.523,0.487,0.345,EnhancerCluster
+Pair,Pair,PL285,EnhancerCluster_Pair_Sox2DHS24andSall1DHS42dn,Bl6/C_PL313(Sox2_6_7)_20231220_C03,5.697,7.85,0.225,0.158,EnhancerCluster
+Pair,Pair,PL306,EnhancerCluster_Pair_Sox2DHS23andSall1DHS27dnAndSall1DHS28dn,Bl6/C_PL313(Sox2_6_7)_20231220_C06,5.44,8.32,0.136,0.095,EnhancerCluster
+Pair,Pair,PL305,EnhancerCluster_Pair_Sox2DHS23andSall1DHS32dn,Bl6/C_PL313(Sox2_6_7)_20231220_C10,5.613,10.52,0.033,0.022,EnhancerCluster
+Pair,Pair,PL306,EnhancerCluster_Pair_Sox2DHS23andSall1DHS27dnAndSall1DHS28dn,Bl6/C_PL313(Sox2_6_7)_20231220_D07,5.803,7.553,0.297,0.21,EnhancerCluster
+Pair,Pair,PL284,EnhancerCluster_Pair_Sox2DHS24andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_D08,5.637,8.753,0.115,0.081,EnhancerCluster
+TF,DHS24.2,PL250,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxE,Bl6/C_PL313(Sox2_6_7)_20231220_D12,7.39,8.577,0.439,0.311,EnhancerCluster
+Pair,Pair,PL284,EnhancerCluster_Pair_Sox2DHS24andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_E03,6.91,10.133,0.107,0.075,EnhancerCluster
+Pair,Pair,PL285,EnhancerCluster_Pair_Sox2DHS24andSall1DHS42dn,Bl6/C_PL313(Sox2_6_7)_20231220_E04,6.18,8.08,0.268,0.189,EnhancerCluster
+Pair,Pair,PL301,EnhancerCluster_Pair_Sox2DHS23andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_E06,5.757,10.617,0.034,0.023,EnhancerCluster
+Pair,Pair,PL306,EnhancerCluster_Pair_Sox2DHS23andSall1DHS27dnAndSall1DHS28dn,Bl6/C_PL313(Sox2_6_7)_20231220_G03,6.457,9.223,0.147,0.103,EnhancerCluster
+Pair,Pair,PL284,EnhancerCluster_Pair_Sox2DHS24andSall1DHS46dn,Bl6/C_PL313(Sox2_6_7)_20231220_H06,6.663,9.557,0.135,0.094,EnhancerCluster
+HPRT1Rspacer,spacer,PL316,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS26,Bl6/C_PL316(Sox2_6_7)_20250912_H02,6.03,6.14,0.927,0.657,EnhancerCluster
+HPRT1Rspacer,spacer,PL316,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS26,Bl6/C_PL316(Sox2_6_7)_20250912_H05,6.16,6.247,0.942,0.667,EnhancerCluster
+HPRT1Rspacer,spacer,PL316,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS26,Bl6/C_PL316(Sox2_6_7)_20250912_H07,5.89,6.11,0.859,0.608,EnhancerCluster
+HPRT1Rspacer,spacer,PL316,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS26,Bl6/C_PL316(Sox2_6_7)_20250912_H10,6.407,6.967,0.678,0.48,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A02,6.693,7.148,0.73,0.517,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A04,5.912,6.422,0.702,0.497,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A06,5.938,6.762,0.565,0.4,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A07,7.138,7.797,0.634,0.449,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A09,6.837,7.468,0.645,0.457,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A10,6.928,7.275,0.786,0.557,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_A12,6.575,7.27,0.618,0.437,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_B05,7.153,7.833,0.624,0.442,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_B07,6.5,7.147,0.639,0.452,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_B08,6.973,7.725,0.594,0.42,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_B10,6.507,7.197,0.62,0.439,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_B11,6.69,7.057,0.776,0.549,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_C02,6.293,6.77,0.719,0.509,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_C04,6.697,7.6,0.535,0.378,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_C05,6.22,6.86,0.642,0.454,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_C07,6.723,7.123,0.758,0.537,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_D02,6.273,7.087,0.569,0.403,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_D03,6.45,7.107,0.634,0.449,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_D09,6.29,6.787,0.709,0.502,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_D10,6.633,7.003,0.774,0.548,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_E05,6.417,7.177,0.59,0.418,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_E09,6.257,6.68,0.746,0.528,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_F01,6.093,6.79,0.617,0.437,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_F03,6.593,7.127,0.691,0.489,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_F05,8.933,9.55,0.652,0.462,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_F11,6.297,6.68,0.767,0.543,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_G10,6.063,6.447,0.767,0.543,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_G11,7.3,8.19,0.54,0.382,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_H05,6.42,6.813,0.761,0.539,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240112_H09,6.343,6.68,0.792,0.561,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_B03,8.54,9.425,0.541,0.383,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_B05,7.22,7.43,0.865,0.613,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_B06,7.318,8.05,0.602,0.426,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_B10,5.94,6.46,0.697,0.494,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_B12,5.868,6.73,0.55,0.389,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_C02,7.018,7.527,0.703,0.498,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_C03,8.487,8.783,0.814,0.577,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_C04,5.713,6.352,0.642,0.455,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_C10,5.62,5.927,0.809,0.573,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_D04,7.555,8.335,0.582,0.412,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_D05,9.892,10.667,0.584,0.414,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL322(Sox2_6_7)_20240809_D07,10.602,11.41,0.571,0.404,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_A03,7.273,8.103,0.563,0.398,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_A04,6.818,7.455,0.643,0.455,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_A07,6.297,7.543,0.421,0.298,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_A10,6.707,7.2,0.71,0.503,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_B05,6.473,7.05,0.671,0.475,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_B10,7.05,8.17,0.46,0.325,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_C02,6.64,7.353,0.61,0.432,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_C06,7.287,8.587,0.406,0.287,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_C08,6.31,7.88,0.337,0.238,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_C09,6.533,6.887,0.783,0.555,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_C11,6.157,6.89,0.602,0.426,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_D10,6.46,7.053,0.663,0.469,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_D12,5.953,6.61,0.634,0.449,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_E01,6.147,6.863,0.609,0.431,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_E02,5.94,6.743,0.573,0.406,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_E03,5.927,7.037,0.463,0.328,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_F02,6.167,6.793,0.648,0.459,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_F03,6.617,7.69,0.475,0.336,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_F04,6.093,7.303,0.432,0.306,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_F06,6.04,6.633,0.663,0.469,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_F08,6.573,7.473,0.536,0.379,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_F11,6.317,7.023,0.613,0.434,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_G01,5.957,7.407,0.366,0.259,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_G04,6.097,6.49,0.761,0.539,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_G08,6.307,6.647,0.79,0.56,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_H01,6.277,6.79,0.701,0.496,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_H03,6.183,6.797,0.654,0.463,EnhancerCluster
+RP11~158F22spacer,spacer,PL328,EnhancerCluster_RP11~158F22spacer_Sox2DHS19andSox2DHS24,Bl6/C_PL328(Sox2_6_7)_20240119_H04,6.055,6.588,0.691,0.489,EnhancerCluster
+SOX2,SOX2,PL331,EnhancerCluster_SOX2_DHS16upToDHS27up,Bl6/C_PL331(Sox2_6_7)_20241125_F02,6.583,13.243,0.01,0.006,EnhancerCluster
+SOX2,SOX2,PL331,EnhancerCluster_SOX2_DHS16upToDHS27up,Bl6/C_PL331(Sox2_6_7)_20241125_F03,5.45,12.223,0.009,0.005,EnhancerCluster
+SOX2,SOX2,PL331,EnhancerCluster_SOX2_DHS16upToDHS27up,Bl6/C_PL331(Sox2_6_7)_20241125_F05,5.813,12.22,0.012,0.007,EnhancerCluster
+SOX2,SOX2,PL332,EnhancerCluster_SOX2_DHS21upToDHS27up,Bl6/C_PL332(Sox2_6_7)_20241125_G04,6.123,11.943,0.018,0.011,EnhancerCluster
+SOX2,SOX2,PL332,EnhancerCluster_SOX2_DHS21upToDHS27up,Bl6/C_PL332(Sox2_6_7)_20241125_G09,6.397,11.733,0.025,0.016,EnhancerCluster
+SOX2,SOX2,PL332,EnhancerCluster_SOX2_DHS21upToDHS27up,Bl6/C_PL332(Sox2_6_7)_20241125_G10,6.087,12.173,0.015,0.009,EnhancerCluster
+SOX2,SOX2,PL332,EnhancerCluster_SOX2_DHS21upToDHS27up,Bl6/C_PL332(Sox2_6_7)_20241125_G11,7.98,12.847,0.034,0.023,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A01,5.825,6.693,0.548,0.388,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A02,6.738,8.488,0.297,0.21,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A05,6.077,6.798,0.606,0.429,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A06,9.8,10.427,0.648,0.459,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A07,7.37,8.307,0.522,0.37,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A09,5.962,6.98,0.494,0.349,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A10,6.182,7.213,0.489,0.346,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_A11,7.27,8.135,0.549,0.389,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B01,5.963,7.052,0.47,0.333,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B03,6.132,7.493,0.389,0.275,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B04,6.163,7.29,0.458,0.324,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B05,5.845,6.677,0.562,0.398,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B06,5.773,6.463,0.62,0.439,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B07,7.25,8.487,0.424,0.3,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B09,5.79,6.587,0.576,0.407,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B10,6.865,7.633,0.587,0.416,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_B12,6.027,6.94,0.531,0.376,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_C04,6.93,7.99,0.48,0.339,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_C08,5.723,6.573,0.555,0.393,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_C10,5.625,6.98,0.391,0.276,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL336,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_PL336(Sox2_6_7)_20240809_C11,6.112,7.417,0.405,0.286,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_D01,6.892,11.423,0.043,0.03,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_D02,7.533,11.208,0.078,0.054,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_D04,5.417,10.01,0.041,0.028,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_D06,6.113,9.207,0.117,0.082,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_D11,5.683,10.475,0.036,0.024,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_D12,5.998,9.035,0.122,0.085,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_E03,5.592,9.715,0.057,0.04,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_E05,6.087,10.873,0.036,0.025,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_E06,5.617,10.318,0.038,0.026,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_E08,5.037,9.947,0.033,0.022,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_E11,5.963,8.723,0.148,0.104,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL337(Sox2_6_7)_20240809_E12,5.303,10.207,0.033,0.023,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_A01,5.648,7.433,0.29,0.205,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_A02,5.688,7.685,0.251,0.177,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_A05,5.75,7.82,0.238,0.168,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_F09,5.772,7.878,0.232,0.164,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_F10,5.965,8.192,0.214,0.15,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_F11,5.507,7.205,0.308,0.218,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G01,7.83,10.508,0.156,0.11,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G03,6.37,8.968,0.165,0.116,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G04,5.755,7.51,0.296,0.209,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G05,5.383,7.805,0.187,0.131,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G07,6.145,8.255,0.232,0.163,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G08,6.172,8.24,0.238,0.168,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G09,5.19,7.483,0.204,0.144,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G10,5.743,7.908,0.223,0.157,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_G11,5.658,8.17,0.175,0.123,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_H02,6.023,7.995,0.255,0.18,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL338,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSall1DHS46dn,Bl6/C_PL338(Sox2_6_7)_20240809_H04,5.34,7.633,0.204,0.144,EnhancerCluster
+HPRT1Rspacer,spacer,PL348,EnhancerCluster_HPRT1Rspacer_Sall1DHS39dnAndSall1DHS40dn~AvrII~Sall1DHS52dnAndSall1DHS53dn,Bl6/C_PL352(Sox2_6_7)_20250205_A01,5.78,7.997,0.215,0.152,EnhancerCluster
+HPRT1Rspacer,spacer,PL350,EnhancerCluster_HPRT1Rspacer_Prdm14DHS57dn~AvrII~Sox2DHS24,Bl6/C_PL352(Sox2_6_7)_20250205_A03,6.63,7.65,0.493,0.349,EnhancerCluster
+HPRT1Rspacer,spacer,PL339,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_A04,8.06,9.147,0.471,0.333,EnhancerCluster
+HPRT1Rspacer,spacer,PL339,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_A05,7.97,9.237,0.416,0.294,EnhancerCluster
+HPRT1Rspacer,spacer,PL351,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Prdm14DHS57dn,Bl6/C_PL352(Sox2_6_7)_20250205_A06,10.877,12.093,0.43,0.304,EnhancerCluster
+HPRT1Rspacer,spacer,PL340,EnhancerCluster_HPRT1Rspacer_Sox2DHS23~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_A08,6.967,11.647,0.039,0.027,EnhancerCluster
+HPRT1Rspacer,spacer,PL348,EnhancerCluster_HPRT1Rspacer_Sall1DHS39dnAndSall1DHS40dn~AvrII~Sall1DHS52dnAndSall1DHS53dn,Bl6/C_PL352(Sox2_6_7)_20250205_A09,8.16,11.103,0.13,0.091,EnhancerCluster
+HPRT1Rspacer,spacer,PL348,EnhancerCluster_HPRT1Rspacer_Sall1DHS39dnAndSall1DHS40dn~AvrII~Sall1DHS52dnAndSall1DHS53dn,Bl6/C_PL352(Sox2_6_7)_20250205_A10,8.063,10.703,0.16,0.113,EnhancerCluster
+HPRT1Rspacer,spacer,PL349,EnhancerCluster_HPRT1Rspacer_Sall1DHS46dn~AvrII~Sox2DHS24,Bl6/C_PL352(Sox2_6_7)_20250205_A11,8.037,9.753,0.304,0.215,EnhancerCluster
+HPRT1Rspacer,spacer,PL348,EnhancerCluster_HPRT1Rspacer_Sall1DHS39dnAndSall1DHS40dn~AvrII~Sall1DHS52dnAndSall1DHS53dn,Bl6/C_PL352(Sox2_6_7)_20250205_A12,6.813,9.433,0.163,0.114,EnhancerCluster
+HPRT1Rspacer,spacer,PL351,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Prdm14DHS57dn,Bl6/C_PL352(Sox2_6_7)_20250205_B03,7.28,9.263,0.253,0.178,EnhancerCluster
+HPRT1Rspacer,spacer,PL339,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_B04,10.603,11.403,0.574,0.407,EnhancerCluster
+HPRT1Rspacer,spacer,PL350,EnhancerCluster_HPRT1Rspacer_Prdm14DHS57dn~AvrII~Sox2DHS24,Bl6/C_PL352(Sox2_6_7)_20250205_B06,8.05,9.187,0.455,0.322,EnhancerCluster
+HPRT1Rspacer,spacer,PL340,EnhancerCluster_HPRT1Rspacer_Sox2DHS23~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_B08,7.99,12.267,0.052,0.035,EnhancerCluster
+HPRT1Rspacer,spacer,PL339,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_B09,7.76,8.983,0.428,0.303,EnhancerCluster
+HPRT1Rspacer,spacer,PL351,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Prdm14DHS57dn,Bl6/C_PL352(Sox2_6_7)_20250205_C02,7.837,9.57,0.301,0.212,EnhancerCluster
+HPRT1Rspacer,spacer,PL351,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Prdm14DHS57dn,Bl6/C_PL352(Sox2_6_7)_20250205_C03,7.863,9.553,0.31,0.219,EnhancerCluster
+HPRT1Rspacer,spacer,PL350,EnhancerCluster_HPRT1Rspacer_Prdm14DHS57dn~AvrII~Sox2DHS24,Bl6/C_PL352(Sox2_6_7)_20250205_C08,7.24,8.467,0.427,0.302,EnhancerCluster
+HPRT1Rspacer,spacer,PL350,EnhancerCluster_HPRT1Rspacer_Prdm14DHS57dn~AvrII~Sox2DHS24,Bl6/C_PL352(Sox2_6_7)_20250205_C11,7.577,8.797,0.429,0.304,EnhancerCluster
+HPRT1Rspacer,spacer,PL349,EnhancerCluster_HPRT1Rspacer_Sall1DHS46dn~AvrII~Sox2DHS24,Bl6/C_PL352(Sox2_6_7)_20250205_D01,8.047,9.617,0.337,0.238,EnhancerCluster
+HPRT1Rspacer,spacer,PL340,EnhancerCluster_HPRT1Rspacer_Sox2DHS23~AvrII~Sox2DHS19,Bl6/C_PL352(Sox2_6_7)_20250205_D04,8.53,12.68,0.056,0.039,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_A01,5.663,8.537,0.136,0.096,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_A08,6.08,8.297,0.215,0.152,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_A11,5.623,8.977,0.098,0.068,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_B03,5.713,8.983,0.104,0.072,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_B04,5.407,8.88,0.09,0.063,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_B07,5.323,7.933,0.164,0.115,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_B08,5.657,9.173,0.087,0.061,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_B11,6.21,9.153,0.13,0.091,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_B12,5.653,9.447,0.072,0.05,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_C01,5.68,8.88,0.109,0.076,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL337,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn,Bl6/C_PL358(Sox2_6_7)_20250418_C07,5.72,8.48,0.148,0.104,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_E06,6.193,7.673,0.358,0.253,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_E08,5.477,6.033,0.68,0.481,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_E09,5.943,6.92,0.508,0.36,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_E12,6.393,7.08,0.621,0.44,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_F03,5.9,6.873,0.509,0.36,EnhancerCluster
+HPRT1Rspacer,spacer,PL316,EnhancerCluster_HPRT1Rspacer_Sox2DHS24~AvrII~Sox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_F06,6.437,6.887,0.732,0.518,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_F09,5.86,6.53,0.629,0.445,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_F11,5.98,6.407,0.744,0.527,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_G03,5.587,5.833,0.843,0.597,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_G09,6.43,7.603,0.443,0.314,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_G10,5.507,6.593,0.471,0.333,EnhancerCluster
+HPRT1RnoCpGspacer,spacer,PL322,EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS24andSox2DHS26,Bl6/C_PL359(Sox2_6_7)_20250418_H01,6.203,6.69,0.714,0.505,EnhancerCluster
+Nanog,Nanog,PL368,EnhancerCluster_Nanog_DHS50dnToDHS65dn,Bl6/C_PL368(Sox2_6_7)_20250903_F08,5.88,9.047,0.111,0.078,EnhancerCluster
+Nanog,Nanog,PL368,EnhancerCluster_Nanog_DHS50dnToDHS65dn,Bl6/C_PL368(Sox2_6_7)_20250903_F09,5.68,8.71,0.122,0.086,EnhancerCluster
+Nanog,Nanog,PL368,EnhancerCluster_Nanog_DHS50dnToDHS65dn,Bl6/C_PL368(Sox2_6_7)_20250903_F10,5.09,8.467,0.096,0.067,EnhancerCluster
+Nanog,Nanog,PL368,EnhancerCluster_Nanog_DHS50dnToDHS65dn,Bl6/C_PL368(Sox2_6_7)_20250903_F11,5.88,8.857,0.127,0.089,EnhancerCluster
+Pair,Pair,PL287,EnhancerCluster_Pair_Sox2DHS24andSall1DHS36dnAndSall1DHS37dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_A02,6.927,7.87,0.52,0.368,EnhancerCluster
+Single,Single,PL277,EnhancerCluster_Single_Sall1DHS46dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_A03,5.583,10.347,0.037,0.025,EnhancerCluster
+Single,Single,PL277,EnhancerCluster_Single_Sall1DHS46dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_A05,5.473,10.627,0.028,0.019,EnhancerCluster
+Single,Single,PL276,EnhancerCluster_Single_Sall1DHS52dnAndSall1DHS53dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_A06,5.942,9.848,0.067,0.046,EnhancerCluster
+Single,Single,PL206,EnhancerCluster_Single_NanogDHS48up,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_A09,5.917,10.573,0.04,0.027,EnhancerCluster
+TF,DHS24.2,PL253,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxE,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_A10,5.847,5.823,1.016,0.72,EnhancerCluster
+Single,Single,PL206,EnhancerCluster_Single_NanogDHS48up,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_B01,5.583,11.643,0.015,0.009,EnhancerCluster
+Single,Single,PL206,EnhancerCluster_Single_NanogDHS48up,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_B05,5.713,10.35,0.04,0.027,EnhancerCluster
+Single,Single,PL206,EnhancerCluster_Single_NanogDHS48up,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_B09,5.757,10.95,0.027,0.018,EnhancerCluster
+Single,Single,PL278,EnhancerCluster_Single_Sall1DHS42dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_B12,5.65,10.843,0.027,0.018,EnhancerCluster
+Single,Single,PL278,EnhancerCluster_Single_Sall1DHS42dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_C07,6.067,11.063,0.031,0.021,EnhancerCluster
+Pair,Pair,PL288,EnhancerCluster_Pair_Sox2DHS24andSall1DHS32dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_C09,6.677,8.07,0.381,0.269,EnhancerCluster
+Pair,Pair,PL289,EnhancerCluster_Pair_Sox2DHS24andSall1DHS27dnAndSall1DHS28dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_C11,5.937,7.02,0.472,0.334,EnhancerCluster
+Single,Single,PL276,EnhancerCluster_Single_Sall1DHS52dnAndSall1DHS53dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_C12,5.395,9.18,0.073,0.05,EnhancerCluster
+Single,Single,PL276,EnhancerCluster_Single_Sall1DHS52dnAndSall1DHS53dn,Bl6/C_Sall1_Single~Pair_pool1(Sox2_6_7)_20230804_D01,5.85,9.74,0.067,0.047,EnhancerCluster
+Single,Single,PL281,EnhancerCluster_Single_Sall1DHS32dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_E01,5.683,10.98,0.025,0.017,EnhancerCluster
+Pair,Pair,PL283,EnhancerCluster_Pair_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_E06,5.963,6.5,0.689,0.488,EnhancerCluster
+Single,Single,PL281,EnhancerCluster_Single_Sall1DHS32dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_E11,6.213,11.22,0.031,0.021,EnhancerCluster
+Single,Single,PL280,EnhancerCluster_Single_Sall1DHS36dnAndSall1DHS37dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_E12,9.613,12.82,0.108,0.076,EnhancerCluster
+Single,Single,PL282,EnhancerCluster_Single_Sall1DHS27dnAndSall1DHS28dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_F03,5.843,11.017,0.028,0.018,EnhancerCluster
+Single,Single,PL280,EnhancerCluster_Single_Sall1DHS36dnAndSall1DHS37dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_F06,5.17,10.13,0.032,0.022,EnhancerCluster
+Single,Single,PL281,EnhancerCluster_Single_Sall1DHS32dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_F08,5.38,11.103,0.019,0.012,EnhancerCluster
+TF,DHS24.2,PL255,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxG,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_F12,5.6,5.537,1.045,0.741,EnhancerCluster
+Single,Single,PL280,EnhancerCluster_Single_Sall1DHS36dnAndSall1DHS37dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_G03,5.197,10.653,0.023,0.015,EnhancerCluster
+Single,Single,PL282,EnhancerCluster_Single_Sall1DHS27dnAndSall1DHS28dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_G04,5.073,9.963,0.034,0.023,EnhancerCluster
+Single,Single,PL282,EnhancerCluster_Single_Sall1DHS27dnAndSall1DHS28dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_G06,5.25,9.573,0.05,0.034,EnhancerCluster
+Single,Single,PL281,EnhancerCluster_Single_Sall1DHS32dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_G07,5.127,10.337,0.027,0.018,EnhancerCluster
+Pair,Pair,PL283,EnhancerCluster_Pair_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_G11,5.747,6.1,0.783,0.555,EnhancerCluster
+TF,DHS24.2,PL255,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxG,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_H02,5.413,5.447,0.977,0.692,EnhancerCluster
+Single,Single,PL282,EnhancerCluster_Single_Sall1DHS27dnAndSall1DHS28dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_H05,5.543,10.153,0.041,0.028,EnhancerCluster
+Pair,Pair,PL283,EnhancerCluster_Pair_Sox2DHS24andSall1DHS52dnAndSall1DHS53dn,Bl6/C_Sall1_Single~Pair_pool2(Sox2_6_7)_20230804_H06,5.833,6.423,0.664,0.47,EnhancerCluster
+Single,Single,PL208,EnhancerCluster_Single_NanogDHS58dn,BL6/C_Single_pool1(Sox2_6_7)_20230508_A02,6.003,11.54,0.022,0.014,EnhancerCluster
+Single,Single,PL203,EnhancerCluster_Single_Sox2DHS23,BL6/C_Single_pool1(Sox2_6_7)_20230508_A03,5.71,11.487,0.018,0.012,EnhancerCluster
+Single,Single,PL208,EnhancerCluster_Single_NanogDHS58dn,BL6/C_Single_pool1(Sox2_6_7)_20230508_A04,6.433,10.29,0.069,0.048,EnhancerCluster
+Single,Single,PL208,EnhancerCluster_Single_NanogDHS58dn,BL6/C_Single_pool1(Sox2_6_7)_20230508_A06,6.278,11.703,0.023,0.015,EnhancerCluster
+Single,Single,PL205,EnhancerCluster_Single_NanogDHS47up,BL6/C_Single_pool1(Sox2_6_7)_20230508_A07,5.653,10.59,0.033,0.022,EnhancerCluster
+Single,Single,PL204,EnhancerCluster_Single_Sox2DHS24,BL6/C_Single_pool1(Sox2_6_7)_20230508_A09,5.957,7.907,0.259,0.183,EnhancerCluster
+Single,Single,PL204,EnhancerCluster_Single_Sox2DHS24,BL6/C_Single_pool1(Sox2_6_7)_20230508_A11,6.307,7.84,0.345,0.244,EnhancerCluster
+Single,Single,PL209,EnhancerCluster_Single_NanogDHS55dn,BL6/C_Single_pool1(Sox2_6_7)_20230508_A12,5.897,11.723,0.018,0.011,EnhancerCluster
+Single,Single,PL203,EnhancerCluster_Single_Sox2DHS23,BL6/C_Single_pool1(Sox2_6_7)_20230508_B01,6.12,10.763,0.04,0.027,EnhancerCluster
+Single,Single,PL204,EnhancerCluster_Single_Sox2DHS24,BL6/C_Single_pool1(Sox2_6_7)_20230508_B04,6.013,7.527,0.35,0.247,EnhancerCluster
+Single,Single,PL209,EnhancerCluster_Single_NanogDHS55dn,BL6/C_Single_pool1(Sox2_6_7)_20230508_B06,5.86,12.167,0.013,0.008,EnhancerCluster
+Single,Single,PL209,EnhancerCluster_Single_NanogDHS55dn,BL6/C_Single_pool1(Sox2_6_7)_20230508_B09,6.04,12.39,0.012,0.008,EnhancerCluster
+Single,Single,PL205,EnhancerCluster_Single_NanogDHS47up,BL6/C_Single_pool1(Sox2_6_7)_20230508_B12,5.867,11.347,0.022,0.015,EnhancerCluster
+Single,Single,PL203,EnhancerCluster_Single_Sox2DHS23,BL6/C_Single_pool1(Sox2_6_7)_20230508_C06,5.99,11.21,0.027,0.018,EnhancerCluster
+Single,Single,PL205,EnhancerCluster_Single_NanogDHS47up,BL6/C_Single_pool1(Sox2_6_7)_20230508_C07,6.793,12.6,0.018,0.011,EnhancerCluster
+Single,Single,PL259,EnhancerCluster_Single_Prdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A01,5.95,12.387,0.012,0.007,EnhancerCluster
+Single,Single,PL257,EnhancerCluster_Single_Prdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A02,5.82,11.73,0.017,0.011,EnhancerCluster
+Single,Single,PL257,EnhancerCluster_Single_Prdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A05,5.553,12.047,0.011,0.007,EnhancerCluster
+Pair,Pair,PL267,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A06,6.14,8.57,0.186,0.131,EnhancerCluster
+Single,Single,PL257,EnhancerCluster_Single_Prdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A07,5.743,12.213,0.011,0.007,EnhancerCluster
+Pair,Pair,PL260,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS52dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A08,6.057,7.89,0.281,0.198,EnhancerCluster
+Pair,Pair,PL266,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A11,6.467,8.59,0.23,0.162,EnhancerCluster
+Pair,Pair,PL260,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS52dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_A12,6.157,8.073,0.265,0.187,EnhancerCluster
+Single,Single,PL259,EnhancerCluster_Single_Prdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_B03,5.837,12.05,0.013,0.008,EnhancerCluster
+Pair,Pair,PL265,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_B05,6.1,8.69,0.166,0.117,EnhancerCluster
+Pair,Pair,PL265,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_B12,6.063,8.847,0.145,0.102,EnhancerCluster
+Single,Single,PL259,EnhancerCluster_Single_Prdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C01,5.873,11.59,0.019,0.012,EnhancerCluster
+Pair,Pair,PL265,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C02,5.673,8.02,0.197,0.138,EnhancerCluster
+Pair,Pair,PL261,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C03,6.31,12.11,0.018,0.012,EnhancerCluster
+Single,Single,PL259,EnhancerCluster_Single_Prdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C05,5.763,12.507,0.009,0.005,EnhancerCluster
+Single,Single,PL258,EnhancerCluster_Single_Prdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C06,5.837,12.06,0.013,0.008,EnhancerCluster
+Pair,Pair,PL262,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C08,5.493,10.203,0.038,0.026,EnhancerCluster
+Pair,Pair,PL260,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS52dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C09,5.65,7.537,0.27,0.191,EnhancerCluster
+Pair,Pair,PL263,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_C12,5.673,11.487,0.018,0.011,EnhancerCluster
+Single,Single,PL257,EnhancerCluster_Single_Prdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D01,6.29,12.373,0.015,0.009,EnhancerCluster
+Pair,Pair,PL267,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D03,5.847,8.2,0.196,0.138,EnhancerCluster
+Pair,Pair,PL262,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D05,5.95,10.277,0.05,0.034,EnhancerCluster
+Pair,Pair,PL262,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D06,5.633,9.873,0.053,0.036,EnhancerCluster
+Pair,Pair,PL261,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D07,6.23,12.03,0.018,0.012,EnhancerCluster
+Pair,Pair,PL266,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D08,5.663,7.5,0.28,0.198,EnhancerCluster
+Single,Single,PL257,EnhancerCluster_Single_Prdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D09,5.72,11.65,0.016,0.01,EnhancerCluster
+Pair,Pair,PL263,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D10,5.59,11.427,0.017,0.011,EnhancerCluster
+Single,Single,PL257,EnhancerCluster_Single_Prdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_D12,5.517,11.42,0.017,0.011,EnhancerCluster
+Pair,Pair,PL261,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E02,5.483,11.22,0.019,0.012,EnhancerCluster
+Pair,Pair,PL260,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS52dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E03,5.74,7.697,0.258,0.182,EnhancerCluster
+Single,Single,PL259,EnhancerCluster_Single_Prdm14DHS22dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E04,5.64,12.593,0.008,0.005,EnhancerCluster
+Pair,Pair,PL261,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E06,5.893,11.463,0.021,0.014,EnhancerCluster
+Single,Single,PL258,EnhancerCluster_Single_Prdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E07,5.74,12.003,0.013,0.008,EnhancerCluster
+Pair,Pair,PL265,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E08,5.543,8.233,0.155,0.109,EnhancerCluster
+Pair,Pair,PL262,EnhancerCluster_Pair_Sox2DHS23andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E09,5.483,9.767,0.051,0.035,EnhancerCluster
+Single,Single,PL258,EnhancerCluster_Single_Prdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_E10,5.727,11.627,0.017,0.011,EnhancerCluster
+Pair,Pair,PL264,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS52dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_F01,5.69,6.983,0.408,0.288,EnhancerCluster
+Pair,Pair,PL265,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS57dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_F10,5.637,8.203,0.169,0.119,EnhancerCluster
+Pair,Pair,PL266,EnhancerCluster_Pair_Sox2DHS24andPrdm14DHS50dn,BL6/C_Single~Pair_pool2(Sox2_6_7)_20230630_F11,5.437,7.39,0.258,0.182,EnhancerCluster
+Pair,Pair,PL217,EnhancerCluster_Pair_Sox2DHS24andNanogDHS47up,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_A01,6.33,8.213,0.271,0.191,EnhancerCluster
+Pair,Pair,PL216,EnhancerCluster_Pair_Sox2DHS24andSox2DHS23,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_A02,6.063,7.367,0.405,0.286,EnhancerCluster
+Single,Single,PL207,EnhancerCluster_Single_NanogDHS57dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_A07,6.34,9.84,0.088,0.062,EnhancerCluster
+Pair,Pair,PL213,EnhancerCluster_Pair_Sox2DHS23andNanogDHS57dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_A12,6.02,7.52,0.354,0.25,EnhancerCluster
+Pair,Pair,PL217,EnhancerCluster_Pair_Sox2DHS24andNanogDHS47up,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_B04,6.287,8.317,0.245,0.173,EnhancerCluster
+Pair,Pair,PL220,EnhancerCluster_Pair_Sox2DHS24andNanogDHS58dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_B08,6.14,7,0.551,0.39,EnhancerCluster
+Pair,Pair,PL216,EnhancerCluster_Pair_Sox2DHS24andSox2DHS23,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_C01,6.237,7.337,0.467,0.33,EnhancerCluster
+Single,Single,PL207,EnhancerCluster_Single_NanogDHS57dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_C02,6.107,9.597,0.089,0.062,EnhancerCluster
+Single,Single,PL207,EnhancerCluster_Single_NanogDHS57dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_C12,6.02,9.487,0.09,0.063,EnhancerCluster
+Pair,Pair,PL217,EnhancerCluster_Pair_Sox2DHS24andNanogDHS47up,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_D03,6.74,8.703,0.256,0.181,EnhancerCluster
+Pair,Pair,PL216,EnhancerCluster_Pair_Sox2DHS24andSox2DHS23,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_D06,6.22,7.33,0.463,0.328,EnhancerCluster
+Pair,Pair,PL213,EnhancerCluster_Pair_Sox2DHS23andNanogDHS57dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_D08,6.24,8.343,0.233,0.164,EnhancerCluster
+Pair,Pair,PL216,EnhancerCluster_Pair_Sox2DHS24andSox2DHS23,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_D09,6.483,7.823,0.395,0.279,EnhancerCluster
+Pair,Pair,PL220,EnhancerCluster_Pair_Sox2DHS24andNanogDHS58dn,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_D11,5.977,6.81,0.561,0.397,EnhancerCluster
+Pair,Pair,PL217,EnhancerCluster_Pair_Sox2DHS24andNanogDHS47up,BL6/C_Single~Pair_pool3(Sox2_6_7)_20230616_E03,5.957,7.903,0.259,0.183,EnhancerCluster
+TF,TF,PL232,EnhancerCluster_TF_Sox2DHS23andDHS24~d4TFBS,BL6/C_TF_pool2(Sox2_6_7)_20230517_A06,6.1,8.863,0.147,0.103,EnhancerCluster
+TF,TF,PL227,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB,BL6/C_TF_pool2(Sox2_6_7)_20230517_A07,6.163,7.797,0.322,0.228,EnhancerCluster
+TF,TF,PL229,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandNuclearreceptorandSox,BL6/C_TF_pool2(Sox2_6_7)_20230517_A09,6.297,7.983,0.311,0.219,EnhancerCluster
+TF,TF,PL228,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_A11,6.793,7.257,0.725,0.514,EnhancerCluster
+TF,TF,PL230,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_B05,6.433,7.077,0.64,0.453,EnhancerCluster
+TF,TF,PL227,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB,BL6/C_TF_pool2(Sox2_6_7)_20230517_B07,6.137,7.733,0.331,0.234,EnhancerCluster
+TF,TF,PL225,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRA,BL6/C_TF_pool2(Sox2_6_7)_20230517_B10,6.143,6.867,0.606,0.429,EnhancerCluster
+TF,TF,PL225,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRA,BL6/C_TF_pool2(Sox2_6_7)_20230517_C07,6.23,6.927,0.617,0.437,EnhancerCluster
+TF,TF,PL228,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_C08,6.66,7.157,0.709,0.502,EnhancerCluster
+TF,TF,PL225,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRA,BL6/C_TF_pool2(Sox2_6_7)_20230517_C09,6.63,7.187,0.68,0.481,EnhancerCluster
+TF,TF,PL231,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandESRRAandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_D05,6.033,7.34,0.404,0.286,EnhancerCluster
+TF,TF,PL227,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB,BL6/C_TF_pool2(Sox2_6_7)_20230517_D08,6.07,7.693,0.325,0.229,EnhancerCluster
+TF,TF,PL229,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandNuclearreceptorandSox,BL6/C_TF_pool2(Sox2_6_7)_20230517_D09,5.977,7.76,0.291,0.205,EnhancerCluster
+TF,TF,PL230,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_D10,6.297,6.943,0.639,0.452,EnhancerCluster
+TF,TF,PL226,EnhancerCluster_TF_Sox2DHS23andDHS24~dForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_D11,10.517,10.537,0.986,0.699,EnhancerCluster
+TF,TF,PL223,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRB,BL6/C_TF_pool2(Sox2_6_7)_20230517_E06,6.227,6.75,0.696,0.493,EnhancerCluster
+TF,TF,PL228,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_E07,5.773,7.177,0.378,0.267,EnhancerCluster
+TF,TF,PL225,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRA,BL6/C_TF_pool2(Sox2_6_7)_20230517_E08,6.627,7.197,0.674,0.477,EnhancerCluster
+TF,TF,PL231,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRBandESRRAandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_E11,6.013,7.583,0.337,0.238,EnhancerCluster
+TF,TF,PL223,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRB,BL6/C_TF_pool2(Sox2_6_7)_20230517_F04,6.87,7.44,0.674,0.477,EnhancerCluster
+TF,TF,PL232,EnhancerCluster_TF_Sox2DHS23andDHS24~d4TFBS,BL6/C_TF_pool2(Sox2_6_7)_20230517_F07,6.077,8.877,0.144,0.101,EnhancerCluster
+TF,TF,PL230,EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_F08,6.843,7.563,0.607,0.43,EnhancerCluster
+TF,TF,PL226,EnhancerCluster_TF_Sox2DHS23andDHS24~dForkhead,BL6/C_TF_pool2(Sox2_6_7)_20230517_F09,6.173,6.28,0.929,0.658,EnhancerCluster
+TF,TF,PL232,EnhancerCluster_TF_Sox2DHS23andDHS24~d4TFBS,BL6/C_TF_pool2(Sox2_6_7)_20230517_F10,5.947,8.77,0.141,0.099,EnhancerCluster
+TF,DHS24.2,PL240,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxD,BL6/C_TF_pool3(Sox2_6_7)_20230525_A02,5.68,9.77,0.059,0.04,EnhancerCluster
+TF,DHS24.2,PL242,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_A06,5.933,6.17,0.849,0.601,EnhancerCluster
+TF,DHS24.2,PL241,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_A08,6.477,6.687,0.865,0.613,EnhancerCluster
+TF,DHS24.2,PL243,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxCandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_A10,6.293,6.387,0.937,0.664,EnhancerCluster
+TF,DHS24.2,PL244,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_A12,7.307,7.247,1.042,0.739,EnhancerCluster
+TF,DHS24.2,PL244,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_B01,6.777,6.693,1.059,0.751,EnhancerCluster
+TF,DHS24.2,PL246,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_B02,6.307,7.187,0.543,0.385,EnhancerCluster
+TF,DHS24.2,PL244,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_B03,6.487,6.297,1.141,0.809,EnhancerCluster
+TF,DHS24.2,PL248,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_B04,6.053,6.56,0.704,0.498,EnhancerCluster
+TF,DHS24.2,PL239,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxC,BL6/C_TF_pool3(Sox2_6_7)_20230525_B08,5.667,10.063,0.047,0.033,EnhancerCluster
+TF,DHS24.2,PL241,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_B12,6.503,6.69,0.879,0.623,EnhancerCluster
+TF,DHS24.2,PL240,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxD,BL6/C_TF_pool3(Sox2_6_7)_20230525_C02,7.317,10.927,0.082,0.057,EnhancerCluster
+TF,DHS24.2,PL240,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxD,BL6/C_TF_pool3(Sox2_6_7)_20230525_C04,5.777,9.393,0.082,0.057,EnhancerCluster
+TF,DHS24.2,PL248,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_C05,6.55,7.06,0.702,0.497,EnhancerCluster
+TF,DHS24.2,PL244,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_C06,6.333,6.19,1.104,0.783,EnhancerCluster
+TF,DHS24.2,PL245,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_C08,5.917,6.997,0.473,0.335,EnhancerCluster
+TF,DHS24.2,PL245,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_C10,6.21,7.383,0.443,0.314,EnhancerCluster
+TF,DHS24.2,PL247,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxCandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_D04,6.52,7.35,0.563,0.398,EnhancerCluster
+TF,DHS24.2,PL242,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_D10,6.663,6.757,0.937,0.664,EnhancerCluster
+TF,DHS24.2,PL241,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_D12,6.777,6.94,0.893,0.633,EnhancerCluster
+TF,DHS24.2,PL240,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxD,BL6/C_TF_pool3(Sox2_6_7)_20230525_E01,5.743,9.68,0.065,0.045,EnhancerCluster
+TF,DHS24.2,PL245,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_E02,5.907,6.887,0.507,0.359,EnhancerCluster
+TF,DHS24.2,PL239,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxC,BL6/C_TF_pool3(Sox2_6_7)_20230525_E04,5.783,9.573,0.072,0.05,EnhancerCluster
+TF,DHS24.2,PL238,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxB,BL6/C_TF_pool3(Sox2_6_7)_20230525_E05,5.973,9.9,0.066,0.045,EnhancerCluster
+TF,DHS24.2,PL239,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxC,BL6/C_TF_pool3(Sox2_6_7)_20230525_F01,6.147,10.467,0.05,0.034,EnhancerCluster
+TF,DHS24.2,PL238,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxB,BL6/C_TF_pool3(Sox2_6_7)_20230525_F02,5.893,9.803,0.067,0.046,EnhancerCluster
+TF,DHS24.2,PL242,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_F05,5.93,6.097,0.891,0.631,EnhancerCluster
+TF,DHS24.2,PL246,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_F06,5.993,7.023,0.49,0.346,EnhancerCluster
+TF,DHS24.2,PL241,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_F07,5.543,5.78,0.849,0.601,EnhancerCluster
+TF,DHS24.2,PL239,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxC,BL6/C_TF_pool3(Sox2_6_7)_20230525_F09,5.393,9.49,0.058,0.04,EnhancerCluster
+TF,DHS24.2,PL237,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxA,BL6/C_TF_pool3(Sox2_6_7)_20230525_F11,5.177,9.473,0.051,0.035,EnhancerCluster
+TF,DHS24.2,PL247,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxCandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_F12,5.73,6.63,0.536,0.379,EnhancerCluster
+TF,DHS24.2,PL238,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxB,BL6/C_TF_pool3(Sox2_6_7)_20230525_G02,5.293,9.527,0.053,0.037,EnhancerCluster
+TF,DHS24.2,PL244,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxDandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_G06,5.66,5.58,1.057,0.749,EnhancerCluster
+TF,DHS24.2,PL239,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxC,BL6/C_TF_pool3(Sox2_6_7)_20230525_G07,5.59,9.22,0.081,0.056,EnhancerCluster
+TF,DHS24.2,PL242,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_G09,5.767,6.04,0.827,0.586,EnhancerCluster
+TF,DHS24.2,PL238,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxB,BL6/C_TF_pool3(Sox2_6_7)_20230525_G10,5.103,9.35,0.053,0.036,EnhancerCluster
+TF,DHS24.2,PL247,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxCandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_G11,5.457,6.273,0.568,0.402,EnhancerCluster
+TF,DHS24.2,PL239,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxC,BL6/C_TF_pool3(Sox2_6_7)_20230525_H02,5.05,9.347,0.051,0.035,EnhancerCluster
+TF,DHS24.2,PL237,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxA,BL6/C_TF_pool3(Sox2_6_7)_20230525_H03,5.477,9.74,0.052,0.036,EnhancerCluster
+TF,DHS24.2,PL241,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_H05,5.643,5.837,0.875,0.62,EnhancerCluster
+TF,DHS24.2,PL243,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxCandSox2DHS24,BL6/C_TF_pool3(Sox2_6_7)_20230525_H06,7.317,7.433,0.922,0.654,EnhancerCluster
+TF,DHS24.2,PL240,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxD,BL6/C_TF_pool3(Sox2_6_7)_20230525_H07,5.337,8.833,0.089,0.062,EnhancerCluster
+TF,DHS24.2,PL246,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxBandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_H08,5.553,7,0.367,0.259,EnhancerCluster
+TF,DHS24.2,PL245,EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxAandSox2DHS24~dNuclearreceptorandSox,BL6/C_TF_pool3(Sox2_6_7)_20230525_H09,5.507,6.62,0.462,0.327,EnhancerCluster
+TF,DHS19 TFs,PL249,EnhancerCluster_TF_Sox2DHS19~d3TFBSandSox2DHS24,BL6/C_TF_pool4(Sox2_6_7)_20230609_A01,6.737,8.28,0.343,0.242,EnhancerCluster
+TF,DHS19 TFs,PL249,EnhancerCluster_TF_Sox2DHS19~d3TFBSandSox2DHS24,BL6/C_TF_pool4(Sox2_6_7)_20230609_A02,7.457,8.827,0.387,0.273,EnhancerCluster
+TF,DHS19 TFs,PL249,EnhancerCluster_TF_Sox2DHS19~d3TFBSandSox2DHS24,BL6/C_TF_pool4(Sox2_6_7)_20230609_A04,7.063,8.527,0.363,0.256,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_A09,6.673,8.153,0.358,0.253,EnhancerCluster
+TF,DHS19 TFs,PL249,EnhancerCluster_TF_Sox2DHS19~d3TFBSandSox2DHS24,BL6/C_TF_pool4(Sox2_6_7)_20230609_A11,9.07,10.593,0.348,0.246,EnhancerCluster
+TF,DHS24.2,PL253,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxE,BL6/C_TF_pool4(Sox2_6_7)_20230609_B01,7.243,7.317,0.95,0.674,EnhancerCluster
+TF,DHS19 TFs,PL249,EnhancerCluster_TF_Sox2DHS19~d3TFBSandSox2DHS24,BL6/C_TF_pool4(Sox2_6_7)_20230609_B03,7.207,8.697,0.356,0.252,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_B07,8.617,10.427,0.285,0.201,EnhancerCluster
+TF,DHS24.2,PL254,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxF,BL6/C_TF_pool4(Sox2_6_7)_20230609_B09,7.167,7.13,1.026,0.727,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_C03,6.663,8.53,0.274,0.193,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_C04,7.28,9.13,0.277,0.196,EnhancerCluster
+TF,DHS24.2,PL251,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxF,BL6/C_TF_pool4(Sox2_6_7)_20230609_C06,8.982,10.402,0.374,0.264,EnhancerCluster
+TF,DHS24.2,PL251,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxF,BL6/C_TF_pool4(Sox2_6_7)_20230609_C07,7.583,9.027,0.368,0.26,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_C10,6.817,8.357,0.344,0.243,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_C12,6.897,8.587,0.31,0.219,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_D08,7.907,9.657,0.297,0.21,EnhancerCluster
+TF,DHS24.2,PL252,EnhancerCluster_TF_Sox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_D09,6.773,8.557,0.291,0.205,EnhancerCluster
+TF,DHS24.2,PL255,EnhancerCluster_TF_Sox2DHS23andSox2DHS24~2xNuclearreceptorandSoxG,BL6/C_TF_pool4(Sox2_6_7)_20230609_D10,7.59,7.583,1.005,0.712,EnhancerCluster
+controls,dLCR,LP167,dLCR,Bl6/C LP167(Sox2_6g_5g)_D11,5.368,11.8,0.012,0.003,Brosh 2023
+controls,dLCR,LP305,dLCR,Bl6/C LP305(Sox2_6g_7g)_20200915_H1,5.185,10.55,0.024,0.012,Brosh 2023
+controls,dLCR,LP305,dLCR,Bl6/C LP305(Sox2_6g_7g)_20210326_C01,5.504,12.009,0.011,0.002,Brosh 2023
+controls,dSox2,LP140,dSox2,Bl6/C LP140(Sox2_1g_5g)_A1,5.572,11.828,0.013,0.004,Brosh 2023
+controls,dSox2,LP300,dSox2,BL6/C LP300(Igf2_1_4)_D5 dSox2_201026_B3,6.414,13.719,0.006,-0.001,Brosh 2023
+controls,dSox2,LP300,dSox2,BL6/C LP300(Igf2_1_4)_D5 dSox2_201026_B7,5.2,12.44,0.007,-0.001,Brosh 2023
+controls,dSox2,LP300,dSox2,BL6/C LP300(Igf2_1_4)_D5 dSox2_201026_D3,5.34,12.57,0.007,-0.001,Brosh 2023
+controls,dSox2,LP300,dSox2,BL6/C LP300(Igf2_1_4)_D5 dSox2_201026_D7,4.985,12.213,0.007,-0.001,Brosh 2023
+controls,dSox2,LP300,dSox2,BL6/C LP300(Sox2_1g_5g)_201007_D4,4.917,11.638,0.009,0.001,Brosh 2023
+controls,MK6,NA,MK6,MK6 hTAF1 converted XDP B12,15.21,4.262,NA,NA,Brosh 2023
+controls,Parental,NA,Parental,Bl6/C dPiga_1_2_F2,6.662,6.232,1.347,NA,Brosh 2023
+controls,Parental,NA,Parental,Bl6/C Par,5.979,5.551,1.345,NA,Brosh 2023
+WT,WT,PL006,Sox2_Sox2_143kb,Bl6/C PL006(Sox2_1_5)_20200808_G11,5.795,5.44,1.279,1.019,Brosh 2023
+WT,WT,PL006,Sox2_Sox2_143kb,BL6/C PL006(Sox2_1_5)_210224_A10,5.43,5.128,1.233,0.982,Brosh 2023
+WT,WT,PL006,Sox2_Sox2_143kb,BL6/C PL006(Sox2_1_5)_210224_C08,4.887,4.559,1.255,0.999,Brosh 2023
+Full locus,dLCR,PL004,Sox2_Sox2_101kb~dDistalLCR,BL6/C PL004(Sox2_1_5)_210224_A03,5.05,9.585,0.043,0.028,Brosh 2023
+Full locus,dLCR,PL004,Sox2_Sox2_101kb~dDistalLCR,BL6/C PL004(Sox2_1_5)_210224_A04,5.12,10.26,0.028,0.016,Brosh 2023
+Full locus,dLCR,PL004,Sox2_Sox2_101kb~dDistalLCR,BL6/C PL004(Sox2_1_5)_210224_E01,4.69,9.425,0.038,0.024,Brosh 2023
+Full locus,d1-8,PL005,Sox2_Sox2_126kb~dProximalLCR,BL6/C PL005(Sox2_1_5)_201214_B5,5.885,5.91,0.983,0.781,Brosh 2023
+Full locus,d1-8,PL005,Sox2_Sox2_126kb~dProximalLCR,BL6/C PL005(Sox2_1_5)_201214_E5,6,5.865,1.098,0.874,Brosh 2023
+Full locus,d1-8 & 17,PL100,Sox2_Sox2_126kb~dProximalLCRandCTCF17,BL6/C PL100(Sox2_1_5)_20220720_B03,6.55,6.08,1.385,1.104,Brosh 2023
+Full locus,d1-8 & 17,PL100,Sox2_Sox2_126kb~dProximalLCRandCTCF17,BL6/C PL100(Sox2_1_5)_20220720_C01,5.91,5.64,1.206,0.96,Brosh 2023
+Full locus,d1-8 & 17,PL100,Sox2_Sox2_126kb~dProximalLCRandCTCF17,BL6/C PL100(Sox2_1_5)_20220720_C02,6.167,5.927,1.181,0.94,Brosh 2023
+Full locus,d1-8 & 17,PL100,Sox2_Sox2_126kb~dProximalLCRandCTCF17,BL6/C PL100(Sox2_1_5)_20220720_E01,6.033,5.877,1.115,0.887,Brosh 2023
+Full locus,d1-8 & 17,PL100,Sox2_Sox2_126kb~dProximalLCRandCTCF17,BL6/C PL100(Sox2_1_5)_20220720_E02,6.097,5.947,1.11,0.883,Brosh 2023
+Full locus,d1-8 & 17,PL100,Sox2_Sox2_126kb~dProximalLCRandCTCF17,BL6/C PL100(Sox2_1_5)_20220720_F01,5.723,5.467,1.195,0.951,Brosh 2023
+Full locus,d16-28,PL003,Sox2_Sox2_46kbp~dDistalLCR,BL6/C PL003(Sox2_1_5)_20201102_A6,5.185,8.975,0.072,0.051,Brosh 2023
+Full locus,d16-28,PL003,Sox2_Sox2_46kbp~dDistalLCR,BL6/C PL003(Sox2_1_5)_20201102_A8,4.8,8.66,0.069,0.049,Brosh 2023
+Full locus,d16-28,PL003,Sox2_Sox2_46kbp~dDistalLCR,BL6/C PL003(Sox2_1_5)_20201102_C3,7.115,11.28,0.056,0.038,Brosh 2023
+Full locus,d16-28,PL003,Sox2_Sox2_46kbp~dDistalLCR,BL6/C PL003(Sox2_1_5)_20201102_C4,5.71,11.355,0.02,0.009,Brosh 2023
+Full locus,d16-28,PL003,Sox2_Sox2_46kbp~dDistalLCR,BL6/C PL003(Sox2_1_5)_20201102_C6,7.05,11.15,0.058,0.04,Brosh 2023
+Full locus,d1-8 & 10-16,PL051,Sox2_Sox2_d3p5pProximal,BL6/C PL051(Sox2_1_5)_20210509_D01,5.855,6.62,0.588,0.465,Brosh 2023
+Full locus,d1-8 & 10-16,PL051,Sox2_Sox2_d3p5pProximal,BL6/C PL051(Sox2_1_5)_20210509_H01,6.26,7.095,0.561,0.443,Brosh 2023
+Full locus,d10-16,PL052,Sox2_Sox2_d3pProximal,BL6/C PL052(Sox2_1_5)_20210509_C05,7.215,7.115,1.072,0.853,Brosh 2023
+Full locus,d10-16,PL052,Sox2_Sox2_d3pProximal,BL6/C PL052(Sox2_1_5)_20210509_D05,6.63,6.825,0.874,0.694,Brosh 2023
+Full locus,d10-16,PL052,Sox2_Sox2_d3pProximal,BL6/C PL052(Sox2_1_5)_20210509_E05,6.17,6.17,1,0.795,Brosh 2023
+Full locus,d1-8 & 13-14 & 17,PL148,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17,BL6/C PL148(Sox2_1_5)_20220720_D08,6.067,5.703,1.286,1.025,Brosh 2023
+Full locus,d1-8 & 13-14 & 17,PL148,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17,BL6/C PL148(Sox2_1_5)_20220720_E06,5.957,5.623,1.26,1.004,Brosh 2023
+Full locus,d1-8 & 13-14 & 17,PL148,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17,BL6/C PL148(Sox2_1_5)_20220720_E08,5.93,5.663,1.203,0.958,Brosh 2023
+Full locus,d1-8 & 13-14 & 17,PL148,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17,BL6/C PL148(Sox2_1_5)_20220720_G06,5.963,5.713,1.189,0.947,Brosh 2023
+Full locus,d1-8 & 13-14 & 17,PL148,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17,BL6/C PL148(Sox2_1_5)_20220720_G07,6.177,5.91,1.203,0.958,Brosh 2023
+Full locus,d1-8 & 13-14 & 17,PL148,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17,BL6/C PL148(Sox2_1_5)_20220720_H07,5.837,5.61,1.17,0.932,Brosh 2023
+Full locus,d10-18,PL053,Sox2_Sox2_dIntervening,BL6/C PL053(Sox2_1_5)_20210509_C07,5.805,5.555,1.189,0.947,Brosh 2023
+Full locus,d10-18,PL053,Sox2_Sox2_dIntervening,BL6/C PL053(Sox2_1_5)_20210509_C08,5.24,4.96,1.214,0.967,Brosh 2023
+Full locus,d10-18,PL053,Sox2_Sox2_dIntervening,BL6/C PL053(Sox2_1_5)_20210509_F07,5.23,4.98,1.189,0.947,Brosh 2023
+Full locus,d10-18,PL053,Sox2_Sox2_dIntervening,BL6/C PL053(Sox2_1_5)_20210509_H07,6.05,5.535,1.429,1.139,Brosh 2023
+Full locus,d1-8 & 10 & 15,PL063,Sox2_Sox2_dProxEnhancers,BL6/C PL063(Sox2_1_5)_20210509_F09,5.855,6.465,0.655,0.519,Brosh 2023
+Full locus,d1-8 & 10 & 15,PL063,Sox2_Sox2_dProxEnhancers,BL6/C PL063(Sox2_1_5)_20210509_F10,5.785,6.38,0.662,0.524,Brosh 2023
+dAllCTCF,dAllCTCF,PL149,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17~dDistalCTCF,BL6/C PL149(Sox2_1_5)_20220720_B11,5.907,5.867,1.028,0.818,Brosh 2023
+dAllCTCF,dAllCTCF,PL149,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17~dDistalCTCF,BL6/C PL149(Sox2_1_5)_20220720_C11,5.71,5.77,0.959,0.763,Brosh 2023
+dAllCTCF,dAllCTCF,PL149,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17~dDistalCTCF,BL6/C PL149(Sox2_1_5)_20220720_D10,6.097,6.07,1.019,0.81,Brosh 2023
+dAllCTCF,dAllCTCF,PL149,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17~dDistalCTCF,BL6/C PL149(Sox2_1_5)_20220720_E09,5.727,5.697,1.021,0.812,Brosh 2023
+dAllCTCF,dAllCTCF,PL149,Sox2_Sox2_d5pProximal~dCTCF13toCTCF14andCTCF17~dDistalCTCF,BL6/C PL149(Sox2_1_5)_20220720_E10,5.987,5.92,1.047,0.833,Brosh 2023
+WT LCR,WT LCR,PL018,Sox2_DistalLCR_WT,CT003_ Bl6/C_PL018(Sox2_6g_7g)_A3,5.322,4.891,1.348,0.992,Brosh 2023
+WT LCR,WT LCR,PL018,Sox2_DistalLCR_WT,CT003_ Bl6/C_PL018(Sox2_6g_7g)_B1,5.931,5.478,1.369,1.008,Brosh 2023
+DHS deletions,d25,PL029,Sox2_DistalLCR_dCTCF25,BL6/C PL029(Sox2_6_7)_20210502_A07,5.465,5.12,1.27,0.934,Brosh 2023
+DHS deletions,d25,PL029,Sox2_DistalLCR_dCTCF25,BL6/C PL029(Sox2_6_7)_20210502_G07,5.255,4.93,1.253,0.921,Brosh 2023
+DHS deletions,d25 & 26 & 28,PL022,Sox2_DistalLCR_dCTCF25andDHS26andCTCF28,BL6/C PL022(Sox2_6_7)_20210502_B01,5.1,5.265,0.892,0.654,Brosh 2023
+DHS deletions,d25 & 26 & 28,PL022,Sox2_DistalLCR_dCTCF25andDHS26andCTCF28,BL6/C PL022(Sox2_6_7)_20210502_C02,5.14,5.4,0.835,0.612,Brosh 2023
+DHS deletions,d28,PL027,Sox2_DistalLCR_dCTCF28,CT005_ Bl6/C_PL027(Sox2_6g_7g)_B5,6.635,6.175,1.376,1.012,Brosh 2023
+DHS deletions,d28,PL027,Sox2_DistalLCR_dCTCF28,CT005_ Bl6/C_PL027(Sox2_6g_7g)_B6,7.18,6.85,1.257,0.925,Brosh 2023
+DHS deletions,d19-20,PL050,Sox2_DistalLCR_dDHS19toDHS20,CT006_ Bl6/C_PL050(Sox2_6g_7g)_A3,7.29,6.795,1.409,1.037,Brosh 2023
+DHS deletions,d19-20,PL050,Sox2_DistalLCR_dDHS19toDHS20,CT006_ Bl6/C_PL050(Sox2_6g_7g)_B1,6.795,6.455,1.266,0.931,Brosh 2023
+DHS deletions,d19-20,PL050,Sox2_DistalLCR_dDHS19toDHS20,CT006_ Bl6/C_PL050(Sox2_6g_7g)_B11,6.355,5.96,1.315,0.968,Brosh 2023
+DHS deletions,d19-20,PL050,Sox2_DistalLCR_dDHS19toDHS20,CT006_ Bl6/C_PL050(Sox2_6g_7g)_B2,6.095,5.635,1.376,1.012,Brosh 2023
+DHS deletions,d19-20,PL050,Sox2_DistalLCR_dDHS19toDHS20,CT006_ Bl6/C_PL050(Sox2_6g_7g)_B3,6.03,5.675,1.279,0.941,Brosh 2023
+DHS deletions,d19-20,PL050,Sox2_DistalLCR_dDHS19toDHS20,CT006_ Bl6/C_PL050(Sox2_6g_7g)_B6,6.06,5.7,1.283,0.944,Brosh 2023
+DHS deletions,d20,PL024,Sox2_DistalLCR_dDHS20,CT004_ Bl6/C_PL024(Sox2_6g_7g)_B1,5.295,4.885,1.329,0.978,Brosh 2023
+DHS deletions,d20,PL024,Sox2_DistalLCR_dDHS20,CT004_ Bl6/C_PL024(Sox2_6g_7g)_B3,7.275,6.88,1.315,0.968,Brosh 2023
+DHS deletions,d20-23.3,PL034,Sox2_DistalLCR_dDHS20toDHS23~3,BL6/C PL034(Sox2_6_7)_20220323_B02,6.63,6.455,1.129,0.83,Brosh 2023
+DHS deletions,d20-27,PL105,Sox2_DistalLCR_dDHS20toDHS27,BL6/C PL105(Sox2_6_7)_20220323_F06,4.89,9.675,0.036,0.021,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20210502_A05,6.2,5.535,1.586,1.168,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20210502_B05,6.545,5.98,1.479,1.089,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20220323_A01,5.57,4.98,1.505,1.108,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20220323_E01,5.34,4.915,1.343,0.988,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20220323_F01,5.635,5.1,1.449,1.067,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20220323_G01,5.66,5.09,1.485,1.093,Brosh 2023
+DHS deletions,d21,PL034,Sox2_DistalLCR_dDHS21,BL6/C PL034(Sox2_6_7)_20220323_H02,5.295,4.88,1.333,0.981,Brosh 2023
+DHS deletions,d21 & 28,PL034,Sox2_DistalLCR_dDHS21andCTCF28,BL6/C PL034(Sox2_6_7)_20210502_C06,5.14,4.74,1.32,0.971,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,BL6/C PL026(Sox2_6_7)_20210721_D02,5.565,5.155,1.329,0.978,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,BL6/C PL026(Sox2_6_7)_20210721_F01,5.72,5.205,1.429,1.052,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,BL6/C PL026(Sox2_6_7)_20210721_F02,5.505,5.065,1.357,0.998,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,BL6/C PL026(Sox2_6_7)_20210923_B01,6.225,5.76,1.38,1.016,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,BL6/C PL026(Sox2_6_7)_20210923_E01,4.995,8.075,0.118,0.082,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,BL6/C PL026(Sox2_6_7)_20210923_G01,6.02,5.405,1.532,1.128,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,CT010_Bl6/C_PL026(Sox2_6g_7g)_A8,7.12,6.6,1.434,1.056,Brosh 2023
+DHS deletions,d21-22,PL026,Sox2_DistalLCR_dDHS21toDHS22,CT010_Bl6/C_PL026(Sox2_6g_7g)_B3,7.035,6.66,1.297,0.954,Brosh 2023
+DHS deletions,d23,PL028,Sox2_DistalLCR_dDHS23,BL6/C PL028(Sox2_6_7)_20210502_A04,5.22,5.26,0.973,0.714,Brosh 2023
+DHS deletions,d23,PL028,Sox2_DistalLCR_dDHS23,BL6/C PL028(Sox2_6_7)_20210502_F04,4.915,5.125,0.865,0.634,Brosh 2023
+DHS deletions,d23-25,PL077,Sox2_DistalLCR_dDHS23toCTCF25,BL6/C PL077(Sox2_6_7)_20220323_D04,5.855,6.975,0.46,0.335,Brosh 2023
+DHS deletions,d23-25,PL077,Sox2_DistalLCR_dDHS23toCTCF25,BL6/C PL077(Sox2_6_7)_20220323_F03,5.13,6.435,0.405,0.294,Brosh 2023
+DHS deletions,d23-25,PL077,Sox2_DistalLCR_dDHS23toCTCF25,BL6/C PL077(Sox2_6_7)_20220323_H04,5.105,6.455,0.392,0.284,Brosh 2023
+DHS deletions,d23-24,PL105,Sox2_DistalLCR_dDHS23toDHS24,BL6/C PL105(Sox2_6_7)_20220323_B05,4.93,6.26,0.398,0.288,Brosh 2023
+DHS deletions,d23-24,PL105,Sox2_DistalLCR_dDHS23toDHS24,BL6/C PL105(Sox2_6_7)_20220323_B06,5.615,6.755,0.454,0.33,Brosh 2023
+DHS deletions,d23-24,PL105,Sox2_DistalLCR_dDHS23toDHS24,BL6/C PL105(Sox2_6_7)_20220323_C06,5.02,6.2,0.441,0.321,Brosh 2023
+DHS deletions,d23-24,PL105,Sox2_DistalLCR_dDHS23toDHS24,BL6/C PL105(Sox2_6_7)_20220323_D06,5.155,6.43,0.413,0.3,Brosh 2023
+DHS deletions,d23-24,PL105,Sox2_DistalLCR_dDHS23toDHS24,BL6/C PL105(Sox2_6_7)_20220323_E05,5.3,6.7,0.379,0.275,Brosh 2023
+DHS deletions,d23-27,PL020,Sox2_DistalLCR_dDHS23toDHS27,CT009_Bl6/C_PL020(Sox2_6g_7g)_A12,6.895,11.155,0.052,0.033,Brosh 2023
+DHS deletions,d23-27,PL020,Sox2_DistalLCR_dDHS23toDHS27,CT009_Bl6/C_PL020(Sox2_6g_7g)_A4,6.675,10.47,0.072,0.047,Brosh 2023
+DHS deletions,d23-27,PL020,Sox2_DistalLCR_dDHS23toDHS27,CT009_Bl6/C_PL020(Sox2_6g_7g)_B11,6.02,10.07,0.06,0.039,Brosh 2023
+DHS deletions,d23-27,PL020,Sox2_DistalLCR_dDHS23toDHS27,CT009_Bl6/C_PL020(Sox2_6g_7g)_B2,8.165,12.58,0.047,0.029,Brosh 2023
+DHS deletions,d23-27,PL020,Sox2_DistalLCR_dDHS23toDHS27,CT009_Bl6/C_PL020(Sox2_6g_7g)_B3,5.82,10.135,0.05,0.031,Brosh 2023
+DHS deletions,d24,PL030,Sox2_DistalLCR_dDHS24,BL6/C PL030(Sox2_6_7)_20210502_A01,5.185,5.985,0.574,0.419,Brosh 2023
+DHS deletions,d24,PL030,Sox2_DistalLCR_dDHS24,BL6/C PL030(Sox2_6_7)_20210502_C02,4.72,5.565,0.557,0.406,Brosh 2023
+DHS deletions,d24,PL030,Sox2_DistalLCR_dDHS24,BL6/C PL030(Sox2_6_7)_20210502_E01,4.73,5.46,0.603,0.44,Brosh 2023
+DHS deletions,d26,PL031,Sox2_DistalLCR_dDHS26,BL6/C PL031(Sox2_6_7)_20210502_D04,6.455,6.54,0.943,0.692,Brosh 2023
+DHS deletions,d26,PL031,Sox2_DistalLCR_dDHS26,BL6/C PL031(Sox2_6_7)_20210502_G03,6.65,6.655,0.997,0.732,Brosh 2023
+DHS deletions,d26,PL031,Sox2_DistalLCR_dDHS26,BL6/C PL031(Sox2_6_7)_20210528_B02,5.44,5.46,0.986,0.724,Brosh 2023
+DHS deletions,d26.2-27 & 28,PL027,Sox2_DistalLCR_dDHS26toDHS27andCTCF28,CT005_ Bl6/C_PL027(Sox2_6g_7g)_B4,7.135,6.86,1.21,0.89,Brosh 2023
+DHS deletions,d27,PL025,Sox2_DistalLCR_dDHS27,BL6/C PL025(Sox2_6_7)_20210502_D03,5.5,5.125,1.297,0.954,Brosh 2023
+DHS deletions,d27,PL025,Sox2_DistalLCR_dDHS27,BL6/C PL025(Sox2_6_7)_20210528_D01,5.315,4.99,1.253,0.921,Brosh 2023
+Sufficiency,2x24,PL119,Sox2_DistalLCR_2xDHS24,BL6/C PL119(Sox2_6_7)_20211201_A08,5.995,6.29,0.815,0.597,Brosh 2023
+Sufficiency,2x24,PL119,Sox2_DistalLCR_2xDHS24,BL6/C PL119(Sox2_6_7)_20211201_C08,6.405,6.84,0.74,0.542,Brosh 2023
+Sufficiency,2x24,PL119,Sox2_DistalLCR_2xDHS24,BL6/C PL119(Sox2_6_7)_20211201_D07,6.575,6.98,0.755,0.553,Brosh 2023
+Sufficiency,2x24,PL119,Sox2_DistalLCR_2xDHS24,BL6/C PL119(Sox2_6_7)_20211201_D08,5.995,6.43,0.74,0.542,Brosh 2023
+Sufficiency,2x24,PL119,Sox2_DistalLCR_2xDHS24,BL6/C PL119(Sox2_6_7)_20211201_F08,7.705,8.275,0.674,0.493,Brosh 2023
+Sufficiency,2x24,PL119,Sox2_DistalLCR_2xDHS24,BL6/C PL119(Sox2_6_7)_20211201_G07,5.975,6.205,0.853,0.625,Brosh 2023
+Sufficiency,25-26,PL165,Sox2_DistalLCR_CTCF25toDHS26,BL6/C PL165(Sox2_6_7)_20220725_A12,5.503,8.003,0.177,0.125,Brosh 2023
+Sufficiency,25-26,PL165,Sox2_DistalLCR_CTCF25toDHS26,BL6/C PL165(Sox2_6_7)_20220725_B11,5.233,7.8,0.169,0.119,Brosh 2023
+Sufficiency,25-26,PL165,Sox2_DistalLCR_CTCF25toDHS26,BL6/C PL165(Sox2_6_7)_20220725_D10,6.357,9.187,0.141,0.098,Brosh 2023
+Sufficiency,25-26,PL165,Sox2_DistalLCR_CTCF25toDHS26,BL6/C PL165(Sox2_6_7)_20220725_D11,6.24,8.797,0.17,0.12,Brosh 2023
+Sufficiency,25-26,PL165,Sox2_DistalLCR_CTCF25toDHS26,BL6/C PL165(Sox2_6_7)_20220725_E10,5.517,7.93,0.188,0.133,Brosh 2023
+Sufficiency,25-26,PL165,Sox2_DistalLCR_CTCF25toDHS26,BL6/C PL165(Sox2_6_7)_20220725_E11,5.75,8.307,0.17,0.12,Brosh 2023
+Sufficiency,23,PL110,Sox2_DistalLCR_DHS23,BL6/C PL110(Sox2_6_7)_20220112_C02,5.665,9.735,0.06,0.038,Brosh 2023
+Sufficiency,23,PL110,Sox2_DistalLCR_DHS23,BL6/C PL110(Sox2_6_7)_20220112_D01,6.085,10.135,0.06,0.039,Brosh 2023
+Sufficiency,23,PL110,Sox2_DistalLCR_DHS23,BL6/C PL110(Sox2_6_7)_20220112_D02,5.9,9.92,0.062,0.04,Brosh 2023
+Sufficiency,23,PL110,Sox2_DistalLCR_DHS23,BL6/C PL110(Sox2_6_7)_20220112_E02,6.44,10.31,0.068,0.045,Brosh 2023
+Sufficiency,23 & 25,PL113,Sox2_DistalLCR_DHS23andCTCF25,BL6/C PL113(Sox2_6_7)_20220112_B07,5.77,10.005,0.053,0.033,Brosh 2023
+Sufficiency,23 & 25,PL113,Sox2_DistalLCR_DHS23andCTCF25,BL6/C PL113(Sox2_6_7)_20220112_B08,6.51,10.43,0.066,0.043,Brosh 2023
+Sufficiency,23 & 25,PL113,Sox2_DistalLCR_DHS23andCTCF25,BL6/C PL113(Sox2_6_7)_20220112_C08,5.93,9.835,0.067,0.043,Brosh 2023
+Sufficiency,23 & 25,PL113,Sox2_DistalLCR_DHS23andCTCF25,BL6/C PL113(Sox2_6_7)_20220112_F08,6.35,10.175,0.071,0.046,Brosh 2023
+Sufficiency,23-24,PL111,Sox2_DistalLCR_DHS23andDHS24,BL6/C PL111(Sox2_6_7)_20220112_A03,6.17,6.61,0.737,0.54,Brosh 2023
+Sufficiency,23-24,PL111,Sox2_DistalLCR_DHS23andDHS24,BL6/C PL111(Sox2_6_7)_20220112_A04,7.04,7.46,0.747,0.547,Brosh 2023
+Sufficiency,23-24,PL111,Sox2_DistalLCR_DHS23andDHS24,BL6/C PL111(Sox2_6_7)_20220112_B03,6.325,6.76,0.74,0.542,Brosh 2023
+Sufficiency,23-24,PL111,Sox2_DistalLCR_DHS23andDHS24,BL6/C PL111(Sox2_6_7)_20220112_B04,6.22,6.73,0.702,0.514,Brosh 2023
+Sufficiency,23-24,PL111,Sox2_DistalLCR_DHS23andDHS24,BL6/C PL111(Sox2_6_7)_20220112_C03,6.455,6.9,0.735,0.538,Brosh 2023
+Sufficiency,23 & 26,PL146,Sox2_DistalLCR_DHS23andDHS26,BL6/C PL146(Sox2_6_7)_20220323_B10,5.02,6.615,0.331,0.239,Brosh 2023
+Sufficiency,23 & 26,PL146,Sox2_DistalLCR_DHS23andDHS26,BL6/C PL146(Sox2_6_7)_20220323_C10,5.1,6.56,0.363,0.263,Brosh 2023
+Sufficiency,23 & 26,PL146,Sox2_DistalLCR_DHS23andDHS26,BL6/C PL146(Sox2_6_7)_20220323_D10,5.425,6.875,0.366,0.265,Brosh 2023
+Sufficiency,23 & 26,PL146,Sox2_DistalLCR_DHS23andDHS26,BL6/C PL146(Sox2_6_7)_20220323_E10,5.25,6.8,0.342,0.247,Brosh 2023
+Sufficiency,23-25,PL078,Sox2_DistalLCR_DHS23toCTCF25,BL6/C PL078(Sox2_6_7)_20210923_C03,5.87,6.05,0.883,0.647,Brosh 2023
+Sufficiency,23-25,PL078,Sox2_DistalLCR_DHS23toCTCF25,BL6/C PL078(Sox2_6_7)_20210923_E03,5.89,6.19,0.812,0.595,Brosh 2023
+Sufficiency,23-25,PL078,Sox2_DistalLCR_DHS23toCTCF25,BL6/C PL078(Sox2_6_7)_20210923_E04,6.085,6.475,0.763,0.559,Brosh 2023
+Sufficiency,23-26,PL112,Sox2_DistalLCR_DHS23toDHS26,BL6/C PL112(Sox2_6_7)_20220112_A06,6.195,6.065,1.094,0.804,Brosh 2023
+Sufficiency,23-26,PL112,Sox2_DistalLCR_DHS23toDHS26,BL6/C PL112(Sox2_6_7)_20220112_B06,6.21,5.82,1.31,0.964,Brosh 2023
+Sufficiency,23-26,PL112,Sox2_DistalLCR_DHS23toDHS26,BL6/C PL112(Sox2_6_7)_20220112_C06,6.27,6.06,1.157,0.85,Brosh 2023
+Sufficiency,23-26,PL112,Sox2_DistalLCR_DHS23toDHS26,BL6/C PL112(Sox2_6_7)_20220112_D05,6.795,6.525,1.206,0.887,Brosh 2023
+Sufficiency,23-27,PL075,Sox2_DistalLCR_DHS23toDHS27,BL6/C PL075(Sox2_6_7)_20210623_A02,4.998,4.603,1.315,0.968,Brosh 2023
+Sufficiency,23-27,PL075,Sox2_DistalLCR_DHS23toDHS27,BL6/C PL075(Sox2_6_7)_20210623_B04,5.37,5.04,1.257,0.925,Brosh 2023
+Sufficiency,23-27,PL075,Sox2_DistalLCR_DHS23toDHS27,BL6/C PL075(Sox2_6_7)_20210623_D04,6.455,6.095,1.283,0.944,Brosh 2023
+Sufficiency,23-27,PL075,Sox2_DistalLCR_DHS23toDHS27,BL6/C PL075(Sox2_6_7)_20210623_F01,5.06,4.77,1.223,0.899,Brosh 2023
+Sufficiency,23-27,PL075,Sox2_DistalLCR_DHS23toDHS27,BL6/C PL075(Sox2_6_7)_20210623_F04,6.795,6.5,1.227,0.902,Brosh 2023
+Sufficiency,24,PL083,Sox2_DistalLCR_DHS24,BL6/C PL083(Sox2_6_7)_20210923_D07,5.705,6.955,0.42,0.305,Brosh 2023
+Sufficiency,24,PL083,Sox2_DistalLCR_DHS24,BL6/C PL083(Sox2_6_7)_20210923_E07,5.58,6.845,0.416,0.302,Brosh 2023
+Sufficiency,24,PL083,Sox2_DistalLCR_DHS24,BL6/C PL083(Sox2_6_7)_20210923_F07,5.58,6.945,0.388,0.281,Brosh 2023
+Sufficiency,24,PL083,Sox2_DistalLCR_DHS24,BL6/C PL083(Sox2_6_7)_20210923_H07,6.09,7.45,0.39,0.282,Brosh 2023
+Sufficiency,24 & 26,PL147,Sox2_DistalLCR_DHS24andDHS26,BL6/C PL147(Sox2_6_7)_20220323_A12,5.735,6.42,0.622,0.454,Brosh 2023
+Sufficiency,24 & 26,PL147,Sox2_DistalLCR_DHS24andDHS26,BL6/C PL147(Sox2_6_7)_20220323_C11,6.495,7.155,0.633,0.463,Brosh 2023
+Sufficiency,24 & 26,PL147,Sox2_DistalLCR_DHS24andDHS26,BL6/C PL147(Sox2_6_7)_20220323_E11,6.635,7.18,0.685,0.501,Brosh 2023
+Sufficiency,24 & 26,PL147,Sox2_DistalLCR_DHS24andDHS26,BL6/C PL147(Sox2_6_7)_20220323_G11,5.085,5.75,0.631,0.461,Brosh 2023
+Sufficiency,24 & 26,PL147,Sox2_DistalLCR_DHS24andDHS26,BL6/C PL147(Sox2_6_7)_20220323_H11,4.95,5.575,0.648,0.474,Brosh 2023
+Sufficiency,24-25,PL084,Sox2_DistalLCR_DHS24toCTCF25,BL6/C PL084(Sox2_6_7)_20210923_B10,6.06,7.145,0.471,0.343,Brosh 2023
+Sufficiency,24-25,PL084,Sox2_DistalLCR_DHS24toCTCF25,BL6/C PL084(Sox2_6_7)_20210923_C10,5.82,6.81,0.503,0.367,Brosh 2023
+Sufficiency,24-25,PL084,Sox2_DistalLCR_DHS24toCTCF25,BL6/C PL084(Sox2_6_7)_20210923_G10,5.92,7.33,0.376,0.273,Brosh 2023
+Sufficiency,24-25,PL084,Sox2_DistalLCR_DHS24toCTCF25,BL6/C PL084(Sox2_6_7)_20210923_H10,6.28,7.605,0.399,0.289,Brosh 2023
+Sufficiency,24-28,PL095,Sox2_DistalLCR_DHS24toCTCF28,BL6/C PL095(Sox2_6_7)_20210721_C05,5.62,5.98,0.779,0.571,Brosh 2023
+Sufficiency,24-28,PL095,Sox2_DistalLCR_DHS24toCTCF28,BL6/C PL095(Sox2_6_7)_20210721_D04,5.445,5.88,0.74,0.542,Brosh 2023
+Sufficiency,24-28,PL095,Sox2_DistalLCR_DHS24toCTCF28,BL6/C PL095(Sox2_6_7)_20210721_E04,5.585,6.225,0.642,0.469,Brosh 2023
+Sufficiency,26,PL145,Sox2_DistalLCR_DHS26,BL6/C PL145(Sox2_6_7)_20220323_A07,4.78,7.185,0.189,0.134,Brosh 2023
+Sufficiency,26,PL145,Sox2_DistalLCR_DHS26,BL6/C PL145(Sox2_6_7)_20220323_B07,5.1,7.31,0.216,0.154,Brosh 2023
+Sufficiency,26,PL145,Sox2_DistalLCR_DHS26,BL6/C PL145(Sox2_6_7)_20220323_C07,4.72,7.02,0.203,0.144,Brosh 2023
+Sufficiency,26,PL145,Sox2_DistalLCR_DHS26,BL6/C PL145(Sox2_6_7)_20220323_D07,4.86,7.225,0.194,0.138,Brosh 2023
+Sufficiency,26,PL145,Sox2_DistalLCR_DHS26,BL6/C PL145(Sox2_6_7)_20220323_E07,4.69,7.025,0.198,0.141,Brosh 2023
+Sufficiency,26,PL145,Sox2_DistalLCR_DHS26,BL6/C PL145(Sox2_6_7)_20220323_F07,4.755,7.215,0.182,0.129,Brosh 2023
+DHSs 19 & 20,19,PL123,Sox2_DistalLCR_dDHS20toCTCF28,BL6/C PL123(Sox2_6_7)_20210923_F01,5.385,10.125,0.037,0.022,Brosh 2023
+DHSs 19 & 20,19 & 25-26,PL168,Sox2_DistalLCR_DHS19andCTCF25toDHS26,BL6/C PL168(Sox2_6_7)_20220914_A01,4.82,7.03,0.216,0.154,Brosh 2023
+DHSs 19 & 20,19 & 25-26,PL168,Sox2_DistalLCR_DHS19andCTCF25toDHS26,BL6/C PL168(Sox2_6_7)_20220914_A09,4.783,6.873,0.235,0.168,Brosh 2023
+DHSs 19 & 20,19 & 25-26,PL168,Sox2_DistalLCR_DHS19andCTCF25toDHS26,BL6/C PL168(Sox2_6_7)_20220914_B02,5.783,8.137,0.196,0.139,Brosh 2023
+DHSs 19 & 20,19 & 25-26,PL168,Sox2_DistalLCR_DHS19andCTCF25toDHS26,BL6/C PL168(Sox2_6_7)_20220914_B04,4.863,7.053,0.219,0.156,Brosh 2023
+DHSs 19 & 20,19 & 20,PL164,Sox2_DistalLCR_DHS19andDHS20,BL6/C PL164(Sox2_6_7)_20220725_B07,5.523,8.137,0.163,0.115,Brosh 2023
+DHSs 19 & 20,19 & 20,PL164,Sox2_DistalLCR_DHS19andDHS20,BL6/C PL164(Sox2_6_7)_20220725_E07,5.62,8.537,0.132,0.092,Brosh 2023
+DHSs 19 & 20,19 & 20,PL164,Sox2_DistalLCR_DHS19andDHS20,BL6/C PL164(Sox2_6_7)_20220725_E08,5.31,8.423,0.116,0.08,Brosh 2023
+DHSs 19 & 20,19 & 20,PL164,Sox2_DistalLCR_DHS19andDHS20,BL6/C PL164(Sox2_6_7)_20220725_F08,5.363,8.543,0.11,0.076,Brosh 2023
+DHSs 19 & 20,19 & 20,PL164,Sox2_DistalLCR_DHS19andDHS20,BL6/C PL164(Sox2_6_7)_20220725_G07,5.453,8.137,0.156,0.109,Brosh 2023
+DHSs 19 & 20,19 & 20 & 25-26,PL118,Sox2_DistalLCR_DHS19andDHS20andCTCF25toDHS26,BL6/C PL118(Sox2_6_7)_20220126_A09,6.64,7.045,0.755,0.553,Brosh 2023
+DHSs 19 & 20,19 & 20 & 25-26,PL118,Sox2_DistalLCR_DHS19andDHS20andCTCF25toDHS26,BL6/C PL118(Sox2_6_7)_20220126_B09,6.405,6.81,0.755,0.553,Brosh 2023
+DHSs 19 & 20,19 & 20 & 25-26,PL118,Sox2_DistalLCR_DHS19andDHS20andCTCF25toDHS26,BL6/C PL118(Sox2_6_7)_20220126_B10,6.46,6.86,0.758,0.555,Brosh 2023
+DHSs 19 & 20,19 & 20 & 25-26,PL118,Sox2_DistalLCR_DHS19andDHS20andCTCF25toDHS26,BL6/C PL118(Sox2_6_7)_20220126_C09,6.3,6.795,0.71,0.519,Brosh 2023
+DHSs 19 & 20,20,PL163,Sox2_DistalLCR_DHS20,BL6/C PL163(Sox2_6_7)_20220725_B04,5.217,9.86,0.04,0.024,Brosh 2023
+DHSs 19 & 20,20,PL163,Sox2_DistalLCR_DHS20,BL6/C PL163(Sox2_6_7)_20220725_C05,5.63,9.887,0.052,0.033,Brosh 2023
+DHSs 19 & 20,20,PL163,Sox2_DistalLCR_DHS20,BL6/C PL163(Sox2_6_7)_20220725_D04,5.387,9.823,0.046,0.028,Brosh 2023
+DHSs 19 & 20,20,PL163,Sox2_DistalLCR_DHS20,BL6/C PL163(Sox2_6_7)_20220725_F04,5.523,9.467,0.065,0.042,Brosh 2023
+DHSs 19 & 20,20,PL163,Sox2_DistalLCR_DHS20,BL6/C PL163(Sox2_6_7)_20220725_G05,5.67,10.613,0.033,0.018,Brosh 2023
+DHSs 19 & 20,20,PL163,Sox2_DistalLCR_DHS20,BL6/C PL163(Sox2_6_7)_20220725_H05,5.403,9.54,0.057,0.036,Brosh 2023
+DHSs 19 & 20,20 & 25-26,PL169,Sox2_DistalLCR_DHS20andCTCF25toDHS26,BL6/C PL169(Sox2_6_7)_20220914_C02,4.96,6.457,0.354,0.256,Brosh 2023
+DHSs 19 & 20,20 & 25-26,PL169,Sox2_DistalLCR_DHS20andCTCF25toDHS26,BL6/C PL169(Sox2_6_7)_20220914_C07,5.063,6.75,0.311,0.224,Brosh 2023
+DHSs 19 & 20,20 & 25-26,PL169,Sox2_DistalLCR_DHS20andCTCF25toDHS26,BL6/C PL169(Sox2_6_7)_20220914_C09,4.857,6.327,0.361,0.261,Brosh 2023
+DHSs 19 & 20,20 & 25-26,PL169,Sox2_DistalLCR_DHS20andCTCF25toDHS26,BL6/C PL169(Sox2_6_7)_20220914_C10,4.9,6.48,0.334,0.242,Brosh 2023
+Inversions,23-25~inv,PL079,Sox2_DistalLCR_DHS23toCTCF25~inverted,BL6/C PL079(Sox2_6_7)_20210623_B09,7.52,8.65,0.457,0.332,Brosh 2023
+Inversions,23-25~inv,PL079,Sox2_DistalLCR_DHS23toCTCF25~inverted,BL6/C PL079(Sox2_6_7)_20210623_B10,6.465,7.065,0.66,0.482,Brosh 2023
+Inversions,25 (inv),PL116,Sox2_DistalLCR_DHS23toDHS26~invertedCTCF25,BL6/C PL116(Sox2_6_7)_20220126_A06,7.395,7.095,1.231,0.905,Brosh 2023
+Inversions,25 (inv),PL116,Sox2_DistalLCR_DHS23toDHS26~invertedCTCF25,BL6/C PL116(Sox2_6_7)_20220126_C05,6.68,6.56,1.087,0.799,Brosh 2023
+Inversions,25 (inv),PL116,Sox2_DistalLCR_DHS23toDHS26~invertedCTCF25,BL6/C PL116(Sox2_6_7)_20220126_E05,8.055,7.725,1.257,0.925,Brosh 2023
+Inversions,25 (inv),PL116,Sox2_DistalLCR_DHS23toDHS26~invertedCTCF25,BL6/C PL116(Sox2_6_7)_20220126_E06,6.54,6.395,1.106,0.813,Brosh 2023
+Inversions,25 (inv),PL116,Sox2_DistalLCR_DHS23toDHS26~invertedCTCF25,BL6/C PL116(Sox2_6_7)_20220126_F05,6.695,6.395,1.231,0.905,Brosh 2023
+Inversions,25 (inv),PL116,Sox2_DistalLCR_DHS23toDHS26~invertedCTCF25,BL6/C PL116(Sox2_6_7)_20220126_G05,6.63,6.525,1.075,0.79,Brosh 2023
+Inversions,23 (inv) & 24 (inv),PL115,Sox2_DistalLCR_DHS23toDHS26~invertedDHS23andDHS24,BL6/C PL115(Sox2_6_7)_20220126_A03,7.62,7.505,1.083,0.796,Brosh 2023
+Inversions,23 (inv) & 24 (inv),PL115,Sox2_DistalLCR_DHS23toDHS26~invertedDHS23andDHS24,BL6/C PL115(Sox2_6_7)_20220126_A04,6.845,6.685,1.117,0.821,Brosh 2023
+Inversions,23 (inv) & 24 (inv),PL115,Sox2_DistalLCR_DHS23toDHS26~invertedDHS23andDHS24,BL6/C PL115(Sox2_6_7)_20220126_F03,7.85,7.61,1.181,0.868,Brosh 2023
+Inversions,23 (inv) & 24 (inv),PL115,Sox2_DistalLCR_DHS23toDHS26~invertedDHS23andDHS24,BL6/C PL115(Sox2_6_7)_20220126_F04,8.065,7.87,1.145,0.841,Brosh 2023
+Inversions,26 (inv),PL117,Sox2_DistalLCR_DHS23toDHS26~invertedDHS26,BL6/C PL117(Sox2_6_7)_20220126_A07,6.565,6.22,1.27,0.934,Brosh 2023
+Inversions,26 (inv),PL117,Sox2_DistalLCR_DHS23toDHS26~invertedDHS26,BL6/C PL117(Sox2_6_7)_20220126_C08,6.915,6.53,1.306,0.961,Brosh 2023
+Inversions,26 (inv),PL117,Sox2_DistalLCR_DHS23toDHS26~invertedDHS26,BL6/C PL117(Sox2_6_7)_20220126_D07,6.475,6.16,1.244,0.915,Brosh 2023
+Inversions,26 (inv),PL117,Sox2_DistalLCR_DHS23toDHS26~invertedDHS26,BL6/C PL117(Sox2_6_7)_20220126_E07,7.285,6.945,1.266,0.931,Brosh 2023
+Inversions,26 (inv),PL117,Sox2_DistalLCR_DHS23toDHS26~invertedDHS26,BL6/C PL117(Sox2_6_7)_20220126_F07,6.155,5.82,1.261,0.928,Brosh 2023
+Inversions,26 (inv),PL117,Sox2_DistalLCR_DHS23toDHS26~invertedDHS26,BL6/C PL117(Sox2_6_7)_20220126_G07,7.065,6.64,1.343,0.988,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_A06,5.195,4.97,1.169,0.859,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_B07,5.235,5.15,1.061,0.779,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_D06,5.33,5.055,1.21,0.89,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_E07,5.5,5.175,1.253,0.921,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_E08,6.385,6.16,1.169,0.859,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_F05,5.885,5.645,1.181,0.868,Brosh 2023
+Inversions,23-27~inv,PL076,Sox2_DistalLCR_DHS23toDHS27~inverted,BL6/C PL076(Sox2_6_7)_20210623_F06,7.15,6.83,1.248,0.918,Brosh 2023
+Inversions,24-25~inv,PL114,Sox2_DistalLCR_DHS24toCTCF25~inverted,BL6/C PL114(Sox2_6_7)_20220126_A01,7.95,9.58,0.323,0.233,Brosh 2023
+Inversions,24-25~inv,PL114,Sox2_DistalLCR_DHS24toCTCF25~inverted,BL6/C PL114(Sox2_6_7)_20220126_A02,6.695,8.405,0.306,0.22,Brosh 2023
+Inversions,24-25~inv,PL114,Sox2_DistalLCR_DHS24toCTCF25~inverted,BL6/C PL114(Sox2_6_7)_20220126_B02,5.975,7.64,0.315,0.227,Brosh 2023
+Inversions,WT LCR~inv,PL074,Sox2_DistalLCR_WT~inverted,BL6/C PL074(Sox2_6_7)_20210623_A12,6.345,6.22,1.091,0.801,Brosh 2023
+Inversions,WT LCR~inv,PL074,Sox2_DistalLCR_WT~inverted,BL6/C PL074(Sox2_6_7)_20210623_D09,6.085,6.105,0.986,0.724,Brosh 2023
+Inversions,WT LCR~inv,PL074,Sox2_DistalLCR_WT~inverted,BL6/C PL074(Sox2_6_7)_20210623_E12,6.315,6.265,1.035,0.76,Brosh 2023
+Order,25 & 23 & 24,PL107,Sox2_DistalLCR_CTCF25~DHS23~DHS24,BL6/C PL107(Sox2_6_7)_20211201_A01,5.845,6.645,0.574,0.419,Brosh 2023
+Order,25 & 23 & 24,PL107,Sox2_DistalLCR_CTCF25~DHS23~DHS24,BL6/C PL107(Sox2_6_7)_20211201_B01,5.995,6.775,0.582,0.425,Brosh 2023
+Order,25 & 23 & 24,PL107,Sox2_DistalLCR_CTCF25~DHS23~DHS24,BL6/C PL107(Sox2_6_7)_20211201_C01,6.06,6.885,0.564,0.412,Brosh 2023
+Order,25 & 23 & 24,PL107,Sox2_DistalLCR_CTCF25~DHS23~DHS24,BL6/C PL107(Sox2_6_7)_20211201_D01,6.295,7.1,0.572,0.418,Brosh 2023
+Order,25 & 23 & 24,PL107,Sox2_DistalLCR_CTCF25~DHS23~DHS24,BL6/C PL107(Sox2_6_7)_20211201_E01,6.315,7.04,0.605,0.442,Brosh 2023
+Order,25 & 23 & 24,PL107,Sox2_DistalLCR_CTCF25~DHS23~DHS24,BL6/C PL107(Sox2_6_7)_20211201_F01,6.63,7.345,0.609,0.445,Brosh 2023
+Order,23 & 25 & 24,PL108,Sox2_DistalLCR_DHS23~CTCF25~DHS24,BL6/C PL108(Sox2_6_7)_20211201_A03,6.95,7.945,0.502,0.365,Brosh 2023
+Order,23 & 25 & 24,PL108,Sox2_DistalLCR_DHS23~CTCF25~DHS24,BL6/C PL108(Sox2_6_7)_20211201_A04,6.175,6.905,0.603,0.44,Brosh 2023
+Order,23 & 25 & 24,PL108,Sox2_DistalLCR_DHS23~CTCF25~DHS24,BL6/C PL108(Sox2_6_7)_20211201_E03,6.095,6.82,0.605,0.442,Brosh 2023
+Order,23 & 25 & 24,PL108,Sox2_DistalLCR_DHS23~CTCF25~DHS24,BL6/C PL108(Sox2_6_7)_20211201_F03,6.48,7.235,0.593,0.433,Brosh 2023
+Order,23 & 25 & 24,PL108,Sox2_DistalLCR_DHS23~CTCF25~DHS24,BL6/C PL108(Sox2_6_7)_20211201_F04,6.12,6.87,0.595,0.434,Brosh 2023
+Order,23 & 25 & 24,PL108,Sox2_DistalLCR_DHS23~CTCF25~DHS24,BL6/C PL108(Sox2_6_7)_20211201_H03,6.89,7.7,0.57,0.416,Brosh 2023
+Order,23 & 24 & 26 & 25,PL109,Sox2_DistalLCR_DHS23~DHS24~DHS26~CTCF25,BL6/C PL109(Sox2_6_7)_20211201_D05,6.38,5.925,1.371,1.009,Brosh 2023
+Order,23 & 24 & 26 & 25,PL109,Sox2_DistalLCR_DHS23~DHS24~DHS26~CTCF25,BL6/C PL109(Sox2_6_7)_20211201_E06,6.69,6.15,1.454,1.07,Brosh 2023
+Order,23 & 24 & 26 & 25,PL109,Sox2_DistalLCR_DHS23~DHS24~DHS26~CTCF25,BL6/C PL109(Sox2_6_7)_20211201_F06,6.84,6.355,1.4,1.03,Brosh 2023
+Order,23 & 24 & 26 & 25,PL109,Sox2_DistalLCR_DHS23~DHS24~DHS26~CTCF25,BL6/C PL109(Sox2_6_7)_20211201_G05,6.96,6.405,1.469,1.082,Brosh 2023
+Order,23 & 24 & 26 & 25,PL109,Sox2_DistalLCR_DHS23~DHS24~DHS26~CTCF25,BL6/C PL109(Sox2_6_7)_20211201_G06,7.55,6.965,1.5,1.105,Brosh 2023
+Order,24 & 23 & 25,PL106,Sox2_DistalLCR_DHS24~DHS23~CTCF25,BL6/C PL106(Sox2_6_7)_20211201_A09,5.99,7.15,0.448,0.325,Brosh 2023
+Order,24 & 23 & 25,PL106,Sox2_DistalLCR_DHS24~DHS23~CTCF25,BL6/C PL106(Sox2_6_7)_20211201_B09,5.82,6.92,0.467,0.339,Brosh 2023
+Order,24 & 23 & 25,PL106,Sox2_DistalLCR_DHS24~DHS23~CTCF25,BL6/C PL106(Sox2_6_7)_20211201_C09,5.735,6.905,0.444,0.323,Brosh 2023
+Order,24 & 23 & 25,PL106,Sox2_DistalLCR_DHS24~DHS23~CTCF25,BL6/C PL106(Sox2_6_7)_20211201_G09,5.99,6.93,0.521,0.38,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.7),PL156,Sox2_DistalLCR_DHS23dC~d7TFBSandDHS24dT,BL6/C PL156(Sox2_6_7)_20220406_B03,4.76,5.48,0.607,0.443,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.7),PL156,Sox2_DistalLCR_DHS23dC~d7TFBSandDHS24dT,BL6/C PL156(Sox2_6_7)_20220406_B04,4.695,5.635,0.521,0.38,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.7),PL156,Sox2_DistalLCR_DHS23dC~d7TFBSandDHS24dT,BL6/C PL156(Sox2_6_7)_20220406_C04,4.83,5.65,0.566,0.413,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.7),PL156,Sox2_DistalLCR_DHS23dC~d7TFBSandDHS24dT,BL6/C PL156(Sox2_6_7)_20220406_D04,4.595,5.295,0.616,0.45,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.7),PL156,Sox2_DistalLCR_DHS23dC~d7TFBSandDHS24dT,BL6/C PL156(Sox2_6_7)_20220406_E03,4.77,5.485,0.609,0.445,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.7),PL156,Sox2_DistalLCR_DHS23dC~d7TFBSandDHS24dT,BL6/C PL156(Sox2_6_7)_20220406_E04,4.73,5.375,0.639,0.467,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.8),PL162,Sox2_DistalLCR_DHS23dC~d8TFBSandDHS24dT,BL6/C PL162(Sox2_6_7)_20220725_A01,5.497,6.73,0.425,0.309,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.8),PL162,Sox2_DistalLCR_DHS23dC~d8TFBSandDHS24dT,BL6/C PL162(Sox2_6_7)_20220725_A02,5.52,6.587,0.477,0.347,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.8),PL162,Sox2_DistalLCR_DHS23dC~d8TFBSandDHS24dT,BL6/C PL162(Sox2_6_7)_20220725_C01,5.817,6.587,0.586,0.428,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.8),PL162,Sox2_DistalLCR_DHS23dC~d8TFBSandDHS24dT,BL6/C PL162(Sox2_6_7)_20220725_E01,6.207,7.453,0.421,0.306,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.8),PL162,Sox2_DistalLCR_DHS23dC~d8TFBSandDHS24dT,BL6/C PL162(Sox2_6_7)_20220725_G01,7.57,9.16,0.332,0.24,Brosh 2023
+syn23-24,syn23-24 (d23.1-23.8),PL162,Sox2_DistalLCR_DHS23dC~d8TFBSandDHS24dT,BL6/C PL162(Sox2_6_7)_20220725_H01,5.507,6.647,0.454,0.33,Brosh 2023
+syn23-24,syn23-24,PL155,Sox2_DistalLCR_DHS23dCandDHS24dT,BL6/C PL155(Sox2_6_7)_20220406_B01,4.85,5.03,0.883,0.647,Brosh 2023
+syn23-24,syn23-24,PL155,Sox2_DistalLCR_DHS23dCandDHS24dT,BL6/C PL155(Sox2_6_7)_20220406_B02,4.84,5.025,0.88,0.645,Brosh 2023
+syn23-24,syn23-24,PL155,Sox2_DistalLCR_DHS23dCandDHS24dT,BL6/C PL155(Sox2_6_7)_20220406_C02,4.845,5.085,0.847,0.621,Brosh 2023
+syn23-24,syn23-24,PL155,Sox2_DistalLCR_DHS23dCandDHS24dT,BL6/C PL155(Sox2_6_7)_20220406_D02,5.015,5.345,0.796,0.583,Brosh 2023
+syn23-24,syn23-24,PL155,Sox2_DistalLCR_DHS23dCandDHS24dT,BL6/C PL155(Sox2_6_7)_20220406_F01,4.84,5.09,0.841,0.617,Brosh 2023
+syn23-24,syn23-24,PL155,Sox2_DistalLCR_DHS23dCandDHS24dT,BL6/C PL155(Sox2_6_7)_20220406_F02,4.83,5.14,0.807,0.591,Brosh 2023
+syn24,syn24.2,PL154,Sox2_DistalLCR_DHS24~NuclearreceptorAndSox,BL6/C PL154(Sox2_6_7)_20220323_A09,4.99,9.605,0.041,0.024,Brosh 2023
+syn24,syn24.2,PL154,Sox2_DistalLCR_DHS24~NuclearreceptorAndSox,BL6/C PL154(Sox2_6_7)_20220323_B10,4.915,9.57,0.04,0.023,Brosh 2023
+syn24,syn24.2,PL154,Sox2_DistalLCR_DHS24~NuclearreceptorAndSox,BL6/C PL154(Sox2_6_7)_20220323_C09,4.52,9.2,0.039,0.023,Brosh 2023
+syn24,syn24.2,PL154,Sox2_DistalLCR_DHS24~NuclearreceptorAndSox,BL6/C PL154(Sox2_6_7)_20220323_C10,4.845,9.335,0.045,0.027,Brosh 2023
+syn24,syn24.2,PL154,Sox2_DistalLCR_DHS24~NuclearreceptorAndSox,BL6/C PL154(Sox2_6_7)_20220323_H10,4.645,9.105,0.045,0.028,Brosh 2023
+syn24,syn24,PL124,Sox2_DistalLCR_DHS24dT,BL6/C PL124(Sox2_6_7)_20211208_A01,5.635,7.13,0.355,0.257,Brosh 2023
+syn24,syn24,PL124,Sox2_DistalLCR_DHS24dT,BL6/C PL124(Sox2_6_7)_20211208_B01,6.165,7.55,0.383,0.277,Brosh 2023
+syn24,syn24,PL124,Sox2_DistalLCR_DHS24dT,BL6/C PL124(Sox2_6_7)_20211208_C01,5.965,7.675,0.306,0.22,Brosh 2023
+syn24,syn24,PL124,Sox2_DistalLCR_DHS24dT,BL6/C PL124(Sox2_6_7)_20211208_D01,6.095,7.49,0.38,0.275,Brosh 2023
+syn24,syn24,PL124,Sox2_DistalLCR_DHS24dT,BL6/C PL124(Sox2_6_7)_20211208_F01,5.67,7.13,0.363,0.263,Brosh 2023
+syn24,syn24,PL124,Sox2_DistalLCR_DHS24dT,BL6/C PL124(Sox2_6_7)_20211208_G01,6.165,7.645,0.358,0.259,Brosh 2023
+syn24,syn24 (d24.1-24.4),PL125,Sox2_DistalLCR_DHS24dT~d4TFBS,BL6/C PL125(Sox2_6_7)_20211208_A02,6.58,11.18,0.041,0.025,Brosh 2023
+syn24,syn24 (d24.1-24.4),PL125,Sox2_DistalLCR_DHS24dT~d4TFBS,BL6/C PL125(Sox2_6_7)_20211208_C02,6.51,11.335,0.035,0.02,Brosh 2023
+syn24,syn24 (d24.1-24.4),PL125,Sox2_DistalLCR_DHS24dT~d4TFBS,BL6/C PL125(Sox2_6_7)_20211208_F02,6.755,11.045,0.051,0.032,Brosh 2023
+syn24,syn24 (d24.1-24.4),PL125,Sox2_DistalLCR_DHS24dT~d4TFBS,BL6/C PL125(Sox2_6_7)_20211208_G02,6.775,11.235,0.045,0.028,Brosh 2023
+syn24,syn24 (d24.1-24.4),PL125,Sox2_DistalLCR_DHS24dT~d4TFBS,BL6/C PL125(Sox2_6_7)_20211208_H02,6.65,11.525,0.034,0.019,Brosh 2023
+syn24,syn24 (d24.3),PL133,Sox2_DistalLCR_DHS24dT~dESRRA,BL6/C PL133(Sox2_6_7)_20220202_C07,6.53,9.705,0.111,0.076,Brosh 2023
+syn24,syn24 (d24.3),PL133,Sox2_DistalLCR_DHS24dT~dESRRA,BL6/C PL133(Sox2_6_7)_20220202_C12,7.3,10.16,0.138,0.096,Brosh 2023
+syn24,syn24 (d24.3),PL133,Sox2_DistalLCR_DHS24dT~dESRRA,BL6/C PL133(Sox2_6_7)_20220202_D07,5.695,7.55,0.276,0.199,Brosh 2023
+syn24,syn24 (d24.3),PL133,Sox2_DistalLCR_DHS24dT~dESRRA,BL6/C PL133(Sox2_6_7)_20220202_H07,5.755,8.6,0.139,0.097,Brosh 2023
+syn24,syn24 (d24.1 & 24.3),PL135,Sox2_DistalLCR_DHS24dT~dESRRAandESRRB,BL6/C PL135(Sox2_6_7)_20220202_B09,5.565,9.48,0.066,0.043,Brosh 2023
+syn24,syn24 (d24.1 & 24.3),PL135,Sox2_DistalLCR_DHS24dT~dESRRAandESRRB,BL6/C PL135(Sox2_6_7)_20220202_C09,5.605,9.565,0.064,0.042,Brosh 2023
+syn24,syn24 (d24.1 & 24.3),PL135,Sox2_DistalLCR_DHS24dT~dESRRAandESRRB,BL6/C PL135(Sox2_6_7)_20220202_D09,8.515,12.465,0.065,0.042,Brosh 2023
+syn24,syn24 (d24.1 & 24.3),PL135,Sox2_DistalLCR_DHS24dT~dESRRAandESRRB,BL6/C PL135(Sox2_6_7)_20220202_G09,7.205,11.515,0.05,0.031,Brosh 2023
+syn24,syn24 (d24.3 & 24.4),PL152,Sox2_DistalLCR_DHS24dT~dESRRAandForkhead,BL6/C PL152(Sox2_6_7)_20220323_A05,5.93,8.415,0.179,0.126,Brosh 2023
+syn24,syn24 (d24.3 & 24.4),PL152,Sox2_DistalLCR_DHS24dT~dESRRAandForkhead,BL6/C PL152(Sox2_6_7)_20220323_A06,4.835,7.49,0.159,0.112,Brosh 2023
+syn24,syn24 (d24.3 & 24.4),PL152,Sox2_DistalLCR_DHS24dT~dESRRAandForkhead,BL6/C PL152(Sox2_6_7)_20220323_B06,4.735,7.915,0.11,0.076,Brosh 2023
+syn24,syn24 (d24.3 & 24.4),PL152,Sox2_DistalLCR_DHS24dT~dESRRAandForkhead,BL6/C PL152(Sox2_6_7)_20220323_D05,4.62,7.505,0.135,0.094,Brosh 2023
+syn24,syn24 (d24.3 & 24.4),PL152,Sox2_DistalLCR_DHS24dT~dESRRAandForkhead,BL6/C PL152(Sox2_6_7)_20220323_E06,5.16,8.505,0.098,0.067,Brosh 2023
+syn24,syn24 (d24.3 & 24.4),PL152,Sox2_DistalLCR_DHS24dT~dESRRAandForkhead,BL6/C PL152(Sox2_6_7)_20220323_G05,4.705,7.72,0.124,0.086,Brosh 2023
+syn24,syn24 (d24.2 & 24.3),PL151,Sox2_DistalLCR_DHS24dT~dESRRAandNuclearreceptorandSox,BL6/C PL151(Sox2_6_7)_20220323_A04,4.86,10.085,0.027,0.014,Brosh 2023
+syn24,syn24 (d24.2 & 24.3),PL151,Sox2_DistalLCR_DHS24dT~dESRRAandNuclearreceptorandSox,BL6/C PL151(Sox2_6_7)_20220323_D04,4.705,9.375,0.039,0.023,Brosh 2023
+syn24,syn24 (d24.2 & 24.3),PL151,Sox2_DistalLCR_DHS24dT~dESRRAandNuclearreceptorandSox,BL6/C PL151(Sox2_6_7)_20220323_F03,4.86,10.06,0.027,0.014,Brosh 2023
+syn24,syn24 (d24.2 & 24.3),PL151,Sox2_DistalLCR_DHS24dT~dESRRAandNuclearreceptorandSox,BL6/C PL151(Sox2_6_7)_20220323_G04,4.905,9.65,0.037,0.022,Brosh 2023
+syn24,syn24 (d24.1),PL131,Sox2_DistalLCR_DHS24dT~dESRRB,BL6/C PL131(Sox2_6_7)_20220202_A05,5.82,8.52,0.154,0.108,Brosh 2023
+syn24,syn24 (d24.1),PL131,Sox2_DistalLCR_DHS24dT~dESRRB,BL6/C PL131(Sox2_6_7)_20220202_B05,5.75,8.62,0.137,0.095,Brosh 2023
+syn24,syn24 (d24.1),PL131,Sox2_DistalLCR_DHS24dT~dESRRB,BL6/C PL131(Sox2_6_7)_20220202_D05,7.12,10.155,0.122,0.084,Brosh 2023
+syn24,syn24 (d24.1),PL131,Sox2_DistalLCR_DHS24dT~dESRRB,BL6/C PL131(Sox2_6_7)_20220202_E05,5.65,8.715,0.119,0.082,Brosh 2023
+syn24,syn24 (d24.1 & 24.3 & 24.4),PL153,Sox2_DistalLCR_DHS24dT~dESRRBandESRRAandForkhead,BL6/C PL153(Sox2_6_7)_20220323_B07,4.935,9.105,0.056,0.035,Brosh 2023
+syn24,syn24 (d24.1 & 24.3 & 24.4),PL153,Sox2_DistalLCR_DHS24dT~dESRRBandESRRAandForkhead,BL6/C PL153(Sox2_6_7)_20220323_C08,4.875,8.765,0.067,0.044,Brosh 2023
+syn24,syn24 (d24.1 & 24.3 & 24.4),PL153,Sox2_DistalLCR_DHS24dT~dESRRBandESRRAandForkhead,BL6/C PL153(Sox2_6_7)_20220323_D07,4.975,8.95,0.064,0.041,Brosh 2023
+syn24,syn24 (d24.1 & 24.3 & 24.4),PL153,Sox2_DistalLCR_DHS24dT~dESRRBandESRRAandForkhead,BL6/C PL153(Sox2_6_7)_20220323_D08,4.855,8.95,0.059,0.037,Brosh 2023
+syn24,syn24 (d24.1 & 24.3 & 24.4),PL153,Sox2_DistalLCR_DHS24dT~dESRRBandESRRAandForkhead,BL6/C PL153(Sox2_6_7)_20220323_E07,4.935,8.905,0.064,0.041,Brosh 2023
+syn24,syn24 (d24.1 & 24.3 & 24.4),PL153,Sox2_DistalLCR_DHS24dT~dESRRBandESRRAandForkhead,BL6/C PL153(Sox2_6_7)_20220323_F08,4.81,8.735,0.066,0.043,Brosh 2023
+syn24,syn24 (d24.1 & 24.4),PL150,Sox2_DistalLCR_DHS24dT~dESRRBandForkhead,BL6/C PL150(Sox2_6_7)_20220323_A01,5.225,8.2,0.127,0.088,Brosh 2023
+syn24,syn24 (d24.1 & 24.4),PL150,Sox2_DistalLCR_DHS24dT~dESRRBandForkhead,BL6/C PL150(Sox2_6_7)_20220323_B02,5.035,7.25,0.215,0.153,Brosh 2023
+syn24,syn24 (d24.1 & 24.4),PL150,Sox2_DistalLCR_DHS24dT~dESRRBandForkhead,BL6/C PL150(Sox2_6_7)_20220323_D01,4.995,7.905,0.133,0.092,Brosh 2023
+syn24,syn24 (d24.1 & 24.4),PL150,Sox2_DistalLCR_DHS24dT~dESRRBandForkhead,BL6/C PL150(Sox2_6_7)_20220323_D02,5.1,7.53,0.186,0.131,Brosh 2023
+syn24,syn24 (d24.1 & 24.4),PL150,Sox2_DistalLCR_DHS24dT~dESRRBandForkhead,BL6/C PL150(Sox2_6_7)_20220323_E02,4.915,8.17,0.105,0.072,Brosh 2023
+syn24,syn24 (d24.1 & 24.4),PL150,Sox2_DistalLCR_DHS24dT~dESRRBandForkhead,BL6/C PL150(Sox2_6_7)_20220323_F02,4.95,7.88,0.131,0.091,Brosh 2023
+syn24,syn24 (d24.4),PL134,Sox2_DistalLCR_DHS24dT~dForkhead,BL6/C PL134(Sox2_6_7)_20220202_A08,5.65,7.445,0.288,0.207,Brosh 2023
+syn24,syn24 (d24.4),PL134,Sox2_DistalLCR_DHS24dT~dForkhead,BL6/C PL134(Sox2_6_7)_20220202_B08,5.57,7.655,0.236,0.168,Brosh 2023
+syn24,syn24 (d24.4),PL134,Sox2_DistalLCR_DHS24dT~dForkhead,BL6/C PL134(Sox2_6_7)_20220202_G08,6.41,8.435,0.246,0.176,Brosh 2023
+syn24,syn24 (d24.4),PL134,Sox2_DistalLCR_DHS24dT~dForkhead,BL6/C PL134(Sox2_6_7)_20220202_H08,6.06,7.97,0.266,0.191,Brosh 2023
+syn24,syn24 (d24.2),PL132,Sox2_DistalLCR_DHS24dT~dNuclearreceptorAndSOX,BL6/C PL132(Sox2_6_7)_20220202_B06,5.77,9.69,0.066,0.043,Brosh 2023
+syn24,syn24 (d24.2),PL132,Sox2_DistalLCR_DHS24dT~dNuclearreceptorAndSOX,BL6/C PL132(Sox2_6_7)_20220202_C06,5.615,9.45,0.07,0.046,Brosh 2023
+syn24,syn24 (d24.2),PL132,Sox2_DistalLCR_DHS24dT~dNuclearreceptorAndSOX,BL6/C PL132(Sox2_6_7)_20220202_F06,6.01,10.03,0.062,0.04,Brosh 2023
+syn24,syn24 (d24.2),PL132,Sox2_DistalLCR_DHS24dT~dNuclearreceptorAndSOX,BL6/C PL132(Sox2_6_7)_20220202_G06,4.765,8.575,0.071,0.047,Brosh 2023
+syn24,syn24 (mut24.1-24.4),PL136,Sox2_DistalLCR_DHS24dT~mut4TFBS,BL6/C PL136(Sox2_6_7)_20220202_A10,5.845,10.54,0.039,0.023,Brosh 2023
+syn24,syn24 (mut24.1-24.4),PL136,Sox2_DistalLCR_DHS24dT~mut4TFBS,BL6/C PL136(Sox2_6_7)_20220202_D10,5.56,10.17,0.041,0.024,Brosh 2023
+syn24,syn24 (mut24.1-24.4),PL136,Sox2_DistalLCR_DHS24dT~mut4TFBS,BL6/C PL136(Sox2_6_7)_20220202_F10,5.885,10.72,0.035,0.02,Brosh 2023
+syn24,syn24 (mut24.1-24.4),PL136,Sox2_DistalLCR_DHS24dT~mut4TFBS,BL6/C PL136(Sox2_6_7)_20220202_H10,5.68,10.67,0.031,0.017,Brosh 2023
+LCR CTCF,23-27 (Divergent CTCF),PL122,Sox2_DistalLCR_DHS23toDHS27~CTCF~Divergent,BL6/C PL122(Sox2_6_7)_20220202_A03,5.9,5.81,1.064,0.782,Brosh 2023
+LCR CTCF,23-27 (Divergent CTCF),PL122,Sox2_DistalLCR_DHS23toDHS27~CTCF~Divergent,BL6/C PL122(Sox2_6_7)_20220202_B03,6.05,6.105,0.963,0.707,Brosh 2023
+LCR CTCF,23-27 (Divergent CTCF),PL122,Sox2_DistalLCR_DHS23toDHS27~CTCF~Divergent,BL6/C PL122(Sox2_6_7)_20220202_B04,6.06,6.1,0.973,0.714,Brosh 2023
+LCR CTCF,23-27 (Divergent CTCF),PL122,Sox2_DistalLCR_DHS23toDHS27~CTCF~Divergent,BL6/C PL122(Sox2_6_7)_20220202_C03,6.09,6.06,1.021,0.75,Brosh 2023
+LCR CTCF,23-27 (Divergent CTCF),PL122,Sox2_DistalLCR_DHS23toDHS27~CTCF~Divergent,BL6/C PL122(Sox2_6_7)_20220202_D04,7.01,6.965,1.032,0.758,Brosh 2023
+LCR CTCF,23-27 (Divergent CTCF),PL122,Sox2_DistalLCR_DHS23toDHS27~CTCF~Divergent,BL6/C PL122(Sox2_6_7)_20220202_F03,6.765,6.74,1.017,0.747,Brosh 2023
+LCR CTCF,23-27 (dCTCF),PL121,Sox2_DistalLCR_DHS23toDHS27~dCTCF,BL6/C PL121(Sox2_6_7)_20220202_A01,5.76,5.985,0.856,0.627,Brosh 2023
+LCR CTCF,23-27 (dCTCF),PL121,Sox2_DistalLCR_DHS23toDHS27~dCTCF,BL6/C PL121(Sox2_6_7)_20220202_C01,6.965,7.375,0.753,0.551,Brosh 2023
+LCR CTCF,23-27 (dCTCF),PL121,Sox2_DistalLCR_DHS23toDHS27~dCTCF,BL6/C PL121(Sox2_6_7)_20220202_D02,6.11,6.48,0.774,0.567,Brosh 2023
+LCR CTCF,23-27 (dCTCF),PL121,Sox2_DistalLCR_DHS23toDHS27~dCTCF,BL6/C PL121(Sox2_6_7)_20220202_E01,5.83,6.085,0.838,0.614,Brosh 2023
+LCR CTCF,23-27 (dCTCF),PL121,Sox2_DistalLCR_DHS23toDHS27~dCTCF,BL6/C PL121(Sox2_6_7)_20220202_F01,7.02,7.25,0.853,0.625,Brosh 2023
+syn26,syn26,PL157,Sox2_DistalLCR_DHS26~minimal,BL6/C PL157(Sox2_6_7)_20220406_B05,4.67,6.67,0.25,0.179,Brosh 2023
+syn26,syn26,PL157,Sox2_DistalLCR_DHS26~minimal,BL6/C PL157(Sox2_6_7)_20220406_B06,4.72,6.73,0.248,0.178,Brosh 2023
+syn26,syn26,PL157,Sox2_DistalLCR_DHS26~minimal,BL6/C PL157(Sox2_6_7)_20220406_C05,4.575,6.615,0.243,0.174,Brosh 2023
+syn26,syn26,PL157,Sox2_DistalLCR_DHS26~minimal,BL6/C PL157(Sox2_6_7)_20220406_C06,4.495,6.52,0.246,0.176,Brosh 2023
+syn26,syn26,PL157,Sox2_DistalLCR_DHS26~minimal,BL6/C PL157(Sox2_6_7)_20220406_D05,4.685,6.575,0.27,0.194,Brosh 2023
+syn26,syn26,PL157,Sox2_DistalLCR_DHS26~minimal,BL6/C PL157(Sox2_6_7)_20220406_D06,4.38,6.515,0.228,0.163,Brosh 2023
+syn26,syn26 (d5TFs),PL158,Sox2_DistalLCR_DHS26~minimal~d4TFBS,BL6/C PL158(Sox2_6_7)_20220406_B07,4.35,9.06,0.038,0.022,Brosh 2023
+syn26,syn26 (d5TFs),PL158,Sox2_DistalLCR_DHS26~minimal~d4TFBS,BL6/C PL158(Sox2_6_7)_20220406_B08,4.325,9.205,0.034,0.019,Brosh 2023
+syn26,syn26 (d5TFs),PL158,Sox2_DistalLCR_DHS26~minimal~d4TFBS,BL6/C PL158(Sox2_6_7)_20220406_C07,4.325,9.225,0.033,0.019,Brosh 2023
+syn26,syn26 (d5TFs),PL158,Sox2_DistalLCR_DHS26~minimal~d4TFBS,BL6/C PL158(Sox2_6_7)_20220406_D08,4.115,8.845,0.038,0.022,Brosh 2023
+syn26,syn26 (d5TFs),PL158,Sox2_DistalLCR_DHS26~minimal~d4TFBS,BL6/C PL158(Sox2_6_7)_20220406_E08,4.475,9.395,0.033,0.018,Brosh 2023
+syn26,syn26 (d5TFs),PL158,Sox2_DistalLCR_DHS26~minimal~d4TFBS,BL6/C PL158(Sox2_6_7)_20220406_F07,4.175,8.905,0.038,0.022,Brosh 2023
+Human orthoDHS,Orthologous to DHS23-DHS24,PL129,Sox2_hDistalLCR_orthoDHS23toDHS24,BL6/C PL129(Sox2_6_7)_20220112_B09,7.195,11.48,0.051,0.032,Brosh 2023
+Human orthoDHS,Orthologous to DHS23-DHS24,PL129,Sox2_hDistalLCR_orthoDHS23toDHS24,BL6/C PL129(Sox2_6_7)_20220112_B10,6.27,10.205,0.065,0.042,Brosh 2023
+Human orthoDHS,Orthologous to DHS23-DHS24,PL129,Sox2_hDistalLCR_orthoDHS23toDHS24,BL6/C PL129(Sox2_6_7)_20220112_C09,6.61,11.155,0.043,0.026,Brosh 2023
+Human orthoDHS,Orthologous to DHS23-DHS24,PL129,Sox2_hDistalLCR_orthoDHS23toDHS24,BL6/C PL129(Sox2_6_7)_20220112_D10,6.235,10.335,0.058,0.037,Brosh 2023
+Human orthoDHS,Orthologous to DHS23-DHS24,PL129,Sox2_hDistalLCR_orthoDHS23toDHS24,BL6/C PL129(Sox2_6_7)_20220112_E10,5.77,9.84,0.06,0.038,Brosh 2023
+Human orthoDHS,Orthologous to DHS24,PL130,Sox2_hDistalLCR_orthoDHS24,BL6/C PL130(Sox2_6_7)_20220112_B11,6.325,11.01,0.039,0.023,Brosh 2023
+Human orthoDHS,Orthologous to DHS24,PL130,Sox2_hDistalLCR_orthoDHS24,BL6/C PL130(Sox2_6_7)_20220112_C12,5.935,10.515,0.042,0.025,Brosh 2023
+Human orthoDHS,Orthologous to DHS24,PL130,Sox2_hDistalLCR_orthoDHS24,BL6/C PL130(Sox2_6_7)_20220112_D12,6.175,11.03,0.035,0.02,Brosh 2023
+Human orthoDHS,Orthologous to DHS24,PL130,Sox2_hDistalLCR_orthoDHS24,BL6/C PL130(Sox2_6_7)_20220112_E12,6.11,10.67,0.042,0.025,Brosh 2023

@@ -1,8 +1,8 @@
 # Data
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+#data/raw/*
+#data/processed/*
+#!data/raw/.gitkeep
+#!data/processed/.gitkeep
 
 # Models
 models/*.pt
@@ -70,9 +70,9 @@ alphagenome/
 # Results and generated tracks (large numpy/npz files)
 results/
 
-# Parquet metadata files (can be re-downloaded)
-src/track_metadata_human.parquet
-src/track_metadata_mouse.parquet
+# Parquet metadata files
+#src/track_metadata_human.parquet
+#src/track_metadata_mouse.parquet
 
 # Python
 __pycache__/
