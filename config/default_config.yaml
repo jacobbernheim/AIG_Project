@@ -4,7 +4,7 @@
 model:
   name: "alphagenome"
   model_checkpoint: "model_all_folds.safetensors"
-  organism: "human"  # "human" or "mouse"
+  organism: "mouse"  # "human" or "mouse"
   device: null  # null for auto-detect, "cuda" or "cpu" for explicit
   cache_dir: "models/"
 
@@ -18,6 +18,21 @@ inference:
     - "chip_tf"
     - "rna_seq"
   feature_aggregation: "mean"  # "mean", "max", or "concat"
+
+# Deterministic zero-shot scoring settings
+zero_shot:
+  organism: mouse
+  reference_pl: "PL018"
+  requested_tracks:
+    - dnase
+    - chip_histone
+    - chip_tf
+  signal_threshold: 0.0  # increase to e.g. 0.01 if padded portions of sequence are getting non-zero predictions that are contributing
+  weights:
+    dnase: 1.0
+    h3k27ac: 1.0
+    h3k4me1: 0.8
+    ep300: 0.6
 
 # Data settings
 data:

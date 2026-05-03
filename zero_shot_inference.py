@@ -1,27 +1,179 @@
 """
-Zero-shot inference script for Sox2 expression prediction using AlphaGenome.
+Zero-shot inference for Sox2 expression prediction using AlphaGenome.
 
-Expects preprocessed data in data/processed/. Run preprocess_data.py first.
+Uses mESC-specific tracks from the mouse AlphaGenome model:
+  - DNase: ES-CJ7 (EFO:0005916) track_index 23
+  - H3K27ac: ES-Bruce4 (EFO:0005483) track_index 50
+  - H3K4me1: ES-Bruce4 (EFO:0005483) track_index 51
+  - EP300: ES-Bruce4 (EFO:0005483) track_index 89
+
+Scoring uses SIGNAL MASS (sum of positive signal across all bins),
+which naturally scales with sequence length — three enhancers score
+~3x a single enhancer.
 
 Usage:
-    python zero_shot_inference.py [--output-dir results/]
+    python zero_shot_inference.py \
+        --sequences-file data/raw/example_subset_sequences.csv \
+        --output-dir results/zero_shot/
 """
 
 import argparse
-import yaml
+import json
 from pathlib import Path
-import pandas as pd
-import numpy as np
 
-from src.data_loader import SequenceDataset
-from src.model_utils import GenomeModel, ExpressionPredictor
-from src.evaluation import evaluate_predictions
+import numpy as np
+import pandas as pd
+import yaml
+
+from src.model_utils import GenomeModel, ZeroShotScorer, ZeroShotScoreWeights
+
+DEFAULT_ORGANISM = "mouse"
+DEFAULT_TRACKS = ["dnase", "chip_histone", "chip_tf"]
+DEFAULT_REFERENCE_PL = "PL018"
+FASTA_PATH = "data/raw/Payload Sequences - Ribeiro-dos-Santos_Supplemental_Data_S1.fasta"
+
+
+def _normalize_column_name(column_name: str) -> str:
+    return "".join(ch for ch in column_name.lower() if ch.isalnum())
+
+
+def _pick_column(dataframe: pd.DataFrame, candidates: list[str]) -> str:
+    lookup = {_normalize_column_name(c): c for c in dataframe.columns}
+    for candidate in candidates:
+        norm = _normalize_column_name(candidate)
+        if norm in lookup:
+            return lookup[norm]
+    raise KeyError(f"Could not find any of these columns: {candidates}")
+
+
+def load_fasta(fasta_path: str) -> dict[str, str]:
+    """Load a FASTA file into a dict of {header_name: sequence}.
+
+    Handles multi-line sequences and strips whitespace.
+    The header name is everything after '>' to end of line.
+    """
+    sequences = {}
+    current_name = None
+    current_seq_parts = []
+
+    with open(fasta_path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            if line.startswith(">"):
+                if current_name is not None:
+                    sequences[current_name] = "".join(current_seq_parts)
+                current_name = line[1:].strip()
+                current_seq_parts = []
+            else:
+                current_seq_parts.append(line)
+
+    if current_name is not None:
+        sequences[current_name] = "".join(current_seq_parts)
+
+    return sequences
+
+
+def _load_sequence_table(csv_path: str) -> pd.DataFrame:
+    """Load sequence table from CSV, joining sequences from the FASTA file.
+
+    The CSV must have PL and MenDel.Name columns. Sequences are loaded
+    from the hardcoded FASTA file and joined on MenDel.Name.
+    """
+    df = pd.read_csv(csv_path)
+
+    pl_col = _pick_column(df, ["PL", "pl"])
+    df = df.rename(columns={pl_col: "PL"})
+    df["PL"] = df["PL"].astype(str)
+
+    mendel_col = _pick_column(df, [
+        "MenDel.Name", "MenDelName", "mendel_name", "mendelname",
+        "Mendel.Name", "mendel.name", "Name", "name",
+    ])
+    df = df.rename(columns={mendel_col: "mendel_name"})
+    df["mendel_name"] = df["mendel_name"].astype(str).str.strip()
+
+    print(f"Loading sequences from FASTA: {FASTA_PATH}")
+    fasta_sequences = load_fasta(FASTA_PATH)
+    print(f"  Loaded {len(fasta_sequences)} sequences from FASTA")
+
+    fasta_names = list(fasta_sequences.keys())
+    print(f"  First 5 FASTA headers: {fasta_names[:5]}")
+    print(f"  First 5 CSV mendel_names: {df['mendel_name'].head().tolist()}")
+
+    # Join: try exact match first
+    df["sequence"] = df["mendel_name"].map(fasta_sequences)
+
+    n_matched = df["sequence"].notna().sum()
+    n_total = len(df)
+    print(f"  Matched {n_matched}/{n_total} sequences by exact MenDel name")
+
+    # If exact match didn't work well, try fuzzy matching
+    if n_matched < n_total:
+        fasta_normalized = {k.strip(): v for k, v in fasta_sequences.items()}
+        unmatched = df["sequence"].isna()
+        df.loc[unmatched, "sequence"] = df.loc[unmatched, "mendel_name"].map(fasta_normalized)
+        n_matched_after = df["sequence"].notna().sum()
+        if n_matched_after > n_matched:
+            print(f"  After normalization: matched {n_matched_after}/{n_total}")
+
+    # Report any still-unmatched
+    still_missing = df.loc[df["sequence"].isna(), "mendel_name"].tolist()
+    if still_missing:
+        print(f"  WARNING: {len(still_missing)} sequences not found in FASTA:")
+        for name in still_missing[:10]:
+            print(f"    - '{name}'")
+        if len(still_missing) > 10:
+            print(f"    ... and {len(still_missing) - 10} more")
+
+    # Drop rows with no sequence
+    df = df.dropna(subset=["sequence"]).reset_index(drop=True)
+    if len(df) == 0:
+        raise ValueError(
+            "No sequences matched between CSV and FASTA. "
+            "Check that the MenDel.Name column in the CSV matches "
+            "the FASTA headers (text after '>')."
+        )
+
+    df["sequence"] = df["sequence"].astype(str).str.strip().str.upper()
+
+    for idx, row in df.iterrows():
+        seq = row["sequence"]
+        if len(seq) < 100:
+            print(f"  [warn] {row['PL']} ({row['mendel_name']}): "
+                  f"very short sequence ({len(seq)} bp)")
+
+    print(f"  Final: {len(df)} sequences ready for scoring")
+    return df
+
+
+def _load_activity_table(file_path: str) -> pd.DataFrame:
+    df = pd.read_csv(file_path)
+    pl_col = _pick_column(df, ["PL", "pl"])
+    renamed = df.rename(columns={pl_col: "PL"}).copy()
+    renamed["PL"] = renamed["PL"].astype(str)
+    return renamed
+
+
+def _extract_score_components(prefix: str, component_values: dict[str, float]) -> dict[str, float]:
+    return {f"{prefix}_{name}": float(value) for name, value in component_values.items()}
 
 
 def load_config(config_path: str = "config/default_config.yaml") -> dict:
-    """Load configuration from YAML file."""
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
+
+
+def _build_zero_shot_weights(config: dict) -> ZeroShotScoreWeights:
+    zs = config.get("zero_shot", {})
+    w = zs.get("weights", {})
+    return ZeroShotScoreWeights(
+        dnase=float(w.get("dnase", ZeroShotScoreWeights.dnase)),
+        h3k27ac=float(w.get("h3k27ac", ZeroShotScoreWeights.h3k27ac)),
+        h3k4me1=float(w.get("h3k4me1", ZeroShotScoreWeights.h3k4me1)),
+        ep300=float(w.get("ep300", ZeroShotScoreWeights.ep300)),
+    )
 
 
 def run_zero_shot_prediction(
@@ -30,175 +182,207 @@ def run_zero_shot_prediction(
     config_path: str = "config/default_config.yaml",
     output_dir: str = "results/",
 ) -> dict:
-    """
-    Run zero-shot prediction on preprocessed sequences using AlphaGenome.
-    
-    Args:
-        sequences_path: Path to processed sequences (defaults to data/processed/sequences_processed.csv)
-        activities_path: Path to processed activities (defaults to data/processed/activities_processed.csv)
-        config_path: Path to configuration YAML
-        output_dir: Directory to save results
-        
-    Returns:
-        Dictionary with predictions and metrics
-    """
-    # Use default paths if not provided
+    """Run zero-shot Sox2 expression prediction."""
     if sequences_path is None:
         sequences_path = "data/processed/sequences_processed.csv"
     if activities_path is None:
         activities_path = "data/processed/activities_processed.csv"
-    
-    # Load config
+
     config = load_config(config_path)
-    
-    # Load data
+
     print(f"Loading sequences from {sequences_path}...")
-    sequences_df = pd.read_csv(sequences_path)
-    
+    sequences_df = _load_sequence_table(sequences_path)
     print(f"Loaded {len(sequences_df)} sequences")
-    
-    # Load true labels if available
-    labels = None
+
+    activities_df = None
     if Path(activities_path).exists():
-        activities_df = pd.read_csv(activities_path)
-        if "expression" in activities_df.columns:
-            labels = activities_df["expression"].values
-            print(f"Loaded {len(labels)} expression labels")
-    
-    # Initialize AlphaGenome model
-    print(f"\nInitializing AlphaGenome model...")
+        activities_df = _load_activity_table(activities_path)
+        print(f"Loaded {len(activities_df)} activity records")
+
+    zs_config = config.get("zero_shot", {})
+    organism = zs_config.get("organism",
+                              config.get("model", {}).get("organism", DEFAULT_ORGANISM))
+    reference_pl = str(zs_config.get("reference_pl", DEFAULT_REFERENCE_PL))
+    requested_tracks = zs_config.get("requested_tracks", DEFAULT_TRACKS)
+    prediction_resolution = int(
+        config.get("inference", {}).get("prediction_resolution", 128)
+    )
+    signal_threshold = float(zs_config.get("signal_threshold", 0.0))
+
+    # chip_histone and chip_tf only available at 128bp
+    if any(t in requested_tracks for t in ["chip_histone", "chip_tf"]):
+        if prediction_resolution != 128:
+            print(f"  [info] Forcing resolution to 128bp (chip_histone/chip_tf only at 128bp)")
+            prediction_resolution = 128
+
+    print("\nInitializing AlphaGenome model...")
     genome_model = GenomeModel(
-        model_name=config["model"]["model_checkpoint"],
-        organism=config["model"]["organism"],
-        cache_dir=config["model"]["cache_dir"],
-        device=config["model"]["device"],
+        organism=organism,
+        device=config.get("model", {}).get("device"),
     )
     print(f"Model info: {genome_model.get_model_info()}")
-    
-    # Load model weights
     genome_model.load_model()
-    
-    # Run inference on all sequences
-    print(f"\nRunning predictions on {len(sequences_df)} sequences...")
-    all_track_predictions = {}
-    aggregated_features_list = []
-    
-    for idx, row in sequences_df.iterrows():
-        sequence = row["sequence"]
-        
-        if idx % max(1, len(sequences_df) // 10) == 0:
-            print(f"  Progress: {idx}/{len(sequences_df)}")
-        
-        # Get AlphaGenome predictions
-        track_preds = genome_model.predict_on_sequence(
+
+    scorer = ZeroShotScorer(
+        weights=_build_zero_shot_weights(config),
+        signal_threshold=signal_threshold,
+    )
+
+    print(f"\n{'='*60}")
+    print(f"mESC Zero-Shot Scoring Configuration")
+    print(f"{'='*60}")
+    print(f"  Organism:         {organism}")
+    print(f"  Resolution:       {prediction_resolution}bp")
+    print(f"  Tracks:           {requested_tracks}")
+    print(f"  Reference:        {reference_pl}")
+    print(f"  Signal threshold: {signal_threshold}")
+    print(f"  DNase:            ES-CJ7 ch{scorer.dnase_indices}")
+    print(f"  H3K27ac:          ES-Bruce4 ch{scorer.h3k27ac_indices}")
+    print(f"  H3K4me1:          ES-Bruce4 ch{scorer.h3k4me1_indices}")
+    print(f"  EP300:            ES-Bruce4 ch{scorer.ep300_indices}")
+    print(f"  Weights:          dnase={scorer.weights.dnase}, "
+          f"h3k27ac={scorer.weights.h3k27ac}, "
+          f"h3k4me1={scorer.weights.h3k4me1}, "
+          f"ep300={scorer.weights.ep300}")
+    print(f"  Scoring method:   signal mass (sum of positive signal)")
+    print(f"{'='*60}\n")
+
+    print(f"Scoring {len(sequences_df)} sequences...")
+    score_rows = []
+
+    for index, row in sequences_df.iterrows():
+        sequence = str(row["sequence"]).strip().upper()
+        pl_value = str(row["PL"])
+        mendel_name = str(row.get("mendel_name", ""))
+
+        if index % max(1, len(sequences_df) // 10) == 0:
+            print(f"\n  [{index}/{len(sequences_df)}] {pl_value} "
+                  f"({mendel_name}, {len(sequence)} bp)")
+
+        raw_outputs = genome_model.predict_on_sequence_raw(
             sequence,
-            tracks=config["inference"]["available_tracks"],
-            resolution=config["inference"]["prediction_resolution"],
+            tracks=requested_tracks,
+            resolution=prediction_resolution,
         )
-        
-        # Aggregate features for expression prediction
-        expr_predictor = ExpressionPredictor()
-        agg_features = expr_predictor.aggregate_track_features(
-            track_preds,
-            aggregation=config["inference"]["feature_aggregation"],
-        )
-        aggregated_features_list.append(agg_features)
-    
-    print("✓ Predictions complete")
-    
-    # Aggregate all features
-    all_features = np.concatenate(aggregated_features_list, axis=0)
-    print(f"Aggregated feature shape: {all_features.shape}")
-    
-    # Predict Sox2 expression
-    print(f"\nPredicting Sox2 expression levels...")
-    expr_predictor = ExpressionPredictor()
-    predictions = expr_predictor.predict(all_features)
-    predictions = np.maximum(predictions, 0)  # Ensure non-negative
-    
-    print(f"Predictions shape: {predictions.shape}")
-    print(f"Prediction range: [{predictions.min():.3f}, {predictions.max():.3f}]")
-    
-    # Evaluate (if labels available)
+
+        score = scorer.score(raw_outputs)
+        score_rows.append({
+            "PL": pl_value,
+            "mendel_name": mendel_name,
+            "sequence_length": len(sequence),
+            "raw_score": score.raw_score,
+            **_extract_score_components("component", score.component_values),
+        })
+
+    score_df = pd.DataFrame(score_rows)
+
+    # Normalize to reference
+    ref_match = score_df.loc[score_df["PL"] == reference_pl]
+    if ref_match.empty:
+        print(f"\n  [warn] Reference PL '{reference_pl}' not found in scored sequences.")
+        print(f"  Available PLs: {score_df['PL'].tolist()}")
+        print(f"  Skipping normalization — raw scores only.")
+        score_df["normalized_score"] = np.nan
+        score_df["is_reference"] = False
+        ref_raw = None
+    else:
+        ref_raw = float(ref_match.iloc[0]["raw_score"])
+        if ref_raw == 0.0:
+            print(f"  [warn] Reference {reference_pl} has zero raw score. Skipping normalization.")
+            score_df["normalized_score"] = np.nan
+        else:
+            score_df["normalized_score"] = score_df["raw_score"] / ref_raw
+        score_df["is_reference"] = score_df["PL"] == reference_pl
+
+    if activities_df is not None:
+        score_df = score_df.merge(activities_df, on="PL", how="left",
+                                   suffixes=("", "_activity"))
+
+    print(f"\n{'='*60}")
+    print("Scoring complete")
+    if ref_raw is not None and ref_raw != 0.0:
+        print(f"Reference {reference_pl} raw score: {ref_raw:.6f}")
+        print(f"Normalized reference score: 1.000000")
+    print(f"Score range (raw): {score_df['raw_score'].min():.4f} — "
+          f"{score_df['raw_score'].max():.4f}")
+    if score_df["normalized_score"].notna().any():
+        print(f"Score range (norm): {score_df['normalized_score'].min():.4f} — "
+              f"{score_df['normalized_score'].max():.4f}")
+    print(f"{'='*60}")
+
+    # Save
     results = {
-        "predictions": predictions,
-        "feature_shape": all_features.shape,
+        "predictions": score_df["normalized_score"].to_numpy(),
+        "raw_scores": score_df["raw_score"].to_numpy(),
+        "score_table": score_df,
+        "reference_pl": reference_pl,
+        "reference_raw_score": ref_raw,
     }
-    
-    if labels is not None and len(labels) == len(predictions):
-        print(f"\nEvaluating predictions against {len(labels)} labels...")
-        metrics = evaluate_predictions(labels, predictions)
-        results.update(metrics)
-        for metric_name, metric_value in metrics.items():
-            print(f"  {metric_name}: {metric_value:.4f}")
-    
-    # Save results
+
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    
-    if config["output"]["save_predictions"]:
-        pred_path = output_dir / "predictions.npy"
-        np.save(pred_path, predictions)
-        print(f"\nSaved predictions to {pred_path}")
-        
-        # Also save as CSV for easier viewing
-        pred_csv = output_dir / "predictions.csv"
-        pred_df = pd.DataFrame({
-            "sequence_index": range(len(predictions)),
-            "sox2_expression_prediction": predictions,
-        })
-        pred_df.to_csv(pred_csv, index=False)
-        print(f"Saved predictions CSV to {pred_csv}")
-    
-    if config["output"]["save_embeddings"]:
-        emb_path = output_dir / "aggregated_features.npy"
-        np.save(emb_path, all_features)
-        print(f"Saved aggregated features to {emb_path}")
-    
+
+    if config.get("output", {}).get("save_predictions", True):
+        np.save(output_dir / "zero_shot_normalized_scores.npy",
+                score_df["normalized_score"].to_numpy())
+        np.save(output_dir / "zero_shot_raw_scores.npy",
+                score_df["raw_score"].to_numpy())
+        score_df.to_csv(output_dir / "zero_shot_scores.csv", index=False)
+
+        summary = {
+            "reference_pl": reference_pl,
+            "reference_raw_score": ref_raw,
+            "organism": organism,
+            "resolution": prediction_resolution,
+            "requested_tracks": requested_tracks,
+            "signal_threshold": signal_threshold,
+            "fasta_file": str(FASTA_PATH),
+            "n_sequences_scored": len(score_df),
+            "scoring_method": "signal_mass (sum of positive signal, scales with length)",
+            "mesc_channels": {
+                "dnase": {"cell_line": "ES-CJ7", "curie": "EFO:0005916",
+                          "indices": scorer.dnase_indices},
+                "h3k27ac": {"cell_line": "ES-Bruce4", "curie": "EFO:0005483",
+                            "indices": scorer.h3k27ac_indices},
+                "h3k4me1": {"cell_line": "ES-Bruce4", "curie": "EFO:0005483",
+                            "indices": scorer.h3k4me1_indices},
+                "ep300": {"cell_line": "ES-Bruce4", "curie": "EFO:0005483",
+                          "indices": scorer.ep300_indices},
+            },
+            "weights": {
+                "dnase": scorer.weights.dnase,
+                "h3k27ac": scorer.weights.h3k27ac,
+                "h3k4me1": scorer.weights.h3k4me1,
+                "ep300": scorer.weights.ep300,
+            },
+        }
+        (output_dir / "zero_shot_summary.json").write_text(
+            json.dumps(summary, indent=2, sort_keys=True, default=str) + "\n"
+        )
+
+        print(f"\nSaved to {output_dir}:")
+        print(f"  zero_shot_scores.csv")
+        print(f"  zero_shot_normalized_scores.npy")
+        print(f"  zero_shot_raw_scores.npy")
+        print(f"  zero_shot_summary.json")
+
     return results
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Zero-shot Sox2 expression prediction using AlphaFold"
+        description="Zero-shot Sox2 expression prediction using AlphaGenome"
     )
-    parser.add_argument(
-        "--sequences-file",
-        type=str,
-        default=None,
-        help="Path to processed sequences file (defaults to data/processed/sequences_processed.csv)"
-    )
-    parser.add_argument(
-        "--activities-file",
-        type=str,
-        default=None,
-        help="Path to processed activities file (defaults to data/processed/activities_processed.csv)"
-    )
-    parser.add_argument(
-        "--output-dir",
-        type=str,
-        default="results/",
-        help="Directory to save results"
-    )
-    parser.add_argument(
-        "--model-checkpoint",
-        type=str,
-        default=None,
-        help="Path to model checkpoint (uses default if not provided)"
-    )
-    parser.add_argument(
-        "--config",
-        type=str,
-        default="config/default_config.yaml",
-        help="Path to configuration file"
-    )
-    
+    parser.add_argument("--sequences-file", type=str, default=None,
+                        help="CSV with PL and MenDel.Name columns")
+    parser.add_argument("--activities-file", type=str, default=None)
+    parser.add_argument("--output-dir", type=str, default="results/")
+    parser.add_argument("--config", type=str, default="config/default_config.yaml")
     args = parser.parse_args()
-    
+
     results = run_zero_shot_prediction(
         sequences_path=args.sequences_file,
         activities_path=args.activities_file,
-        model_checkpoint=args.model_checkpoint,
         config_path=args.config,
         output_dir=args.output_dir,
     )

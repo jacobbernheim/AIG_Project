@@ -60,3 +60,29 @@ wheels/
 .DS_Store
 .env
 .env.local
+
+# Model weights (too large for GitHub)
+*.pth
+*.safetensors
+*.bin
+alphagenome/
+
+# Results and generated tracks (large numpy/npz files)
+results/
+
+# Parquet metadata files (can be re-downloaded)
+src/track_metadata_human.parquet
+src/track_metadata_mouse.parquet
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
