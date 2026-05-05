@@ -14,7 +14,7 @@ conda activate sox2-alphagenome
 conda info
 echo "conda activated"
 
-
+# python /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/example_inference.py
 # in this context can we not just use payload activities because it has the PL and name cols we need?
 python zero_shot_inference.py \
     --sequences-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/raw/Payload Activities.csv" \

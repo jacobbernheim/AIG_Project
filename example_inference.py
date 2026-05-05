@@ -1,75 +1,54 @@
 """
-Quick example script demonstrating AlphaGenome model setup and inference.
-
-This script shows how to:
-1. Initialize the AlphaGenome model
-2. Run predictions on a sample DNA sequence
-3. Aggregate predictions for downstream tasks
+Minimal example: predict on a random 2048bp sequence using existing classes.
 """
-
 import numpy as np
-from src.model_utils import GenomeModel, ExpressionPredictor
+from src.model_utils import ZeroShotScorer, ZeroShotScoreWeights
+from src.genome_model import GenomeModel
 
+# ============================================================
+# 1. LOAD MODEL
+# ============================================================
+print("Loading model...")
+genome_model = GenomeModel(organism="mouse")
+print(f"Model info: {genome_model.get_model_info()}")
+genome_model.load_model()
 
-def log(message: str) -> None:
-    print(message, flush=True)
+# ============================================================
+# 2. GENERATE RANDOM 2048bp SEQUENCE
+# ============================================================
+SEQ_LEN = 2048
+np.random.seed(42)
+bases = ['A', 'C', 'G', 'T']
+sequence = ''.join(np.random.choice(bases, size=SEQ_LEN))
+print(f"\nSequence: {sequence[:50]}... ({len(sequence)} bp)")
 
+# ============================================================
+# 3. PREDICT
+# ============================================================
+print("\nRunning prediction...")
+tracks = ["dnase", "chip_histone", "chip_tf"]
+raw_outputs = genome_model.predict_on_sequence_raw(
+    sequence,
+    tracks=tracks,
+    resolution=128,
+)
 
-def main():
-    """Run example inference."""
-    
-    log("=" * 60)
-    log("AlphaGenome Model Setup Example")
-    log("=" * 60)
-    
-    # Initialize model
-    log("\n1. Initializing AlphaGenome model...")
-    genome_model = GenomeModel(
-        organism="human",
-    )
-    log(f"Model info: {genome_model.get_model_info()}")
-    
-    # Load model
-    log("\n2. Loading model weights...")
-    genome_model.load_model()
-    
-    # Example DNA sequence for a quick local smoke test.
-    # AlphaGenome supports much longer windows, but this keeps the test practical on CPU.
-    example_sequence = ("ACGT" * 1024)
-    
-    log(f"\n3. Running prediction on sequence of length {len(example_sequence)} bp...")
-    
-    # Get predictions
-    track_predictions = genome_model.predict_on_sequence(
-        example_sequence,
-        tracks=["atac", "dnase", "rna_seq"],
-        resolution=1,
-    )
-    
-    log(f"\nTrack predictions retrieved:")
-    for track_name, pred_array in track_predictions.items():
-        log(f"  {track_name}: shape {pred_array.shape}")
-    
-    # Aggregate features for expression prediction
-    log("\n4. Aggregating features for Sox2 expression prediction...")
-    expr_predictor = ExpressionPredictor()
-    
-    agg_features = expr_predictor.aggregate_track_features(
-        track_predictions,
-        aggregation="mean",
-    )
-    log(f"Aggregated features shape: {agg_features.shape}")
-    
-    # Predict Sox2 expression
-    log("\n5. Predicting Sox2 expression...")
-    expression_pred = expr_predictor.predict(agg_features)
-    log(f"Predicted Sox2 expression level: {expression_pred[0]:.3f}")
-    log(f"Expression scale: 0 (none), 1 (WT), >1 (overexpression)")
-    
-    log("\n" + "=" * 60)
-    log("Example complete! Model is working correctly.")
-    log("=" * 60)
+print(f"\nReturned tracks: {list(raw_outputs.keys())}")
+for track_name, arr in raw_outputs.items():
+    print(f"  '{track_name}': shape={arr.shape}, "
+          f"min={arr.min():.4f}, max={arr.max():.4f}, mean={arr.mean():.4f}")
 
+# ============================================================
+# 4. SCORE
+# ============================================================
+print("\nScoring...")
+scorer = ZeroShotScorer(
+    weights=ZeroShotScoreWeights(),
+    signal_threshold=0.0,
+)
+result = scorer.score(raw_outputs)
 
-if __name__ == "__main__":
-    main()
+print(f"\n{'='*60}")
+print(f"Zero-Shot Score: {result.raw_score:.6f}")
+print(f"Components: {result.component_values}")
+print(f"{'='*60}")

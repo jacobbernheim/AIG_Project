@@ -25,7 +25,9 @@ import pandas as pd
 import yaml
 import tqdm
 
-from src.model_utils import GenomeModel, ZeroShotScorer, ZeroShotScoreWeights
+from src.model_utils import ZeroShotScorer, ZeroShotScoreWeights
+from src.genome_model import GenomeModel
+
 
 DEFAULT_ORGANISM = "mouse"
 DEFAULT_TRACKS = ["dnase", "chip_histone", "chip_tf"]
