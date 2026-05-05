@@ -251,6 +251,8 @@ class GenomeModel:
                     continue
             if model is not None:
                 self.model = model
+                print(f"adding {self.organism} reference heads", flush=True)
+                self.model.add_reference_heads(organism=self.organism)
             elif dna_model is not None:
                 self.model = dna_model.create(add_reference_heads=True, device=self.device)
             else:
@@ -315,6 +317,17 @@ class GenomeModel:
                     return tensor[..., valid], valid
         return tensor, None
 
+    def get_model_info(self) -> dict:
+        """Return basic model information."""
+        info = {
+            "organism": self.organism,
+            "device": str(self.device),
+        }
+        if self.model is not None:
+            heads = list(self.model.heads.get(self.organism, {}).keys())
+            info["available_heads"] = heads
+        return info
+
     def predict_on_sequence(self, sequence: str, tracks: Optional[List[str]] = None,
                              ontology_terms: Optional[List[str]] = None,
                              resolution: int = 1, preserve_raw: bool = False,
@@ -377,55 +390,95 @@ class GenomeModel:
 
         return results
 
-    def predict_on_sequence_raw(self, sequence: str, tracks: Optional[List[str]] = None,
-                                 resolution: int = 128) -> Dict[str, torch.Tensor]:
-        """Run raw forward pass, returning unfiltered tensors (padding channels stripped)."""
-        if not self._is_loaded:
-            self.load_model()
-        if resolution not in self.RESOLUTIONS:
-            raise ValueError(f"Resolution must be 1 or 128, got {resolution}")
+    def encode_sequence(self, sequence: str, pad_to_multiple_of: int = 2048) -> torch.Tensor:
+        """Encode DNA sequence to integer tensor with padding.
+        
+        A=0, C=1, G=2, T=3, N=-1 (masked to zero internally by model).
+        Pads sequence to nearest multiple of pad_to_multiple_of using N (-1).
+        
+        Args:
+            sequence: DNA string
+            pad_to_multiple_of: Pad length to be divisible by this value.
+                            2048 is safe for the transformer_unet architecture
+                            (accounts for multiple downsampling stages of 2x, 4x, 8x, 16x).
+        
+        Returns:
+            Integer tensor of shape (padded_seq_len,)
+        """
+        mapping = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
+        encoded = [mapping.get(base.upper(), -1) for base in sequence]
+        
+        # Pad to nearest multiple
+        seq_len = len(encoded)
+        if seq_len % pad_to_multiple_of != 0:
+            pad_len = pad_to_multiple_of - (seq_len % pad_to_multiple_of)
+            # Pad with -1 (N) — model clamps to 0 then one-hots, so these become zero vectors
+            encoded.extend([-1] * pad_len)
+        
+        return torch.tensor(encoded, dtype=torch.long)
 
-        requested_outputs = tracks if tracks is not None else list(self.AVAILABLE_TRACKS.keys())
-        sequence, _ = self.prepare_sequence_for_model(sequence)
+    def predict_on_sequence_raw(
+        self,
+        sequence: str,
+        tracks: list[str] = None,
+        resolution: int = 128,
+    ) -> dict[str, np.ndarray]:
+        """
+        Run AlphaGenome on a DNA sequence and return raw predictions.
 
-        dna_one_hot = self._sequence_to_one_hot(sequence, self.device)
-        organism_tensor = torch.tensor(
-            [self.organism_index], dtype=torch.long, device=dna_one_hot.device
-        )
+        Args:
+            sequence: DNA string (ACGT characters)
+            tracks: List of assay types to return, e.g. ["dnase", "chip_histone", "chip_tf"]
+            resolution: Prediction resolution (128 for chip_histone/chip_tf)
+
+        Returns:
+            Dict mapping track names to numpy arrays of shape (n_bins, n_tracks_per_assay)
+        """
+        if self.model is None:
+            raise RuntimeError("Model not loaded. Call load_model() first.")
+
+        if tracks is None:
+            tracks = ["dnase", "chip_histone", "chip_tf"]
+
+        # Encode and prepare input
+        input_tensor = self.encode_sequence(sequence).unsqueeze(0).to(self.device)
+
+        # Organism index: 0=human, 1=mouse
+        organism_idx = 1 if self.organism == "mouse" else 0
+        organism_tensor = torch.tensor([organism_idx], dtype=torch.long).to(self.device)
+
+        # Run inference
         with torch.no_grad():
-            outputs = self.model(dna_one_hot, organism_tensor)
+            self.model.eval()
+            output = self.model(input_tensor, organism_tensor)
 
+        # Output is nested under organism key
+        organism_output = output[self.organism]
+
+        # Extract requested tracks at the desired resolution
         results = {}
-        for track in requested_outputs:
-            if track not in outputs:
+        for track_name in tracks:
+            if track_name not in organism_output:
+                print(f"  [warn] Track '{track_name}' not found. "
+                    f"Available: {list(organism_output.keys()) if isinstance(organism_output, dict) else 'N/A'}")
                 continue
-            track_output = outputs[track]
-            if isinstance(track_output, dict):
-                if resolution in track_output:
-                    tensor = track_output[resolution]
-                elif str(resolution) in track_output:
-                    tensor = track_output[str(resolution)]
+
+            pred = organism_output[track_name]
+
+            if isinstance(pred, dict):
+                resolution_key = f"resolution_{resolution}"
+                if resolution_key in pred:
+                    tensor = pred[resolution_key]
                 else:
-                    available = sorted(track_output.keys())
-                    tensor = track_output[available[0]]
-            elif isinstance(track_output, torch.Tensor):
-                tensor = track_output
-            else:
-                continue
-            tensor = self._strip_padding_channels(tensor, track)
-            results[track] = tensor
+                    available = list(pred.keys())
+                    print(f"  [info] '{track_name}': using {available[-1]} "
+                        f"(requested {resolution_key})")
+                    tensor = pred[available[-1]]
+                results[track_name] = tensor[0].cpu().numpy()
+            elif hasattr(pred, 'shape'):
+                results[track_name] = pred[0].cpu().numpy()
 
         return results
-
-    def get_model_info(self) -> Dict:
-        return {
-            "organism": self.organism,
-            "device": self.device,
-            "loaded": self._is_loaded,
-            "available_tracks": self.AVAILABLE_TRACKS,
-            "resolutions": self.RESOLUTIONS,
-        }
-
 
 # ---------------------------------------------------------------------------
 # Expression predictor (placeholder)

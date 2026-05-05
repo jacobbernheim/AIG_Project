@@ -1,0 +1,114 @@
+
+     active environment : sox2-alphagenome
+    active env location : /gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome
+            shell level : 2
+       user config file : /gpfs/data/shenhavlab/users/ca3261/.condarc
+ populated config files : 
+          conda version : 24.1.0
+    conda-build version : 24.1.1
+         python version : 3.11.5.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake_avx512
+                          __conda=24.1.0=0
+                          __cuda=12.9=0
+                          __glibc=2.28=0
+                          __linux=4.18.0=0
+                          __unix=0=0
+       base environment : /gpfs/share/apps/anaconda3/gpu/2023.09  (read only)
+      conda av data dir : /gpfs/share/apps/anaconda3/gpu/2023.09/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /gpfs/share/apps/anaconda3/gpu/2023.09/pkgs
+                          /gpfs/data/shenhavlab/users/ca3261/.conda/pkgs
+       envs directories : /gpfs/data/shenhavlab/users/ca3261/.conda/envs
+                          /gpfs/share/apps/anaconda3/gpu/2023.09/envs
+               platform : linux-64
+             user-agent : conda/24.1.0 requests/2.31.0 CPython/3.11.5 Linux/4.18.0-477.27.1.el8_8.x86_64 rhel/8.8 glibc/2.28 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.2 c/BBWx9H1I3PF_IylHJcfT0w s/N03Lrn8yRDbSYhJHxyl0ww e/uOXDcn5R0pE3aUHU75YGeQ
+                UID:GID : 1024291498:1024304291
+             netrc file : None
+           offline mode : False
+
+
+conda activated
+Loading sequences from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/raw/Payload Activities.csv...
+Loading sequences from FASTA: data/raw/Payload Sequences - Ribeiro-dos-Santos_Supplemental_Data_S1.fasta
+  Loaded 227 sequences from FASTA
+  First 5 FASTA headers: ['Sox2_DistalLCR_WT', 'Sox2_DistalLCR_dCTCF25', 'Sox2_DistalLCR_dCTCF25andDHS26andCTCF28', 'Sox2_DistalLCR_dCTCF28', 'Sox2_DistalLCR_dDHS19toDHS20']
+  First 5 CSV mendel_names: ['dLCR', 'dLCR', 'Sox2_DistalLCR_DHS19andDHS23', 'Sox2_DistalLCR_DHS19andDHS23', 'Sox2_DistalLCR_DHS19andDHS23']
+  Matched 629/997 sequences by exact MenDel name
+  WARNING: 368 sequences not found in FASTA:
+    - 'dLCR'
+    - 'dLCR'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23toSox2DHS24~invertedSpacer'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24'
+    - 'EnhancerCluster_HPRT1Rspacer_Sox2DHS23andSox2DHS24'
+    ... and 358 more
+  Final: 629 sequences ready for scoring
+Loaded 629 sequences
+Loaded 997 activity records
+  [info] Forcing resolution to 128bp (chip_histone/chip_tf only at 128bp)
+
+Initializing AlphaGenome model...
+Model info: {'organism': 'mouse', 'device': 'cpu'}
+Creating AlphaGenome model on cpu...
+  Loaded via: constructor_no_args
+adding mouse reference heads
+Model loaded successfully
+
+============================================================
+mESC Zero-Shot Scoring Configuration
+============================================================
+  Organism:         mouse
+  Resolution:       128bp
+  Tracks:           ['dnase', 'chip_histone', 'chip_tf']
+  Reference:        PL018
+  Signal threshold: 0.0
+  DNase:            ES-CJ7 ch[23]
+  H3K27ac:          ES-Bruce4 ch[50]
+  H3K4me1:          ES-Bruce4 ch[51]
+  EP300:            ES-Bruce4 ch[89]
+  Weights:          dnase=1.0, h3k27ac=1.0, h3k4me1=0.8, ep300=0.6
+  Scoring method:   signal mass (sum of positive signal)
+============================================================
+
+Scoring 629 sequences...
+  0%|          | 0/629 [00:00<?, ?it/s]
+  [0/629] PL188 (Sox2_DistalLCR_DHS19andDHS23, 26880 bp)
+  0%|          | 0/629 [00:23<?, ?it/s]
+  [debug] output type: <class 'dict'>
+  [debug] dict keys: ['mouse']
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [debug] Returning tracks: ['dnase', 'chip_histone', 'chip_tf']
+    'dnase': shape=(224, 384), min=0.0717, max=1.5998
+    'chip_histone': shape=(224, 1152), min=0.0464, max=2.2240
+    'chip_tf': shape=(224, 1664), min=0.0299, max=1.8992
+  [scorer] DNase (ES-CJ7 ch[23]): mass=215.3550, 224/224 bins active (100.0%), mean_active=0.9614
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=108.9132, 224/224 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=130.9002, 224/224 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=309.4138, 224/224 bins active (100.0%)
+  [scorer] Raw score: 614.636679
+
+  [warn] Reference PL 'PL018' not found in scored sequences.
+  Available PLs: ['PL188']
+  Skipping normalization — raw scores only.
+
+============================================================
+Scoring complete
+Score range (raw): 614.6367 — 614.6367
+============================================================
+
+Saved to /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot:
+  zero_shot_scores.csv
+  zero_shot_normalized_scores.npy
+  zero_shot_raw_scores.npy
+  zero_shot_summary.json
