@@ -17,6 +17,5 @@ echo "conda activated"
 # python /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/example_inference.py
 # in this context can we not just use payload activities because it has the PL and name cols we need?
 python zero_shot_inference.py \
-    --sequences-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/raw/Payload Activities.csv" \
-    --activities-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/raw/Payload Activities.csv" \
+    --data-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv" \
     --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/

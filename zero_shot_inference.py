@@ -73,35 +73,49 @@ def load_fasta(fasta_path: str) -> dict[str, str]:
     return sequences
 
 
-def _load_sequence_table(csv_path: str) -> pd.DataFrame:
-    """Load sequence table from CSV, joining sequences from the FASTA file."""
+def _load_data(csv_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Load CSV once and return both sequences_df and activities_df.
+    
+    The CSV contains PL, MenDel.Name, and activity columns.
+    Sequences are joined from the FASTA file.
+    
+    Returns:
+        (sequences_df, activities_df) — sequences with FASTA joined,
+        and the full table for activity lookup.
+    """
     df = pd.read_csv(csv_path)
-
+    
+    # Standardize PL column
     pl_col = _pick_column(df, ["PL", "pl"])
     df = df.rename(columns={pl_col: "PL"})
     df["PL"] = df["PL"].astype(str)
-
+    
+    # Standardize MenDel.Name column
     mendel_col = _pick_column(df, [
         "MenDel.Name", "MenDelName", "mendel_name", "mendelname",
         "Mendel.Name", "mendel.name", "Name", "name",
     ])
     df = df.rename(columns={mendel_col: "mendel_name"})
     df["mendel_name"] = df["mendel_name"].astype(str).str.strip()
-
+    
+    # ---- Activities: just the full table with PL standardized ----
+    activities_df = df.copy()
+    
+    # ---- Sequences: join from FASTA ----
     print(f"Loading sequences from FASTA: {FASTA_PATH}", flush=True)
     fasta_sequences = load_fasta(FASTA_PATH)
     print(f"  Loaded {len(fasta_sequences)} sequences from FASTA", flush=True)
-
+    
     fasta_names = list(fasta_sequences.keys())
     print(f"  First 5 FASTA headers: {fasta_names[:5]}", flush=True)
     print(f"  First 5 CSV mendel_names: {df['mendel_name'].head().tolist()}", flush=True)
-
+    
     # Join: try exact match first
     df["sequence"] = df["mendel_name"].map(fasta_sequences)
     n_matched = df["sequence"].notna().sum()
     n_total = len(df)
     print(f"  Matched {n_matched}/{n_total} sequences by exact MenDel name", flush=True)
-
+    
     # If exact match didn't work well, try normalized matching
     if n_matched < n_total:
         fasta_normalized = {k.strip(): v for k, v in fasta_sequences.items()}
@@ -110,7 +124,7 @@ def _load_sequence_table(csv_path: str) -> pd.DataFrame:
         n_matched_after = df["sequence"].notna().sum()
         if n_matched_after > n_matched:
             print(f"  After normalization: matched {n_matched_after}/{n_total}", flush=True)
-
+    
     # Report any still-unmatched
     still_missing = df.loc[df["sequence"].isna(), "mendel_name"].tolist()
     if still_missing:
@@ -119,35 +133,29 @@ def _load_sequence_table(csv_path: str) -> pd.DataFrame:
             print(f"    - '{name}'", flush=True)
         if len(still_missing) > 10:
             print(f"    ... and {len(still_missing) - 10} more", flush=True)
-
+    
     # Drop rows with no sequence
-    df = df.dropna(subset=["sequence"]).reset_index(drop=True)
-
-    if len(df) == 0:
+    sequences_df = df.dropna(subset=["sequence"]).reset_index(drop=True)
+    
+    if len(sequences_df) == 0:
         raise ValueError(
             "No sequences matched between CSV and FASTA. "
             "Check that the MenDel.Name column in the CSV matches "
             "the FASTA headers (text after '>')."
         )
-
-    df["sequence"] = df["sequence"].astype(str).str.strip().str.upper()
-
-    for idx, row in df.iterrows():
+    
+    sequences_df["sequence"] = sequences_df["sequence"].astype(str).str.strip().str.upper()
+    
+    for idx, row in sequences_df.iterrows():
         seq = row["sequence"]
         if len(seq) < 100:
             print(f"  [warn] {row['PL']} ({row['mendel_name']}): "
                   f"very short sequence ({len(seq)} bp)", flush=True)
-
-    print(f"  Final: {len(df)} sequences ready for scoring", flush=True)
-    return df
-
-
-def _load_activity_table(file_path: str) -> pd.DataFrame:
-    df = pd.read_csv(file_path)
-    pl_col = _pick_column(df, ["PL", "pl"])
-    renamed = df.rename(columns={pl_col: "PL"}).copy()
-    renamed["PL"] = renamed["PL"].astype(str)
-    return renamed
+    
+    print(f"  Final: {len(sequences_df)} sequences ready for scoring", flush=True)
+    print(f"  Activities table: {len(activities_df)} records", flush=True)
+    
+    return sequences_df, activities_df
 
 
 def _extract_score_components(prefix: str, component_values: dict[str, float]) -> dict[str, float]:
@@ -171,28 +179,20 @@ def _build_zero_shot_weights(config: dict) -> ZeroShotScoreWeights:
 
 
 def run_zero_shot_prediction(
-    sequences_path: str = None,
-    activities_path: str = None,
+    data_path: str = None,
     config_path: str = "config/default_config.yaml",
     output_dir: str = "results/",
 ) -> dict:
     """Run zero-shot Sox2 expression prediction."""
 
-    if sequences_path is None:
-        sequences_path = "data/processed/sequences_processed.csv"
-    if activities_path is None:
-        activities_path = "data/processed/activities_processed.csv"
+    if data_path is None:
+        data_path = "data/processed/merged_payloads.csv"
 
     config = load_config(config_path)
 
-    print(f"Loading sequences from {sequences_path}...", flush=True)
-    sequences_df = _load_sequence_table(sequences_path)
-    print(f"Loaded {len(sequences_df)} sequences", flush=True)
-
-    activities_df = None
-    if Path(activities_path).exists():
-        activities_df = _load_activity_table(activities_path)
-        print(f"Loaded {len(activities_df)} activity records", flush=True)
+    print(f"Loading data from {data_path}...", flush=True)
+    sequences_df, activities_df = _load_data(data_path)
+    print(f"Loaded {len(sequences_df)} sequences, {len(activities_df)} activity records", flush=True)
 
     zs_config = config.get("zero_shot", {})
     organism = zs_config.get("organism",
@@ -270,7 +270,6 @@ def run_zero_shot_prediction(
             "raw_score": score.raw_score,
             **_extract_score_components("component", score.component_values),
         })
-        break
 
     score_df = pd.DataFrame(score_rows)
 
@@ -373,17 +372,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Zero-shot Sox2 expression prediction using AlphaGenome"
     )
-    parser.add_argument("--sequences-file", type=str, default=None,
-                        help="CSV with PL and MenDel.Name columns")
-    parser.add_argument("--activities-file", type=str, default=None)
+    parser.add_argument("--data-file", type=str, default=None,
+                        help="CSV with PL, MenDel.Name, Activity, and Sequence columns")
     parser.add_argument("--output-dir", type=str, default="results/")
     parser.add_argument("--config", type=str, default="config/default_config.yaml")
 
     args = parser.parse_args()
 
     results = run_zero_shot_prediction(
-        sequences_path=args.sequences_file,
-        activities_path=args.activities_file,
+        data_path=args.data_file,
         config_path=args.config,
         output_dir=args.output_dir,
     )

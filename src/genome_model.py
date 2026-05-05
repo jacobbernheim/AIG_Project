@@ -57,10 +57,15 @@ class GenomeModel:
         self.organism_index = self.ORGANISM_MAP.get(self.organism)
         if self.organism_index is None:
             raise ValueError(f"Organism must be 'human' or 'mouse', got {organism}")
-        if device is None:
-            self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        if device is None or device == "cpu":
+            if torch.cuda.is_available():
+                self.device = torch.device("cuda")
+            else:
+                self.device = torch.device("cpu")
         else:
-            self.device = device
+            self.device = torch.device(device)
+        print(f"  Using device: {self.device} (CUDA available: {torch.cuda.is_available()})")
+
         self.model = None
         self._is_loaded = False
         self.track_metadata = TrackMetadata(csv_path=track_metadata_path, organism=self.organism)
@@ -89,8 +94,10 @@ class GenomeModel:
                     continue
             if model is not None:
                 self.model = model
+                self.model = self.model.to(self.device)
                 print(f"adding {self.organism} reference heads", flush=True)
                 self.model.add_reference_heads(organism=self.organism)
+                self.model = self.model.to(self.device)
             elif dna_model is not None:
                 self.model = dna_model.create(add_reference_heads=True, device=self.device)
             else:

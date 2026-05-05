@@ -30,10 +30,10 @@
       ]
     }
   },
-  "n_sequences_scored": 5,
+  "n_sequences_scored": 171,
   "organism": "mouse",
   "reference_pl": "PL018",
-  "reference_raw_score": null,
+  "reference_raw_score": 11869.651035308838,
   "requested_tracks": [
     "dnase",
     "chip_histone",
