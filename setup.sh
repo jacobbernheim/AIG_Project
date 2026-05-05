@@ -24,17 +24,45 @@ ENV_NAME="sox2-alphagenome"
 if conda env list | grep -q "^$ENV_NAME "; then
     echo "✓ Environment '$ENV_NAME' already exists"
     echo ""
-    echo "=========================================="
-    echo "Environment already installed!"
-    echo "=========================================="
-    echo ""
-    echo "To activate the environment, run:"
-    echo "  conda activate $ENV_NAME"
-    echo ""
-    echo "To verify installation, run:"
-    echo "  conda activate $ENV_NAME"
-    echo "  python example_inference.py"
-    echo ""
+    read -r -p "Recreate it from scratch? [r]emake / [e]xit: " choice
+    case "$choice" in
+        r|R|remake|Remake|REMAKE)
+            echo ""
+            echo "Removing existing environment..."
+            conda env remove -n $ENV_NAME --yes
+
+            echo ""
+            echo "Creating conda environment from environment.yml..."
+            echo ""
+            conda env create -f environment.yml --yes
+
+            echo ""
+            echo "Installing pip packages..."
+            conda run -n $ENV_NAME pip install --upgrade pip setuptools wheel
+            conda run -n $ENV_NAME pip install -r requirements.txt
+
+            echo ""
+            echo "=========================================="
+            echo "Environment recreated successfully!"
+            echo "=========================================="
+            echo ""
+            echo "To activate the environment, run:"
+            echo "  conda activate $ENV_NAME"
+            echo ""
+            echo "To verify installation, run:"
+            echo "  conda activate $ENV_NAME"
+            echo "  python example_inference.py"
+            echo ""
+            ;;
+        *)
+            echo "Keeping the existing environment unchanged."
+            echo ""
+            echo "To activate the environment, run:"
+            echo "  conda activate $ENV_NAME"
+            echo ""
+            exit 0
+            ;;
+    esac
 else
     echo "Creating conda environment from environment.yml..."
     echo ""
@@ -43,10 +71,7 @@ else
     echo ""
     echo "Installing pip packages..."
     conda run -n $ENV_NAME pip install --upgrade pip setuptools wheel
-    conda run -n $ENV_NAME pip install \
-        huggingface-hub \
-        pyfaidx
-    conda run -n $ENV_NAME pip install alphagenome-pytorch==0.2.8
+    conda run -n $ENV_NAME pip install -r requirements.txt
     
     echo ""
     echo "=========================================="

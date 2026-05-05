@@ -5,7 +5,7 @@ channels:
   - defaults
 dependencies:
   # Python
-  - python=3.11
+  - python=3.12
   
   # Core dependencies
   - numpy>=1.21.0
@@ -38,4 +38,9 @@ dependencies:
   # From pip (for packages not in conda)
   - pip
 
-# alphagenome-pytorch is installed via pip (see setup.sh)
+  - pip:
+      - alphagenome-pytorch==0.3.1
+      - huggingface-hub>=0.16.0
+      - pyfaidx>=0.7.0
+
+# AlphaGenome PyTorch is pinned to the documented release line used by the README/docs.

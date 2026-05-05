@@ -1,0 +1,36 @@
+{
+  "model_type": "alphagenome",
+  "architecture": "AlphaGenome",
+  "input_sequence_length": 1048576,
+  "organisms": ["human", "mouse"],
+  "heads": {
+    "atac": {"num_tracks": 256, "resolutions": [1, 128]},
+    "dnase": {"num_tracks": 384, "resolutions": [1, 128]},
+    "procap": {"num_tracks": 128, "resolutions": [1, 128]},
+    "cage": {"num_tracks": 640, "resolutions": [1, 128]},
+    "rna_seq": {"num_tracks": 768, "resolutions": [1, 128], "apply_squashing": true},
+    "chip_tf": {"num_tracks": 1664, "resolutions": [128]},
+    "chip_histone": {"num_tracks": 1152, "resolutions": [128]},
+    "contact_maps": {"num_maps": 28, "resolution": "64x64"},
+    "splice_sites_classification": {"num_classes": 5, "resolution": 1},
+    "splice_sites_usage": {"num_tracks": 734, "resolution": 1},
+    "splice_sites_junction": {"num_tissues": 367, "resolution": "pairwise"}
+  },
+  "encoder": {
+    "initial_channels": 768,
+    "num_down_blocks": 6,
+    "bin_sizes": [2, 4, 8, 16, 32, 64]
+  },
+  "transformer_tower": {
+    "d_model": 1536,
+    "num_blocks": 9
+  },
+  "output_embedders": {
+    "1bp": {"out_channels": 1536},
+    "128bp": {"out_channels": 3072},
+    "pair": {"out_channels": 128}
+  },
+  "tensor_format": "NLC",
+  "torch_dtype": "float32"
+}
+

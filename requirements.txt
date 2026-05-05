@@ -8,7 +8,7 @@ pyyaml>=5.4.0
 # For conda environment, use: conda env create -f environment.yml
 
 # AlphaGenome
-alphagenome-pytorch
+alphagenome-pytorch==0.3.1
 huggingface-hub>=0.16.0
 pyfaidx>=0.7.0
 

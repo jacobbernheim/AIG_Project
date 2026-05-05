@@ -24,17 +24,45 @@ ENV_NAME="sox2-alphagenome-gpu"
 if conda env list | grep -q "^$ENV_NAME "; then
     echo "✓ Environment '$ENV_NAME' already exists"
     echo ""
-    echo "=========================================="
-    echo "GPU environment already installed!"
-    echo "=========================================="
-    echo ""
-    echo "To activate the environment, run:"
-    echo "  conda activate $ENV_NAME"
-    echo ""
-    echo "To verify GPU access, run:"
-    echo "  conda activate $ENV_NAME"
-    echo "  python -c \"import torch; print('GPU available:', torch.cuda.is_available())\""
-    echo ""
+    read -r -p "Recreate it from scratch? [r]emake / [e]xit: " choice
+    case "$choice" in
+        r|R|remake|Remake|REMAKE)
+            echo ""
+            echo "Removing existing environment..."
+            conda env remove -n $ENV_NAME --yes
+
+            echo ""
+            echo "Creating GPU conda environment from environment-gpu.yml..."
+            echo ""
+            conda env create -f environment-gpu.yml --yes
+
+            echo ""
+            echo "Installing pip packages..."
+            conda run -n $ENV_NAME pip install --upgrade pip setuptools wheel
+            conda run -n $ENV_NAME pip install -r requirements.txt
+
+            echo ""
+            echo "=========================================="
+            echo "GPU environment recreated successfully!"
+            echo "=========================================="
+            echo ""
+            echo "To activate the environment, run:"
+            echo "  conda activate $ENV_NAME"
+            echo ""
+            echo "To verify GPU access, run:"
+            echo "  conda activate $ENV_NAME"
+            echo "  python -c \"import torch; print('GPU available:', torch.cuda.is_available())\""
+            echo ""
+            ;;
+        *)
+            echo "Keeping the existing GPU environment unchanged."
+            echo ""
+            echo "To activate the environment, run:"
+            echo "  conda activate $ENV_NAME"
+            echo ""
+            exit 0
+            ;;
+    esac
 else
     echo "Creating GPU conda environment from environment-gpu.yml..."
     echo ""
@@ -43,10 +71,7 @@ else
     echo ""
     echo "Installing pip packages..."
     conda run -n $ENV_NAME pip install --upgrade pip setuptools wheel
-    conda run -n $ENV_NAME pip install \
-        huggingface-hub \
-        pyfaidx
-    conda run -n $ENV_NAME pip install alphagenome-pytorch==0.2.8
+    conda run -n $ENV_NAME pip install -r requirements.txt
     
     echo ""
     echo "=========================================="

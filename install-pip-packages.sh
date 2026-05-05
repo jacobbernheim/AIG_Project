@@ -22,7 +22,7 @@ echo "Installing alphagenome-pytorch dependencies..."
 pip install huggingface-hub pyfaidx
 
 echo "Installing AlphaGenome PyTorch..."
-pip install alphagenome-pytorch==0.2.8
+pip install alphagenome-pytorch==0.3.1
 
 echo ""
 echo "✓ All pip packages installed successfully!"
