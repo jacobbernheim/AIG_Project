@@ -1,105 +1,87 @@
-"""
-Data preprocessing and formatting script.
-
-Reads raw CSV files from data/raw/ and outputs formatted data to data/processed/.
-
-Usage:
-    python preprocess_data.py [--raw-dir data/raw/] [--processed-dir data/processed/]
-"""
-
-import argparse
-from pathlib import Path
 import pandas as pd
 
-from src.data_loader import SequenceDataset
+# ── Base paths ───────────────────────────────────────────────────────────────
+RAW_DIR       = '/Users/jacobbernheim/Github-Projects/AIG_Project/data/raw/'
+PROCESSED_DIR = '/Users/jacobbernheim/Github-Projects/AIG_Project/data/processed/'
 
+# ── Load files ───────────────────────────────────────────────────────────────
+activities_df = pd.read_csv(RAW_DIR + 'Payload Activities.csv')
+categories_df = pd.read_csv(RAW_DIR + 'Payload Categories.csv')
+sequences_df  = pd.read_csv(RAW_DIR + 'all_sequences.csv', header=None)
 
-def preprocess_data(
-    raw_dir: str = "data/raw/",
-    processed_dir: str = "data/processed/",
-    sequences_file: str = "Payload Sequences.csv",
-    activities_file: str = "Payload Activities.csv",
-) -> None:
-    """
-    Load raw data, format it, and save to processed directory.
-    
-    Args:
-        raw_dir: Directory containing raw CSV files
-        processed_dir: Directory to save processed data
-        sequences_file: Name of sequences file
-        activities_file: Name of activities file
-    """
-    raw_dir = Path(raw_dir)
-    processed_dir = Path(processed_dir)
-    processed_dir.mkdir(parents=True, exist_ok=True)
-    
-    sequences_path = raw_dir / sequences_file
-    activities_path = raw_dir / activities_file
-    
-    print(f"Loading raw data from {raw_dir}...")
-    
-    # Load raw data
-    if not sequences_path.exists():
-        raise FileNotFoundError(f"Sequences file not found: {sequences_path}")
-    if not activities_path.exists():
-        raise FileNotFoundError(f"Activities file not found: {activities_path}")
-    
-    sequences_df = pd.read_csv(sequences_path)
-    activities_df = pd.read_csv(activities_path)
-    
-    print(f"Loaded {len(sequences_df)} sequences")
-    print(f"Loaded {len(activities_df)} activity records")
-    
-    # TODO: Add formatting logic here
-    # - Merge/align sequences with activities
-    # - Filter/validate sequences
-    # - Normalize expression values
-    # - Handle missing data
-    # - Any other preprocessing steps
-    
-    # For now, save raw data as processed (placeholder)
-    sequences_df.to_csv(processed_dir / "sequences_processed.csv", index=False)
-    activities_df.to_csv(processed_dir / "activities_processed.csv", index=False)
-    
-    print(f"Saved processed data to {processed_dir}")
-    print(f"  - sequences_processed.csv")
-    print(f"  - activities_processed.csv")
+# ── Clean up sequences file ───────────────────────────────────────────────────
+sequences_df.columns = ['MenDel.Name', 'Sequence']
+sequences_df['MenDel.Name'] = sequences_df['MenDel.Name'].str.strip()
 
+# ── Strip whitespace from MenDel.Name across all dfs ─────────────────────────
+for df in [activities_df, categories_df]:
+    df['MenDel.Name'] = df['MenDel.Name'].str.strip()
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Preprocess and format raw data files"
-    )
-    parser.add_argument(
-        "--raw-dir",
-        type=str,
-        default="data/raw/",
-        help="Directory containing raw CSV files"
-    )
-    parser.add_argument(
-        "--processed-dir",
-        type=str,
-        default="data/processed/",
-        help="Directory to save processed data"
-    )
-    parser.add_argument(
-        "--sequences-file",
-        type=str,
-        default="Payload Sequences.csv",
-        help="Name of sequences file in raw directory"
-    )
-    parser.add_argument(
-        "--activities-file",
-        type=str,
-        default="Payload Activities.csv",
-        help="Name of activities file in raw directory"
-    )
-    
-    args = parser.parse_args()
-    
-    preprocess_data(
-        raw_dir=args.raw_dir,
-        processed_dir=args.processed_dir,
-        sequences_file=args.sequences_file,
-        activities_file=args.activities_file,
-    )
+# ── Average numeric replicate columns in Activities ───────────────────────────
+cols_to_avg  = ['Sox2 (CAST)', 'Sox2 (BL6)', 'Fold Change', 'Activity']
+cols_to_keep = ['Project', 'groups', 'PL', 'MenDel.Name', 'Paper']
+
+# Keep one representative row for the non-numeric columns
+meta_df = (
+    activities_df[cols_to_keep]
+    .groupby('MenDel.Name', as_index=False)
+    .first()
+)
+
+# Average the numeric columns across replicates
+avg_df = (
+    activities_df[['MenDel.Name'] + cols_to_avg]
+    .groupby('MenDel.Name', as_index=False)
+    .mean(numeric_only=True)
+)
+
+activities_collapsed = meta_df.merge(avg_df, on='MenDel.Name')
+
+# ── Merge everything together ─────────────────────────────────────────────────
+# 1. Activities (collapsed) + Categories on MenDel.Name
+merged = activities_collapsed.merge(
+    categories_df[['MenDel.Name', 'Category']],
+    on='MenDel.Name',
+    how='outer'
+)
+
+# 2. Add sequences
+merged = merged.merge(
+    sequences_df,
+    on='MenDel.Name',
+    how='outer'
+)
+
+# ── Final column order ────────────────────────────────────────────────────────
+final_cols = [
+    'MenDel.Name',
+    'Project',
+    'groups',
+    'PL',
+    'Category',
+    'Paper',
+    'Sox2 (CAST)',
+    'Sox2 (BL6)',
+    'Fold Change',
+    'Activity',
+    'Sequence'
+]
+
+# Only include columns that actually exist
+final_cols = [c for c in final_cols if c in merged.columns]
+merged = merged[final_cols]
+
+# ── Save output ───────────────────────────────────────────────────────────────
+output_path = PROCESSED_DIR + 'merged_payloads.csv'
+merged.to_csv(output_path, index=False)
+
+print(f"Done! Output saved to: {output_path}")
+print(f"Shape: {merged.shape[0]} rows × {merged.shape[1]} columns")
+print(f"\nColumn names:\n{list(merged.columns)}")
+
+# ── Sanity check ──────────────────────────────────────────────────────────────
+print(f"\n── Row counts ──────────────────────────────────────────────────")
+print(f"Unique MenDel.Names in Activities:  {activities_df['MenDel.Name'].nunique()}")
+print(f"Unique MenDel.Names in Categories:  {categories_df['MenDel.Name'].nunique()}")
+print(f"Unique MenDel.Names in Sequences:   {sequences_df['MenDel.Name'].nunique()}")
+print(f"Rows in final merged file:          {merged.shape[0]}")
