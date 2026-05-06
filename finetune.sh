@@ -5,8 +5,8 @@
 #SBATCH --mem 20G
 #SBATCH --gres=gpu:1
 #SBATCH --time 0-04:00:00
-#SBATCH --job-name zero-shot-ag
-#SBATCH --output logs/zero-shot-ag-%J.log 
+#SBATCH --job-name finetune-ag
+#SBATCH --output logs/finetune-ag-%J.log 
 
 source /gpfs/data/shenhavlab/users/ca3261/set_r_conda.sh
 
@@ -14,6 +14,8 @@ conda activate sox2-alphagenome
 conda info
 echo "conda activated"
 
-python zero_shot_inference.py \
+python finetune.py \
     --data-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv" \
-    --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/
+    --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/ \
+    --category "Sub-DHS Level"
+# Sub-DHS Level, DHS Level

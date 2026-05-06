@@ -1,0 +1,97 @@
+{
+  "category": "DHS Level",
+  "category_col": "Category",
+  "split_seed": 42,
+  "split_fractions": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "split_sizes": {
+    "train": 94,
+    "val": 31,
+    "test": 33
+  },
+  "organism": "mouse",
+  "resolution": 128,
+  "tracks": [
+    "dnase",
+    "chip_histone",
+    "chip_tf"
+  ],
+  "signal_threshold": 0.0,
+  "feature_names": [
+    "dnase",
+    "h3k27ac",
+    "h3k4me1",
+    "ep300"
+  ],
+  "log_transform": true,
+  "model_type": "mlp",
+  "hyperparams": {
+    "hidden_dim": 32,
+    "dropout": 0.3,
+    "n_epochs_max": 200,
+    "batch_size": 16,
+    "lr": 0.0005,
+    "weight_decay": 0.01,
+    "patience": 9999
+  },
+  "training": {
+    "best_epoch": 189,
+    "best_val_loss": 0.05626647390665546,
+    "final_train_r": 0.02228575566456606,
+    "final_val_r": 0.4327173605406997
+  },
+  "train_metrics": {
+    "pearson_r": 0.29997726482304204,
+    "pearson_p": 0.003309340020263515,
+    "pearson_r2": 0.08998635941071349,
+    "spearman_rho": 0.3657341849831706,
+    "spearman_p": 0.0002890582765642732,
+    "r2": 0.04954598419176637,
+    "mse_log1p": 0.04526263523006576,
+    "rmse_log1p": 0.2127501709284055,
+    "mae_log1p": 0.18080400381728676,
+    "mape_pct": 447.4799295342728,
+    "n_samples": 94,
+    "mean_true": 0.3216075884634034,
+    "mean_pred": 0.2604936381722701,
+    "std_true": 0.30456907628549634,
+    "std_pred": 0.09541696967529556
+  },
+  "val_metrics": {
+    "pearson_r": 0.40872526197374986,
+    "pearson_p": 0.02243556835480907,
+    "pearson_r2": 0.16705633977551046,
+    "spearman_rho": 0.43306451612903224,
+    "spearman_p": 0.01495296420832088,
+    "r2": -0.10248201120323497,
+    "mse_log1p": 0.056266486671653425,
+    "rmse_log1p": 0.2372055789218572,
+    "mae_log1p": 0.19116830198270682,
+    "mape_pct": 395.5175968722652,
+    "n_samples": 31,
+    "mean_true": 0.3689781076635324,
+    "mean_pred": 0.4277677766738399,
+    "std_true": 0.3588146007855981,
+    "std_pred": 0.3234227543516055
+  },
+  "test_metrics": {
+    "pearson_r": 0.5518211727657862,
+    "pearson_p": 0.0008714391539924838,
+    "pearson_r2": 0.3045066067126077,
+    "spearman_rho": 0.3280688571661428,
+    "spearman_p": 0.06233480225497445,
+    "r2": 0.22094444706759808,
+    "mse_log1p": 0.04249416436777448,
+    "rmse_log1p": 0.2061411273079064,
+    "mae_log1p": 0.17485152774938884,
+    "mape_pct": 474.1309549335704,
+    "n_samples": 33,
+    "mean_true": 0.3241233776859713,
+    "mean_pred": 0.37906217033212836,
+    "std_true": 0.33045045532348927,
+    "std_pred": 0.2604937084199789
+  }
+}

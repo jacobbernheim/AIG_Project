@@ -1,0 +1,88 @@
+
+     active environment : sox2-alphagenome
+    active env location : /gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome
+            shell level : 2
+       user config file : /gpfs/data/shenhavlab/users/ca3261/.condarc
+ populated config files : 
+          conda version : 24.1.0
+    conda-build version : 24.1.1
+         python version : 3.11.5.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake_avx512
+                          __conda=24.1.0=0
+                          __cuda=12.9=0
+                          __glibc=2.28=0
+                          __linux=4.18.0=0
+                          __unix=0=0
+       base environment : /gpfs/share/apps/anaconda3/gpu/2023.09  (read only)
+      conda av data dir : /gpfs/share/apps/anaconda3/gpu/2023.09/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /gpfs/share/apps/anaconda3/gpu/2023.09/pkgs
+                          /gpfs/data/shenhavlab/users/ca3261/.conda/pkgs
+       envs directories : /gpfs/data/shenhavlab/users/ca3261/.conda/envs
+                          /gpfs/share/apps/anaconda3/gpu/2023.09/envs
+               platform : linux-64
+             user-agent : conda/24.1.0 requests/2.31.0 CPython/3.11.5 Linux/4.18.0-477.27.1.el8_8.x86_64 rhel/8.8 glibc/2.28 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.2 c/BBWx9H1I3PF_IylHJcfT0w s/acAZjIZPPYEd-rQDDgtAww e/uOXDcn5R0pE3aUHU75YGeQ
+                UID:GID : 1024291498:1024304291
+             netrc file : None
+           offline mode : False
+
+
+conda activated
+22:05:05 | INFO | Device: cuda
+22:05:05 | INFO | Forcing resolution → 128 bp
+22:05:05 | INFO | Loading data from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv …
+22:05:06 | INFO | Kept 207 / 213 rows after dropping NA
+22:05:06 | INFO | Category 'DHS Level': 158 rows
+22:05:06 | INFO | Split (seed=42): train=94 | val=31 | test=33
+22:05:06 | INFO | Initialising AlphaGenome (mouse)…
+  Using device: cuda (CUDA available: True)
+Creating AlphaGenome model on cuda...
+  Loaded via: constructor_no_args
+adding mouse reference heads
+22:05:10 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/feature_cache/features_dhs_level_seed42_train.npy
+22:05:10 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/feature_cache/features_dhs_level_seed42_val.npy
+22:05:10 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/feature_cache/features_dhs_level_seed42_test.npy
+22:05:10 | INFO | Sox2RegressionHead — 193 trainable parameters
+/gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+22:05:10 | INFO | Training — max_epochs=200 | lr=5.00e-04 | patience=9999
+22:05:10 | INFO | Epoch   1/200 | train loss=1.8064 r=0.009 | val loss=0.4206 r=0.331
+22:05:10 | INFO | Epoch  10/200 | train loss=1.1030 r=0.094 | val loss=0.6871 r=0.353
+22:05:10 | INFO | Epoch  20/200 | train loss=1.2062 r=0.089 | val loss=0.8962 r=0.364
+22:05:11 | INFO | Epoch  30/200 | train loss=0.6124 r=-0.051 | val loss=1.0209 r=0.371
+22:05:11 | INFO | Epoch  40/200 | train loss=0.6757 r=0.096 | val loss=0.8975 r=0.372
+22:05:11 | INFO | Epoch  50/200 | train loss=1.1395 r=0.088 | val loss=0.6616 r=0.375
+22:05:11 | INFO | Epoch  60/200 | train loss=0.7290 r=-0.108 | val loss=0.6958 r=0.385
+22:05:11 | INFO | Epoch  70/200 | train loss=0.6469 r=-0.115 | val loss=0.4465 r=0.379
+22:05:11 | INFO | Epoch  80/200 | train loss=0.7355 r=-0.109 | val loss=0.6068 r=0.384
+22:05:11 | INFO | Epoch  90/200 | train loss=0.2676 r=0.000 | val loss=0.6095 r=0.385
+22:05:12 | INFO | Epoch 100/200 | train loss=0.1513 r=0.269 | val loss=0.3100 r=0.390
+22:05:12 | INFO | Epoch 110/200 | train loss=0.3207 r=0.057 | val loss=0.2592 r=0.394
+22:05:12 | INFO | Epoch 120/200 | train loss=0.3988 r=0.033 | val loss=0.2604 r=0.397
+22:05:12 | INFO | Epoch 130/200 | train loss=0.2344 r=0.150 | val loss=0.2244 r=0.400
+22:05:12 | INFO | Epoch 140/200 | train loss=0.5096 r=0.063 | val loss=0.2916 r=0.405
+22:05:12 | INFO | Epoch 150/200 | train loss=0.3712 r=0.093 | val loss=0.2451 r=0.409
+22:05:12 | INFO | Epoch 160/200 | train loss=0.2357 r=0.130 | val loss=0.2087 r=0.412
+22:05:13 | INFO | Epoch 170/200 | train loss=0.1445 r=0.255 | val loss=0.2098 r=0.411
+22:05:13 | INFO | Epoch 180/200 | train loss=0.1241 r=0.096 | val loss=0.1107 r=0.429
+22:05:13 | INFO | Epoch 190/200 | train loss=0.1294 r=0.108 | val loss=0.0581 r=0.458
+22:05:13 | INFO | Epoch 200/200 | train loss=0.2528 r=0.022 | val loss=0.0920 r=0.433
+22:05:13 | INFO | Best epoch: 189 | best val loss: 0.0563
+22:05:13 | INFO | ============================================================
+22:05:13 | INFO | TEST RESULTS  (category='DHS Level', seed=42)
+22:05:13 | INFO |   MSE (log1p space)      : 0.0425
+22:05:13 | INFO |   Pearson r (log1p space): 0.5316
+22:05:13 | INFO |   Pearson r (orig scale) : 0.5518
+22:05:13 | INFO |   RMSE log1p (orig scale): 0.2061
+22:05:13 | INFO |   R² (orig scale)        : 0.2209
+22:05:13 | INFO | ============================================================
+22:05:13 | INFO | Saved artefacts to /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune
+22:05:13 | INFO |   test_predictions.csv
+22:05:13 | INFO |   training_history.csv
+22:05:13 | INFO |   fine_tune_summary.json
+Model loaded successfully

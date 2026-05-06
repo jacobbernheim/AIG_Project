@@ -1,0 +1,83 @@
+{
+  "category": "Sub-DHS Level",
+  "category_col": "Category",
+  "split_seed": 42,
+  "split_fractions": {
+    "train": 0.6,
+    "val": 0.2,
+    "test": 0.2
+  },
+  "split_sizes": {
+    "train": 29,
+    "val": 9,
+    "test": 11
+  },
+  "organism": "mouse",
+  "resolution": 128,
+  "tracks": [
+    "dnase",
+    "chip_histone",
+    "chip_tf"
+  ],
+  "signal_threshold": 0.0,
+  "feature_names": [
+    "dnase",
+    "h3k27ac",
+    "h3k4me1",
+    "ep300"
+  ],
+  "log_transform": true,
+  "model_type": "ridge",
+  "selected_alpha": 1.0,
+  "train_metrics": {
+    "pearson_r": 0.8658846616744995,
+    "pearson_p": 1.3116252528533323e-09,
+    "pearson_r2": 0.7497562766075134,
+    "spearman_rho": 0.8068965517241378,
+    "spearman_p": 1.2430164918882624e-07,
+    "r2": 0.4974242971725895,
+    "mse_log1p": 0.017505129799246788,
+    "rmse_log1p": 0.13230694830417633,
+    "mae_log1p": 0.12149272859096527,
+    "mape_pct": 246.092529296875,
+    "n_samples": 29,
+    "mean_true": 0.2791201174259186,
+    "mean_pred": 0.3018348813056946,
+    "std_true": 0.23978179693222046,
+    "std_pred": 0.08933581411838531
+  },
+  "val_metrics": {
+    "pearson_r": 0.4644086956977844,
+    "pearson_p": 0.2078840732574463,
+    "pearson_r2": 0.2156754434108734,
+    "spearman_rho": 0.65,
+    "spearman_p": 0.058073058017148654,
+    "r2": 0.21140727207759646,
+    "mse_log1p": 0.011518875136971474,
+    "rmse_log1p": 0.10732602328062057,
+    "mae_log1p": 0.07703113555908203,
+    "mape_pct": 63.36919021606445,
+    "n_samples": 9,
+    "mean_true": 0.32450738549232483,
+    "mean_pred": 0.3168170750141144,
+    "std_true": 0.16949419677257538,
+    "std_pred": 0.08668170869350433
+  },
+  "test_metrics": {
+    "pearson_r": 0.3192331790924072,
+    "pearson_p": 0.3386150896549225,
+    "pearson_r2": 0.1019098237156868,
+    "spearman_rho": 0.3272727272727273,
+    "spearman_p": 0.3258949410128415,
+    "r2": 0.08185548034701706,
+    "mse_log1p": 0.03102971240878105,
+    "rmse_log1p": 0.1761525273323059,
+    "mae_log1p": 0.16043366491794586,
+    "mape_pct": 194.49114990234375,
+    "n_samples": 11,
+    "mean_true": 0.34720301628112793,
+    "mean_pred": 0.37546297907829285,
+    "std_true": 0.2464390993118286,
+    "std_pred": 0.09914880990982056
+  }
+}

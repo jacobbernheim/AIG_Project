@@ -1,5 +1,4 @@
 {
-  "fasta_file": "data/raw/Payload Sequences - Ribeiro-dos-Santos_Supplemental_Data_S1.fasta",
   "mesc_channels": {
     "dnase": {
       "cell_line": "ES-CJ7",
@@ -30,10 +29,10 @@
       ]
     }
   },
-  "n_sequences_scored": 171,
+  "n_sequences_scored": 229,
   "organism": "mouse",
   "reference_pl": "PL018",
-  "reference_raw_score": 11869.651035308838,
+  "reference_raw_score": 2496.742546081543,
   "requested_tracks": [
     "dnase",
     "chip_histone",

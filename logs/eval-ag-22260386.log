@@ -1,0 +1,85 @@
+
+     active environment : sox2-alphagenome
+    active env location : /gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome
+            shell level : 2
+       user config file : /gpfs/data/shenhavlab/users/ca3261/.condarc
+ populated config files : 
+          conda version : 24.1.0
+    conda-build version : 24.1.1
+         python version : 3.11.5.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake_avx512
+                          __conda=24.1.0=0
+                          __cuda=12.9=0
+                          __glibc=2.28=0
+                          __linux=4.18.0=0
+                          __unix=0=0
+       base environment : /gpfs/share/apps/anaconda3/gpu/2023.09  (read only)
+      conda av data dir : /gpfs/share/apps/anaconda3/gpu/2023.09/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /gpfs/share/apps/anaconda3/gpu/2023.09/pkgs
+                          /gpfs/data/shenhavlab/users/ca3261/.conda/pkgs
+       envs directories : /gpfs/data/shenhavlab/users/ca3261/.conda/envs
+                          /gpfs/share/apps/anaconda3/gpu/2023.09/envs
+               platform : linux-64
+             user-agent : conda/24.1.0 requests/2.31.0 CPython/3.11.5 Linux/4.18.0-477.27.1.el8_8.x86_64 rhel/8.8 glibc/2.28 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.2 c/BBWx9H1I3PF_IylHJcfT0w s/P87YRht2--Z82mjKHjLOAg e/uOXDcn5R0pE3aUHU75YGeQ
+                UID:GID : 1024291498:1024304291
+             netrc file : None
+           offline mode : False
+
+
+conda activated
+21:18:32 | INFO | Loading zero-shot scores from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/zero_shot_scores.csv …
+21:18:32 | INFO | ──────────────────────────────────────────────────
+21:18:32 | INFO | Category: 'Sub-DHS Level'
+21:18:32 | INFO |   Total rows in category: 49
+21:18:32 | INFO |   Split (seed=42): train=29 | val=9 | test=11
+21:18:32 | INFO |   Pearson  r = 0.7645  (p = 0.00614)
+21:18:32 | INFO |   Spearman ρ = 0.5455  (p = 0.0827)
+21:18:32 | INFO |   RMSE log1p = 0.2655
+21:18:32 | INFO |   MAPE %     = 73.75
+21:18:32 | INFO | ──────────────────────────────────────────────────
+21:18:32 | INFO | Category: 'DHS Level'
+21:18:32 | INFO |   Total rows in category: 180
+21:18:32 | INFO |   Split (seed=42): train=108 | val=36 | test=36
+21:18:32 | INFO |   Pearson  r = 0.4986  (p = 0.00197)
+21:18:32 | INFO |   Spearman ρ = 0.5033  (p = 0.00175)
+21:18:32 | INFO |   RMSE log1p = 0.5833
+21:18:32 | INFO |   MAPE %     = 562.20
+21:18:32 | INFO | Metrics JSON → /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/results/eval_zero_shot/zero_shot_eval_metrics.json
+21:18:32 | INFO | Per-sample predictions → /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/results/eval_zero_shot/zero_shot_test_predictions.csv
+
+
+======================================================================
+  ZERO-SHOT EVALUATION  —  TEST SPLITS
+  Score column : normalized_score
+  Split seed   : 42
+  Split fracs  : train=0.6  val=0.2  test=0.2
+======================================================================
+---------------------------------------------------------
+Metric                      Sub-DHS Level       DHS Level
+---------------------------------------------------------
+Pearson r                          0.7645          0.4986
+Pearson r²                         0.5844          0.2486
+Spearman ρ                         0.5455          0.5033
+R²                                -1.0265        -62.1489
+RMSE (log1p)                       0.2655          0.5833
+MAE  (log1p)                       0.2202          0.3261
+MAPE (%)                            73.75          562.20
+N samples                              11              36
+---------------------------------------------------------
+
+  [Sub-DHS Level]
+    Pearson  r = 0.7645  (p = 0.00614)
+    Spearman ρ = 0.5455  (p = 0.0827)
+    N test     = 11
+
+  [DHS Level]
+    Pearson  r = 0.4986  (p = 0.00197)
+    Spearman ρ = 0.5033  (p = 0.00175)
+    N test     = 36
+

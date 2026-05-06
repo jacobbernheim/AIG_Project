@@ -32,45 +32,6 @@ from src.genome_model import GenomeModel
 DEFAULT_ORGANISM = "mouse"
 DEFAULT_TRACKS = ["dnase", "chip_histone", "chip_tf"]
 DEFAULT_REFERENCE_PL = "PL018"
-FASTA_PATH = "data/raw/Payload Sequences - Ribeiro-dos-Santos_Supplemental_Data_S1.fasta"
-
-
-def _normalize_column_name(column_name: str) -> str:
-    return "".join(ch for ch in column_name.lower() if ch.isalnum())
-
-
-def _pick_column(dataframe: pd.DataFrame, candidates: list[str]) -> str:
-    lookup = {_normalize_column_name(c): c for c in dataframe.columns}
-    for candidate in candidates:
-        norm = _normalize_column_name(candidate)
-        if norm in lookup:
-            return lookup[norm]
-    raise KeyError(f"Could not find any of these columns: {candidates}")
-
-
-def load_fasta(fasta_path: str) -> dict[str, str]:
-    """Load a FASTA file into a dict of {header_name: sequence}."""
-    sequences = {}
-    current_name = None
-    current_seq_parts = []
-
-    with open(fasta_path, "r") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            if line.startswith(">"):
-                if current_name is not None:
-                    sequences[current_name] = "".join(current_seq_parts)
-                current_name = line[1:].strip()
-                current_seq_parts = []
-            else:
-                current_seq_parts.append(line)
-
-    if current_name is not None:
-        sequences[current_name] = "".join(current_seq_parts)
-
-    return sequences
 
 
 def _load_data(csv_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -84,65 +45,21 @@ def _load_data(csv_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
         and the full table for activity lookup.
     """
     df = pd.read_csv(csv_path)
-    
-    # Standardize PL column
-    pl_col = _pick_column(df, ["PL", "pl"])
-    df = df.rename(columns={pl_col: "PL"})
     df["PL"] = df["PL"].astype(str)
-    
-    # Standardize MenDel.Name column
-    mendel_col = _pick_column(df, [
-        "MenDel.Name", "MenDelName", "mendel_name", "mendelname",
-        "Mendel.Name", "mendel.name", "Name", "name",
-    ])
+    mendel_col = "MenDel.Name"
     df = df.rename(columns={mendel_col: "mendel_name"})
     df["mendel_name"] = df["mendel_name"].astype(str).str.strip()
+    df = df.rename(columns={"Sequence": "sequence"})
     
-    # ---- Activities: just the full table with PL standardized ----
     activities_df = df.copy()
     
-    # ---- Sequences: join from FASTA ----
-    print(f"Loading sequences from FASTA: {FASTA_PATH}", flush=True)
-    fasta_sequences = load_fasta(FASTA_PATH)
-    print(f"  Loaded {len(fasta_sequences)} sequences from FASTA", flush=True)
-    
-    fasta_names = list(fasta_sequences.keys())
-    print(f"  First 5 FASTA headers: {fasta_names[:5]}", flush=True)
-    print(f"  First 5 CSV mendel_names: {df['mendel_name'].head().tolist()}", flush=True)
-    
-    # Join: try exact match first
-    df["sequence"] = df["mendel_name"].map(fasta_sequences)
-    n_matched = df["sequence"].notna().sum()
+    n_seq = df["sequence"].notna().sum()
     n_total = len(df)
-    print(f"  Matched {n_matched}/{n_total} sequences by exact MenDel name", flush=True)
-    
-    # If exact match didn't work well, try normalized matching
-    if n_matched < n_total:
-        fasta_normalized = {k.strip(): v for k, v in fasta_sequences.items()}
-        unmatched = df["sequence"].isna()
-        df.loc[unmatched, "sequence"] = df.loc[unmatched, "mendel_name"].map(fasta_normalized)
-        n_matched_after = df["sequence"].notna().sum()
-        if n_matched_after > n_matched:
-            print(f"  After normalization: matched {n_matched_after}/{n_total}", flush=True)
-    
-    # Report any still-unmatched
-    still_missing = df.loc[df["sequence"].isna(), "mendel_name"].tolist()
-    if still_missing:
-        print(f"  WARNING: {len(still_missing)} sequences not found in FASTA:", flush=True)
-        for name in still_missing[:10]:
-            print(f"    - '{name}'", flush=True)
-        if len(still_missing) > 10:
-            print(f"    ... and {len(still_missing) - 10} more", flush=True)
-    
-    # Drop rows with no sequence
+    print(f"  Sequences {n_seq}/{n_total} not NA", flush=True)
     sequences_df = df.dropna(subset=["sequence"]).reset_index(drop=True)
     
     if len(sequences_df) == 0:
-        raise ValueError(
-            "No sequences matched between CSV and FASTA. "
-            "Check that the MenDel.Name column in the CSV matches "
-            "the FASTA headers (text after '>')."
-        )
+        raise ValueError("no sequences")
     
     sequences_df["sequence"] = sequences_df["sequence"].astype(str).str.strip().str.upper()
     
@@ -204,7 +121,6 @@ def run_zero_shot_prediction(
     )
     signal_threshold = float(zs_config.get("signal_threshold", 0.0))
 
-    # chip_histone and chip_tf only available at 128bp
     if any(t in requested_tracks for t in ["chip_histone", "chip_tf"]):
         if prediction_resolution != 128:
             print(f"  [info] Forcing resolution to 128bp "
@@ -273,7 +189,6 @@ def run_zero_shot_prediction(
 
     score_df = pd.DataFrame(score_rows)
 
-    # Normalize to reference
     ref_match = score_df.loc[score_df["PL"] == reference_pl]
     if ref_match.empty:
         print(f"\n  [warn] Reference PL '{reference_pl}' not found in scored sequences.",
@@ -309,7 +224,6 @@ def run_zero_shot_prediction(
               f"{score_df['normalized_score'].max():.4f}", flush=True)
     print(f"{'='*60}", flush=True)
 
-    # Save
     results = {
         "predictions": score_df["normalized_score"].to_numpy(),
         "raw_scores": score_df["raw_score"].to_numpy(),
@@ -335,7 +249,6 @@ def run_zero_shot_prediction(
             "resolution": prediction_resolution,
             "requested_tracks": requested_tracks,
             "signal_threshold": signal_threshold,
-            "fasta_file": str(FASTA_PATH),
             "n_sequences_scored": len(score_df),
             "scoring_method": "signal_mass (sum of positive signal, scales with length)",
             "mesc_channels": {
@@ -370,7 +283,7 @@ def run_zero_shot_prediction(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Zero-shot Sox2 expression prediction using AlphaGenome"
+        description="zero-shot sox2 expression prediction using alphaGenome"
     )
     parser.add_argument("--data-file", type=str, default=None,
                         help="CSV with PL, MenDel.Name, Activity, and Sequence columns")

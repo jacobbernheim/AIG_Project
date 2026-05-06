@@ -1,0 +1,1760 @@
+
+     active environment : sox2-alphagenome
+    active env location : /gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome
+            shell level : 2
+       user config file : /gpfs/data/shenhavlab/users/ca3261/.condarc
+ populated config files : 
+          conda version : 24.1.0
+    conda-build version : 24.1.1
+         python version : 3.11.5.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake_avx512
+                          __conda=24.1.0=0
+                          __cuda=12.9=0
+                          __glibc=2.28=0
+                          __linux=4.18.0=0
+                          __unix=0=0
+       base environment : /gpfs/share/apps/anaconda3/gpu/2023.09  (read only)
+      conda av data dir : /gpfs/share/apps/anaconda3/gpu/2023.09/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /gpfs/share/apps/anaconda3/gpu/2023.09/pkgs
+                          /gpfs/data/shenhavlab/users/ca3261/.conda/pkgs
+       envs directories : /gpfs/data/shenhavlab/users/ca3261/.conda/envs
+                          /gpfs/share/apps/anaconda3/gpu/2023.09/envs
+               platform : linux-64
+             user-agent : conda/24.1.0 requests/2.31.0 CPython/3.11.5 Linux/4.18.0-477.27.1.el8_8.x86_64 rhel/8.8 glibc/2.28 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.2 c/BBWx9H1I3PF_IylHJcfT0w s/DS0V2ouM6uubKAADA6HKyA e/uOXDcn5R0pE3aUHU75YGeQ
+                UID:GID : 1024291498:1024304291
+             netrc file : None
+           offline mode : False
+
+
+conda activated
+Loading data from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv...
+  Matched 207/213 sequences by exact MenDel name
+  Final: 207 sequences ready for scoring
+  Activities table: 213 records
+Loaded 207 sequences, 213 activity records
+  [info] Forcing resolution to 128bp (chip_histone/chip_tf only at 128bp)
+
+Initializing AlphaGenome model...
+  Using device: cuda (CUDA available: True)
+Model info: {'organism': 'mouse', 'device': 'cuda'}
+Creating AlphaGenome model on cuda...
+  Loaded via: constructor_no_args
+adding mouse reference heads
+Model loaded successfully
+
+============================================================
+mESC Zero-Shot Scoring Configuration
+============================================================
+  Organism:         mouse
+  Resolution:       128bp
+  Tracks:           ['dnase', 'chip_histone', 'chip_tf']
+  Reference:        PL018
+  Signal threshold: 0.0
+  DNase:            ES-CJ7 ch[23]
+  H3K27ac:          ES-Bruce4 ch[50]
+  H3K4me1:          ES-Bruce4 ch[51]
+  EP300:            ES-Bruce4 ch[89]
+  Weights:          dnase=1.0, h3k27ac=1.0, h3k4me1=0.8, ep300=0.6
+  Scoring method:   signal mass (sum of positive signal)
+============================================================
+
+Scoring 207 sequences...
+  0%|          | 0/207 [00:00<?, ?it/s]
+  [0/207] PL337 (EnhancerCluster_HPRT1RnoCpGspacer_Sox2DHS23andPrdm14DHS52dn, 96857 bp)
+  0%|          | 1/207 [00:03<12:49,  3.74s/it]  1%|          | 2/207 [00:04<06:28,  1.89s/it]  1%|▏         | 3/207 [00:04<04:25,  1.30s/it]  2%|▏         | 4/207 [00:05<03:28,  1.03s/it]  2%|▏         | 5/207 [00:06<03:05,  1.09it/s]  3%|▎         | 6/207 [00:06<02:21,  1.42it/s]  4%|▍         | 8/207 [00:07<01:45,  1.89it/s]  4%|▍         | 9/207 [00:07<01:50,  1.79it/s]  5%|▌         | 11/207 [00:08<01:09,  2.83it/s]  6%|▋         | 13/207 [00:08<00:47,  4.05it/s]  7%|▋         | 15/207 [00:08<00:44,  4.32it/s]  8%|▊         | 16/207 [00:08<00:47,  4.00it/s]  8%|▊         | 17/207 [00:09<00:50,  3.75it/s]  9%|▉         | 19/207 [00:09<00:36,  5.21it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1278.3552, 768/768 bins active (100.0%), mean_active=1.6645
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=126.3444, 768/768 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=336.0112, 768/768 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=116.1374, 768/768 bins active (100.0%)
+  [scorer] Raw score: 1743.191045
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1329.1332, 768/768 bins active (100.0%), mean_active=1.7306
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=125.3931, 768/768 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=346.2407, 768/768 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=107.6237, 768/768 bins active (100.0%)
+  [scorer] Raw score: 1796.093045
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1433.7531, 768/768 bins active (100.0%), mean_active=1.8669
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=134.1446, 768/768 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=366.1874, 768/768 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=100.5357, 768/768 bins active (100.0%)
+  [scorer] Raw score: 1921.168969
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1644.3430, 768/768 bins active (100.0%), mean_active=2.1411
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=148.9959, 768/768 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=394.8441, 768/768 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=92.6986, 768/768 bins active (100.0%)
+  [scorer] Raw score: 2164.833274
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=30.5607, 16/16 bins active (100.0%), mean_active=1.9100
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=2.0579, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=5.3729, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=3.5156, 16/16 bins active (100.0%)
+  [scorer] Raw score: 39.026209
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=63.0654, 32/32 bins active (100.0%), mean_active=1.9708
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=4.1556, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=12.4580, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=8.0680, 32/32 bins active (100.0%)
+  [scorer] Raw score: 82.028124
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=30.3989, 16/16 bins active (100.0%), mean_active=1.8999
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.7660, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=5.6973, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=3.3820, 16/16 bins active (100.0%)
+  [scorer] Raw score: 38.751991
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1887.7849, 800/800 bins active (100.0%), mean_active=2.3597
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=135.8039, 800/800 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=425.6468, 800/800 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=97.3686, 800/800 bins active (100.0%)
+  [scorer] Raw score: 2422.527464
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2117.5239, 816/816 bins active (100.0%), mean_active=2.5950
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=147.2879, 816/816 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=472.2440, 816/816 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=80.8923, 816/816 bins active (100.0%)
+  [scorer] Raw score: 2691.142399
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=74.2916, 32/32 bins active (100.0%), mean_active=2.3216
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=3.5601, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=13.8568, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=9.0475, 32/32 bins active (100.0%)
+  [scorer] Raw score: 94.365701
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=37.7794, 16/16 bins active (100.0%), mean_active=2.3612
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=2.3722, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=8.0007, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=3.9726, 16/16 bins active (100.0%)
+  [scorer] Raw score: 48.935699
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=36.0943, 16/16 bins active (100.0%), mean_active=2.2559
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.4876, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=5.1777, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=5.7740, 16/16 bins active (100.0%)
+  [scorer] Raw score: 45.188535
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=37.0658, 16/16 bins active (100.0%), mean_active=2.3166
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.7359, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=5.5158, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=6.4833, 16/16 bins active (100.0%)
+  [scorer] Raw score: 47.104345
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=77.7355, 32/32 bins active (100.0%), mean_active=2.4292
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=3.8508, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=12.3111, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=16.9065, 32/32 bins active (100.0%)
+  [scorer] Raw score: 101.579044
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=349.5474, 160/160 bins active (100.0%), mean_active=2.1847
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=21.4571, 160/160 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=57.8894, 160/160 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=68.8675, 160/160 bins active (100.0%)
+  [scorer] Raw score: 458.636601
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=214.8143, 96/96 bins active (100.0%), mean_active=2.2376
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=14.4956, 96/96 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=33.7695, 96/96 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=45.0396, 96/96 bins active (100.0%)
+  [scorer] Raw score: 283.349256
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=292.2550, 128/128 bins active (100.0%), mean_active=2.2832
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=22.4817, 128/128 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=58.6653, 128/128 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=55.0167, 128/128 bins active (100.0%)
+  [scorer] Raw score: 394.678897
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=85.7999, 32/32 bins active (100.0%), mean_active=2.6812
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=4.1057, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=16.2475, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=16.9131, 32/32 bins active (100.0%)
+  [scorer] Raw score: 113.051531
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=38.4709, 16/16 bins active (100.0%), mean_active=2.4044
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.5736, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=6.5015, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=8.0550, 16/16 bins active (100.0%)
+  [scorer] Raw score: 50.078713
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=85.3232, 32/32 bins active (100.0%), mean_active=2.6663
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=2.7442, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=19.5527, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=17.5265, 32/32 bins active (100.0%)
+  [scorer] Raw score: 114.225460
+
+  [20/207] PL212 (EnhancerCluster_Pair_Sox2DHS23andNanogDHS48up, 1746 bp)
+ 10%|█         | 21/207 [00:09<00:27,  6.65it/s] 11%|█         | 23/207 [00:09<00:22,  8.02it/s] 12%|█▏        | 25/207 [00:09<00:19,  9.23it/s] 13%|█▎        | 27/207 [00:09<00:17, 10.36it/s] 14%|█▍        | 29/207 [00:10<00:15, 11.16it/s] 15%|█▍        | 31/207 [00:10<00:14, 11.79it/s] 16%|█▌        | 33/207 [00:10<00:14, 12.12it/s] 17%|█▋        | 35/207 [00:10<00:13, 12.50it/s] 18%|█▊        | 37/207 [00:10<00:13, 12.55it/s] 19%|█▉        | 39/207 [00:10<00:12, 12.96it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=41.3206, 16/16 bins active (100.0%), mean_active=2.5825
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.6440, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=10.0053, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=10.1815, 16/16 bins active (100.0%)
+  [scorer] Raw score: 57.077638
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=43.9764, 16/16 bins active (100.0%), mean_active=2.7485
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.7421, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=12.3743, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=7.6286, 16/16 bins active (100.0%)
+  [scorer] Raw score: 60.195185
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=87.4879, 32/32 bins active (100.0%), mean_active=2.7340
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.7573, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=27.9697, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=14.9407, 32/32 bins active (100.0%)
+  [scorer] Raw score: 120.585418
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=42.1044, 16/16 bins active (100.0%), mean_active=2.6315
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.8287, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=20.6553, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=6.1954, 16/16 bins active (100.0%)
+  [scorer] Raw score: 64.174615
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=84.4765, 32/32 bins active (100.0%), mean_active=2.6399
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.5369, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=30.8310, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=9.5616, 32/32 bins active (100.0%)
+  [scorer] Raw score: 116.415150
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=45.2579, 16/16 bins active (100.0%), mean_active=2.8286
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.1835, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=19.3210, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=3.0034, 16/16 bins active (100.0%)
+  [scorer] Raw score: 63.700187
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=46.5013, 16/16 bins active (100.0%), mean_active=2.9063
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.9586, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=23.3691, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=2.4582, 16/16 bins active (100.0%)
+  [scorer] Raw score: 68.630144
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=47.0479, 16/16 bins active (100.0%), mean_active=2.9405
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.3027, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=20.5650, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=1.1088, 16/16 bins active (100.0%)
+  [scorer] Raw score: 65.467833
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=88.1296, 32/32 bins active (100.0%), mean_active=2.7541
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.0476, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=41.2564, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=2.3626, 32/32 bins active (100.0%)
+  [scorer] Raw score: 123.599926
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=47.8394, 16/16 bins active (100.0%), mean_active=2.9900
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.5470, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=27.4523, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.6636, 16/16 bins active (100.0%)
+  [scorer] Raw score: 71.746444
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=84.3527, 32/32 bins active (100.0%), mean_active=2.6360
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.7420, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=36.7962, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=1.1956, 32/32 bins active (100.0%)
+  [scorer] Raw score: 115.249135
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=73.9402, 32/32 bins active (100.0%), mean_active=2.3106
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.3747, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=30.9921, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.6643, 32/32 bins active (100.0%)
+  [scorer] Raw score: 99.507122
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=73.2990, 32/32 bins active (100.0%), mean_active=2.2906
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.2161, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=23.1840, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.5100, 32/32 bins active (100.0%)
+  [scorer] Raw score: 92.368309
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=47.8132, 16/16 bins active (100.0%), mean_active=2.9883
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.7694, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=17.8876, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.1165, 16/16 bins active (100.0%)
+  [scorer] Raw score: 62.962530
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=68.0476, 32/32 bins active (100.0%), mean_active=2.1265
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.1291, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=19.6946, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.1729, 32/32 bins active (100.0%)
+  [scorer] Raw score: 84.036070
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=58.8001, 32/32 bins active (100.0%), mean_active=1.8375
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0291, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=10.4510, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.2429, 32/32 bins active (100.0%)
+  [scorer] Raw score: 67.335690
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=52.4351, 32/32 bins active (100.0%), mean_active=1.6386
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0232, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=11.2770, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.2955, 32/32 bins active (100.0%)
+  [scorer] Raw score: 61.657200
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=41.7652, 16/16 bins active (100.0%), mean_active=2.6103
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.1923, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=5.3718, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0671, 16/16 bins active (100.0%)
+  [scorer] Raw score: 46.295238
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=39.6642, 16/16 bins active (100.0%), mean_active=2.4790
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.1361, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=3.9697, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0489, 16/16 bins active (100.0%)
+  [scorer] Raw score: 43.005365
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=48.2936, 16/16 bins active (100.0%), mean_active=3.0183
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.2531, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=12.2594, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0259, 16/16 bins active (100.0%)
+  [scorer] Raw score: 58.369676
+
+  [40/207] PL220 (EnhancerCluster_Pair_Sox2DHS24andNanogDHS58dn, 1831 bp)
+ 20%|█▉        | 41/207 [00:11<00:12, 13.27it/s] 21%|██        | 43/207 [00:11<00:12, 13.33it/s] 22%|██▏       | 45/207 [00:11<00:11, 13.56it/s] 23%|██▎       | 47/207 [00:11<00:11, 13.47it/s] 24%|██▎       | 49/207 [00:11<00:11, 13.29it/s] 25%|██▍       | 51/207 [00:11<00:11, 13.34it/s] 26%|██▌       | 53/207 [00:11<00:11, 13.21it/s] 27%|██▋       | 55/207 [00:14<00:55,  2.74it/s] 27%|██▋       | 56/207 [00:14<00:54,  2.75it/s] 28%|██▊       | 57/207 [00:14<00:52,  2.85it/s] 28%|██▊       | 58/207 [00:15<00:51,  2.87it/s] 29%|██▉       | 60/207 [00:15<00:35,  4.15it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=41.8181, 16/16 bins active (100.0%), mean_active=2.6136
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.3426, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=7.2212, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0154, 16/16 bins active (100.0%)
+  [scorer] Raw score: 47.946918
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=56.3536, 32/32 bins active (100.0%), mean_active=1.7610
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0139, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=4.4660, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0268, 32/32 bins active (100.0%)
+  [scorer] Raw score: 59.956342
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=31.0701, 16/16 bins active (100.0%), mean_active=1.9419
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0467, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.6191, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0131, 16/16 bins active (100.0%)
+  [scorer] Raw score: 32.419889
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=40.0605, 16/16 bins active (100.0%), mean_active=2.5038
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.1110, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.3468, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0089, 16/16 bins active (100.0%)
+  [scorer] Raw score: 41.254294
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=36.6767, 16/16 bins active (100.0%), mean_active=2.2923
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0192, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.5040, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0070, 16/16 bins active (100.0%)
+  [scorer] Raw score: 37.103220
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=69.9196, 32/32 bins active (100.0%), mean_active=2.1850
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0119, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=4.0219, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0089, 32/32 bins active (100.0%)
+  [scorer] Raw score: 73.154299
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=50.7810, 16/16 bins active (100.0%), mean_active=3.1738
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0790, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.1146, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0155, 16/16 bins active (100.0%)
+  [scorer] Raw score: 51.761015
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=74.7182, 32/32 bins active (100.0%), mean_active=2.3349
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0102, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=3.7543, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0076, 32/32 bins active (100.0%)
+  [scorer] Raw score: 77.736399
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=59.9603, 32/32 bins active (100.0%), mean_active=1.8738
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0137, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=3.0816, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0057, 32/32 bins active (100.0%)
+  [scorer] Raw score: 62.442736
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=63.8181, 32/32 bins active (100.0%), mean_active=1.9943
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0054, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=2.9676, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0034, 32/32 bins active (100.0%)
+  [scorer] Raw score: 66.199667
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=54.8232, 16/16 bins active (100.0%), mean_active=3.4265
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0173, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.4172, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0052, 16/16 bins active (100.0%)
+  [scorer] Raw score: 55.177390
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=76.8028, 32/32 bins active (100.0%), mean_active=2.4001
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0196, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=3.0160, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0037, 32/32 bins active (100.0%)
+  [scorer] Raw score: 79.237370
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=67.2461, 32/32 bins active (100.0%), mean_active=2.1014
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0119, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=2.8576, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0077, 32/32 bins active (100.0%)
+  [scorer] Raw score: 69.548643
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=7333.4241, 1312/1312 bins active (100.0%), mean_active=5.5895
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=5.9438, 1312/1312 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=288.1574, 1312/1312 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.1209, 1312/1312 bins active (100.0%)
+  [scorer] Raw score: 7569.966396
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=6270.5599, 1072/1072 bins active (100.0%), mean_active=5.8494
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=2.9603, 1072/1072 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=557.5654, 1072/1072 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0347, 1072/1072 bins active (100.0%)
+  [scorer] Raw score: 6719.593358
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2160.0411, 368/368 bins active (100.0%), mean_active=5.8697
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.4108, 368/368 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=410.9026, 368/368 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0027, 368/368 bins active (100.0%)
+  [scorer] Raw score: 2489.175585
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=397.0962, 64/64 bins active (100.0%), mean_active=6.2046
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0525, 64/64 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=121.9719, 64/64 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0003, 64/64 bins active (100.0%)
+  [scorer] Raw score: 494.726439
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1381.0761, 224/224 bins active (100.0%), mean_active=6.1655
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.3514, 224/224 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=557.6270, 224/224 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0002, 224/224 bins active (100.0%)
+  [scorer] Raw score: 1827.529190
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=86.6923, 16/16 bins active (100.0%), mean_active=5.4183
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0003, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=10.1764, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 94.833690
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=51.5242, 16/16 bins active (100.0%), mean_active=3.2203
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.3188, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 52.579338
+
+  [60/207] PL209 (EnhancerCluster_Single_NanogDHS55dn, 570 bp)
+ 30%|██▉       | 62/207 [00:15<00:26,  5.55it/s] 31%|███       | 64/207 [00:15<00:20,  6.98it/s] 32%|███▏      | 66/207 [00:15<00:16,  8.36it/s] 33%|███▎      | 68/207 [00:15<00:14,  9.60it/s] 34%|███▍      | 70/207 [00:15<00:12, 10.66it/s] 35%|███▍      | 72/207 [00:16<00:11, 11.53it/s] 36%|███▌      | 74/207 [00:16<00:10, 12.20it/s] 37%|███▋      | 76/207 [00:16<00:10, 12.71it/s] 38%|███▊      | 78/207 [00:16<00:09, 13.09it/s] 39%|███▊      | 80/207 [00:16<00:09, 13.02it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=43.1184, 16/16 bins active (100.0%), mean_active=2.6949
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.8552, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0002, 16/16 bins active (100.0%)
+  [scorer] Raw score: 44.602806
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=50.1837, 16/16 bins active (100.0%), mean_active=3.1365
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=3.3264, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 52.844869
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=27.1383, 16/16 bins active (100.0%), mean_active=1.6961
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.4592, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 28.305795
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=31.3483, 16/16 bins active (100.0%), mean_active=1.9593
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0004, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=2.5499, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 33.388614
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=3.8699, 16/16 bins active (100.0%), mean_active=0.2419
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0292, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 3.893280
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=3.4806, 16/16 bins active (100.0%), mean_active=0.2175
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.1139, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 3.571860
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2.2695, 16/16 bins active (100.0%), mean_active=0.1418
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0024, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 2.271425
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=32.2762, 16/16 bins active (100.0%), mean_active=2.0173
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0021, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.2518, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 32.479788
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.5572, 16/16 bins active (100.0%), mean_active=0.0348
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0269, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 0.578676
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=33.4235, 16/16 bins active (100.0%), mean_active=2.0890
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0017, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.6460, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 33.941925
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=28.9477, 16/16 bins active (100.0%), mean_active=1.8092
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=4.5672, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 32.601497
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=26.8759, 16/16 bins active (100.0%), mean_active=1.6797
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.6790, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 28.219130
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.1263, 16/16 bins active (100.0%), mean_active=0.0079
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0150, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 0.138235
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=50.8699, 16/16 bins active (100.0%), mean_active=3.1794
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.9259, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 52.410693
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.1688, 16/16 bins active (100.0%), mean_active=0.0105
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0191, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 0.184080
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=9.0431, 16/16 bins active (100.0%), mean_active=0.5652
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.2108, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 9.211821
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1.2846, 16/16 bins active (100.0%), mean_active=0.0803
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0037, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 1.287624
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=42.5739, 16/16 bins active (100.0%), mean_active=2.6609
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.8098, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 44.021782
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1.5029, 32/32 bins active (100.0%), mean_active=0.0470
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0002, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0231, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 1.521579
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1.3267, 32/32 bins active (100.0%), mean_active=0.0415
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0002, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0271, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 1.348646
+
+  [80/207] PL227 (EnhancerCluster_TF_Sox2DHS23andDHS24~dESRRAandESRRB, 2166 bp)
+ 40%|███▉      | 82/207 [00:16<00:09, 12.96it/s] 41%|████      | 84/207 [00:16<00:09, 12.82it/s] 42%|████▏     | 86/207 [00:17<00:09, 12.80it/s] 43%|████▎     | 88/207 [00:17<00:09, 12.83it/s] 43%|████▎     | 90/207 [00:17<00:09, 12.84it/s] 44%|████▍     | 92/207 [00:17<00:08, 13.02it/s] 45%|████▌     | 94/207 [00:17<00:08, 12.98it/s] 46%|████▋     | 96/207 [00:17<00:08, 13.12it/s] 47%|████▋     | 98/207 [00:17<00:08, 13.22it/s] 48%|████▊     | 100/207 [00:18<00:08, 13.11it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1.8994, 32/32 bins active (100.0%), mean_active=0.0594
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0841, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 1.966792
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=13.2404, 32/32 bins active (100.0%), mean_active=0.4138
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0003, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.1799, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 13.384563
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=55.8600, 32/32 bins active (100.0%), mean_active=1.7456
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0004, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.1513, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 55.981421
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=112.4246, 32/32 bins active (100.0%), mean_active=3.5133
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0002, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.3397, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 112.696475
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=135.3693, 32/32 bins active (100.0%), mean_active=4.2303
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0002, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.6784, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 136.712293
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=192.1645, 32/32 bins active (100.0%), mean_active=6.0051
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=2.3560, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 194.049361
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=267.1539, 32/32 bins active (100.0%), mean_active=8.3486
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=9.8088, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 275.000973
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=287.0594, 32/32 bins active (100.0%), mean_active=8.9706
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=30.2439, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 311.254481
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=297.6297, 32/32 bins active (100.0%), mean_active=9.3009
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=94.2185, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 373.004477
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=251.8431, 32/32 bins active (100.0%), mean_active=7.8701
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=87.1579, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 321.569378
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=246.4927, 32/32 bins active (100.0%), mean_active=7.7029
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=120.6802, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 343.036876
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=90.3233, 16/16 bins active (100.0%), mean_active=5.6452
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=6.8642, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 95.814676
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=123.7015, 32/32 bins active (100.0%), mean_active=3.8657
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=48.2509, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 162.302219
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=97.5919, 32/32 bins active (100.0%), mean_active=3.0497
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=12.3320, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 107.457521
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=63.5883, 16/16 bins active (100.0%), mean_active=3.9743
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0120, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 63.597952
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=66.9726, 32/32 bins active (100.0%), mean_active=2.0929
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=2.7067, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 69.137985
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=115.5561, 32/32 bins active (100.0%), mean_active=3.6111
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=5.9479, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 120.314426
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=71.0168, 16/16 bins active (100.0%), mean_active=4.4386
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=6.9258, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 76.557521
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=99.2570, 32/32 bins active (100.0%), mean_active=3.1018
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=95.6256, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 175.757398
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=129.8555, 32/32 bins active (100.0%), mean_active=4.0580
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=99.1933, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 209.210102
+
+  [100/207] PL240 (EnhancerCluster_TF_Sox2DHS23~NuclearreceptorandSoxD, 1273 bp)
+ 49%|████▉     | 102/207 [00:18<00:07, 13.21it/s] 50%|█████     | 104/207 [00:18<00:07, 13.29it/s] 51%|█████     | 106/207 [00:18<00:07, 13.52it/s] 52%|█████▏    | 108/207 [00:18<00:10,  9.10it/s] 53%|█████▎    | 110/207 [00:19<00:12,  7.51it/s] 54%|█████▍    | 112/207 [00:19<00:10,  8.65it/s] 55%|█████▌    | 114/207 [00:19<00:09,  9.45it/s] 56%|█████▌    | 116/207 [00:19<00:08, 10.13it/s] 57%|█████▋    | 118/207 [00:19<00:08, 10.68it/s] 58%|█████▊    | 120/207 [00:20<00:07, 11.38it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=84.7540, 16/16 bins active (100.0%), mean_active=5.2971
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=57.1350, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 130.462068
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=102.7719, 32/32 bins active (100.0%), mean_active=3.2116
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=52.5120, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 144.781463
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=190.7100, 32/32 bins active (100.0%), mean_active=5.9597
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=48.4800, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 229.494034
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=102.9049, 16/16 bins active (100.0%), mean_active=6.4316
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=6.6094, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 108.192439
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.3000, 16/16 bins active (100.0%), mean_active=0.0187
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=1.8230, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 1.758374
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=43.3379, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 34.670360
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 32/32 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=18.6354, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 14.908314
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 48/48 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=16.8398, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] Raw score: 13.471806
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.1582, 368/368 bins active (100.0%), mean_active=0.0004
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 368/368 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=2.6442, 368/368 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 368/368 bins active (100.0%)
+  [scorer] Raw score: 2.273531
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0023, 32/32 bins active (100.0%), mean_active=0.0001
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.1944, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 0.157850
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0551, 16/16 bins active (100.0%), mean_active=0.0034
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0004, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 0.055443
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0007, 32/32 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0681, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 0.055115
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 48/48 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.2763, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] Raw score: 0.221026
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 32/32 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0141, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 0.011304
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0237, 32/32 bins active (100.0%), mean_active=0.0007
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.2516, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 0.225014
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.1740, 48/48 bins active (100.0%), mean_active=0.0036
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] Raw score: 0.174043
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=101.7325, 48/48 bins active (100.0%), mean_active=2.1194
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0006, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] Raw score: 101.732934
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=188.1517, 32/32 bins active (100.0%), mean_active=5.8797
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 188.151721
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0594, 32/32 bins active (100.0%), mean_active=0.0019
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0008, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 0.060063
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=40.8019, 16/16 bins active (100.0%), mean_active=2.5501
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 40.801854
+
+  [120/207] PL163 (Sox2_DistalLCR_DHS20, 1910 bp)
+ 59%|█████▉    | 122/207 [00:20<00:07, 11.76it/s] 60%|█████▉    | 124/207 [00:20<00:06, 12.07it/s] 61%|██████    | 126/207 [00:20<00:06, 12.46it/s] 62%|██████▏   | 128/207 [00:20<00:06, 12.58it/s] 63%|██████▎   | 130/207 [00:20<00:05, 12.84it/s] 64%|██████▍   | 132/207 [00:21<00:05, 13.02it/s] 65%|██████▍   | 134/207 [00:21<00:05, 12.98it/s] 66%|██████▌   | 136/207 [00:21<00:05, 12.55it/s] 67%|██████▋   | 138/207 [00:21<00:05, 11.99it/s] 68%|██████▊   | 140/207 [00:21<00:05, 11.63it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=72.9900, 16/16 bins active (100.0%), mean_active=4.5619
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 72.989986
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=173.6365, 48/48 bins active (100.0%), mean_active=3.6174
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/48 bins active (0.0%)
+  [scorer] Raw score: 173.636511
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=235.5230, 32/32 bins active (100.0%), mean_active=7.3601
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 235.523020
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=154.9188, 32/32 bins active (100.0%), mean_active=4.8412
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 154.918823
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=94.2379, 16/16 bins active (100.0%), mean_active=5.8899
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 94.237938
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=12.1016, 32/32 bins active (100.0%), mean_active=0.3782
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 12.101599
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0002, 32/32 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 0.000174
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0059, 32/32 bins active (100.0%), mean_active=0.0002
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 0.005924
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0001, 32/32 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=31.8974, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 25.518014
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2.4534, 16/16 bins active (100.0%), mean_active=0.1533
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0003, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=58.4588, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 49.220757
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=5.4784, 16/16 bins active (100.0%), mean_active=0.3424
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=66.6273, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 58.780252
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=207.6321, 32/32 bins active (100.0%), mean_active=6.4885
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=25.1469, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 227.749642
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=181.2279, 32/32 bins active (100.0%), mean_active=5.6634
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0401, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 181.260041
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=305.4618, 32/32 bins active (100.0%), mean_active=9.5457
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0001, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 305.461870
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=599.0810, 48/48 bins active (100.0%), mean_active=12.4809
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.3668, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0105, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/48 bins active (0.0%)
+  [scorer] Raw score: 599.456264
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=626.8395, 48/48 bins active (100.0%), mean_active=13.0592
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=2.7771, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=3.7406, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/48 bins active (0.0%)
+  [scorer] Raw score: 632.609101
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=706.1436, 64/64 bins active (100.0%), mean_active=11.0335
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0113, 64/64 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=7.2215, 64/64 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/64 bins active (0.0%)
+  [scorer] Raw score: 711.932145
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=777.0799, 64/64 bins active (100.0%), mean_active=12.1419
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0020, 64/64 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.9818, 64/64 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/64 bins active (0.0%)
+  [scorer] Raw score: 777.867298
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1281.8440, 64/64 bins active (100.0%), mean_active=20.0288
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 64/64 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0043, 64/64 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/64 bins active (0.0%)
+  [scorer] Raw score: 1281.847381
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1764.2890, 64/64 bins active (100.0%), mean_active=27.5670
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0005, 64/64 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0002, 64/64 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/64 bins active (0.0%)
+  [scorer] Raw score: 1764.289770
+
+  [140/207] PL075 (Sox2_DistalLCR_DHS23toDHS27, 10113 bp)
+ 69%|██████▊   | 142/207 [00:22<00:07,  8.24it/s] 70%|██████▉   | 144/207 [00:22<00:07,  8.61it/s] 71%|███████   | 146/207 [00:22<00:06,  9.26it/s] 71%|███████▏  | 148/207 [00:22<00:05, 10.22it/s] 72%|███████▏  | 150/207 [00:22<00:05, 11.15it/s] 73%|███████▎  | 152/207 [00:22<00:04, 11.91it/s] 74%|███████▍  | 154/207 [00:23<00:04, 12.51it/s] 75%|███████▌  | 156/207 [00:23<00:03, 12.96it/s] 76%|███████▋  | 158/207 [00:23<00:03, 13.29it/s] 77%|███████▋  | 160/207 [00:23<00:03, 13.54it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2194.1404, 80/80 bins active (100.0%), mean_active=27.4268
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 80/80 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0030, 80/80 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/80 bins active (0.0%)
+  [scorer] Raw score: 2194.142781
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2543.3637, 80/80 bins active (100.0%), mean_active=31.7920
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 80/80 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0005, 80/80 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/80 bins active (0.0%)
+  [scorer] Raw score: 2543.364070
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2838.1721, 80/80 bins active (100.0%), mean_active=35.4772
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 80/80 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0001, 80/80 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/80 bins active (0.0%)
+  [scorer] Raw score: 2838.172203
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=3065.3539, 96/96 bins active (100.0%), mean_active=31.9308
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 96/96 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.2238, 96/96 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/96 bins active (0.0%)
+  [scorer] Raw score: 3065.533075
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1158.4674, 48/48 bins active (100.0%), mean_active=24.1347
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.3736, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/48 bins active (0.0%)
+  [scorer] Raw score: 1158.766307
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=1827.4279, 64/64 bins active (100.0%), mean_active=28.5536
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0002, 64/64 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 64/64 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/64 bins active (0.0%)
+  [scorer] Raw score: 1827.428146
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=201.1040, 16/16 bins active (100.0%), mean_active=12.5690
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 201.104006
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=396.0356, 32/32 bins active (100.0%), mean_active=12.3761
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/32 bins active (0.0%)
+  [scorer] Raw score: 396.035558
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=112.2726, 16/16 bins active (100.0%), mean_active=7.0170
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 112.272630
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=73.8620, 16/16 bins active (100.0%), mean_active=4.6164
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 73.862031
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=91.0069, 16/16 bins active (100.0%), mean_active=5.6879
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 91.006857
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=46.5603, 16/16 bins active (100.0%), mean_active=2.9100
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 46.560317
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0223, 16/16 bins active (100.0%), mean_active=0.0014
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.022261
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000003
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000013
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0094, 16/16 bins active (100.0%), mean_active=0.0006
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.009393
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000005
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000000
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000000
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0000, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000042
+
+  [160/207] PL084 (Sox2_DistalLCR_DHS24toCTCF25, 2846 bp)
+ 78%|███████▊  | 162/207 [00:23<00:03, 13.34it/s] 79%|███████▉  | 164/207 [00:24<00:04,  8.70it/s] 80%|████████  | 166/207 [00:24<00:04,  9.83it/s] 81%|████████  | 168/207 [00:24<00:03, 10.81it/s] 82%|████████▏ | 170/207 [00:25<00:05,  6.25it/s] 83%|████████▎ | 171/207 [00:25<00:06,  5.21it/s] 83%|████████▎ | 172/207 [00:25<00:07,  4.53it/s] 84%|████████▎ | 173/207 [00:25<00:07,  4.36it/s] 84%|████████▍ | 174/207 [00:26<00:08,  3.91it/s] 85%|████████▍ | 175/207 [00:26<00:08,  3.60it/s] 85%|████████▌ | 176/207 [00:26<00:07,  4.30it/s] 86%|████████▌ | 177/207 [00:27<00:07,  3.89it/s] 86%|████████▌ | 178/207 [00:27<00:07,  3.67it/s] 86%|████████▋ | 179/207 [00:27<00:07,  3.74it/s] 87%|████████▋ | 180/207 [00:27<00:07,  3.51it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=7.1869, 32/32 bins active (100.0%), mean_active=0.2246
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 7.186913
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=97.1979, 32/32 bins active (100.0%), mean_active=3.0374
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 32/32 bins active (100.0%)
+  [scorer] Raw score: 97.197917
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0669, 144/144 bins active (100.0%), mean_active=0.0005
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 144/144 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 144/144 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 144/144 bins active (100.0%)
+  [scorer] Raw score: 0.066880
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=319.3477, 48/48 bins active (100.0%), mean_active=6.6531
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 48/48 bins active (100.0%)
+  [scorer] Raw score: 319.347684
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0001, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000123
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.9873, 16/16 bins active (100.0%), mean_active=0.0617
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] Raw score: 0.987312
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=17.8765, 16/16 bins active (100.0%), mean_active=1.1173
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 17.876487
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=0.0003, 16/16 bins active (100.0%), mean_active=0.0000
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 0.000258
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2496.7425, 336/336 bins active (100.0%), mean_active=7.4308
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 336/336 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 336/336 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/336 bins active (0.0%)
+  [scorer] Raw score: 2496.742546
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2680.2845, 336/336 bins active (100.0%), mean_active=7.9770
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 336/336 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 336/336 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/336 bins active (0.0%)
+  [scorer] Raw score: 2680.284513
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=3680.5360, 320/320 bins active (100.0%), mean_active=11.5017
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/320 bins active (0.0%)
+  [scorer] Raw score: 3680.536019
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=3683.8561, 288/288 bins active (100.0%), mean_active=12.7912
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 288/288 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 288/288 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/288 bins active (0.0%)
+  [scorer] Raw score: 3683.856129
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=6931.5405, 320/320 bins active (100.0%), mean_active=21.6611
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/320 bins active (0.0%)
+  [scorer] Raw score: 6931.540461
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=5590.3303, 240/240 bins active (100.0%), mean_active=23.2930
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 240/240 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 240/240 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/240 bins active (0.0%)
+  [scorer] Raw score: 5590.330282
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=9122.3947, 304/304 bins active (100.0%), mean_active=30.0079
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 304/304 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 304/304 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/304 bins active (0.0%)
+  [scorer] Raw score: 9122.394725
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2446.4083, 96/96 bins active (100.0%), mean_active=25.4834
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 96/96 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.3348, 96/96 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 96/96 bins active (100.0%)
+  [scorer] Raw score: 2446.676165
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=4562.0228, 176/176 bins active (100.0%), mean_active=25.9206
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 176/176 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=34.5705, 176/176 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 176/176 bins active (100.0%)
+  [scorer] Raw score: 4589.679142
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=2417.8503, 112/112 bins active (100.0%), mean_active=21.5879
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0001, 112/112 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=25.5086, 112/112 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 112/112 bins active (100.0%)
+  [scorer] Raw score: 2438.257300
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=7637.4502, 304/304 bins active (100.0%), mean_active=25.1232
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=1.1169, 304/304 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.4075, 304/304 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 304/304 bins active (100.0%)
+  [scorer] Raw score: 7638.893173
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=8713.8698, 256/256 bins active (100.0%), mean_active=34.0386
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=6.5447, 256/256 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0435, 256/256 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 256/256 bins active (100.0%)
+  [scorer] Raw score: 8720.449283
+
+  [180/207] PL026 (Sox2_DistalLCR_dDHS21toDHS22, 35798 bp)
+ 87%|████████▋ | 181/207 [00:28<00:07,  3.67it/s] 88%|████████▊ | 182/207 [00:28<00:06,  3.73it/s] 88%|████████▊ | 183/207 [00:28<00:06,  3.78it/s] 89%|████████▉ | 184/207 [00:28<00:06,  3.83it/s] 89%|████████▉ | 185/207 [00:29<00:05,  4.02it/s] 90%|████████▉ | 186/207 [00:29<00:05,  3.97it/s] 90%|█████████ | 187/207 [00:29<00:05,  3.92it/s] 91%|█████████ | 188/207 [00:29<00:04,  4.08it/s] 91%|█████████▏| 189/207 [00:30<00:04,  4.03it/s] 92%|█████████▏| 191/207 [00:30<00:02,  6.01it/s] 93%|█████████▎| 192/207 [00:30<00:04,  3.57it/s] 93%|█████████▎| 193/207 [00:31<00:05,  2.42it/s] 94%|█████████▎| 194/207 [00:32<00:06,  1.94it/s] 94%|█████████▍| 195/207 [00:33<00:07,  1.63it/s] 95%|█████████▍| 196/207 [00:33<00:05,  1.90it/s] 95%|█████████▌| 197/207 [00:34<00:05,  1.86it/s] 96%|█████████▌| 198/207 [00:34<00:05,  1.68it/s] 96%|█████████▌| 199/207 [00:35<00:05,  1.55it/s] 97%|█████████▋| 200/207 [00:36<00:04,  1.46it/s]  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=10371.3692, 288/288 bins active (100.0%), mean_active=36.0117
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=75.1562, 288/288 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0067, 288/288 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 288/288 bins active (100.0%)
+  [scorer] Raw score: 10446.530723
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=12424.2788, 320/320 bins active (100.0%), mean_active=38.8259
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=158.1080, 320/320 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0637, 320/320 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] Raw score: 12582.437821
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=12024.5437, 304/304 bins active (100.0%), mean_active=39.5544
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=604.5308, 304/304 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.2179, 304/304 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 304/304 bins active (100.0%)
+  [scorer] Raw score: 12629.248777
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=14366.8834, 304/304 bins active (100.0%), mean_active=47.2595
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=186.0605, 304/304 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.1509, 304/304 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 304/304 bins active (100.0%)
+  [scorer] Raw score: 14553.064736
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=12176.0043, 256/256 bins active (100.0%), mean_active=47.5625
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=71.7071, 256/256 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=8.0176, 256/256 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 256/256 bins active (100.0%)
+  [scorer] Raw score: 12254.125479
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=16895.0140, 320/320 bins active (100.0%), mean_active=52.7969
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=14.4287, 320/320 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.4671, 320/320 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] Raw score: 16909.816339
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=16867.6263, 320/320 bins active (100.0%), mean_active=52.7113
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=36.5539, 320/320 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=22.8584, 320/320 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 320/320 bins active (100.0%)
+  [scorer] Raw score: 16922.466949
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=14921.3743, 256/256 bins active (100.0%), mean_active=58.2866
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=168.3697, 256/256 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.4482, 256/256 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 256/256 bins active (100.0%)
+  [scorer] Raw score: 15090.102499
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=18129.1546, 304/304 bins active (100.0%), mean_active=59.6354
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=18.3498, 304/304 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.8060, 304/304 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 304/304 bins active (100.0%)
+  [scorer] Raw score: 18148.149139
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=288.9632, 16/16 bins active (100.0%), mean_active=18.0602
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=59.6458, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 336.679904
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=300.3186, 16/16 bins active (100.0%), mean_active=18.7699
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=47.7072, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 338.484446
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=28105.9102, 800/800 bins active (100.0%), mean_active=35.1324
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 800/800 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0256, 800/800 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/800 bins active (0.0%)
+  [scorer] Raw score: 28105.930676
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=40312.8852, 992/992 bins active (100.0%), mean_active=40.6380
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 992/992 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.1221, 992/992 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/992 bins active (0.0%)
+  [scorer] Raw score: 40312.982842
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=43851.3090, 992/992 bins active (100.0%), mean_active=44.2049
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 992/992 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.5588, 992/992 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/992 bins active (0.0%)
+  [scorer] Raw score: 43851.756047
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=48661.3643, 1120/1120 bins active (100.0%), mean_active=43.4476
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 1120/1120 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.5771, 1120/1120 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/1120 bins active (0.0%)
+  [scorer] Raw score: 48661.825946
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=16486.4342, 368/368 bins active (100.0%), mean_active=44.8001
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 368/368 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=228.7817, 368/368 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/368 bins active (0.0%)
+  [scorer] Raw score: 16669.459538
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=33382.1069, 720/720 bins active (100.0%), mean_active=46.3640
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 720/720 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=124.2718, 720/720 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/720 bins active (0.0%)
+  [scorer] Raw score: 33481.524368
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=41780.8961, 848/848 bins active (100.0%), mean_active=49.2699
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 848/848 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0536, 848/848 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/848 bins active (0.0%)
+  [scorer] Raw score: 41780.939012
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=48821.8323, 976/976 bins active (100.0%), mean_active=50.0224
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 976/976 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0012, 976/976 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/976 bins active (0.0%)
+  [scorer] Raw score: 48821.833269
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=49715.9597, 976/976 bins active (100.0%), mean_active=50.9385
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0023, 976/976 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 976/976 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/976 bins active (0.0%)
+  [scorer] Raw score: 49715.962010
+
+  [200/207] PL053 (Sox2_Sox2_dIntervening, 62413 bp)
+ 97%|█████████▋| 201/207 [00:36<00:03,  1.67it/s] 98%|█████████▊| 202/207 [00:37<00:03,  1.54it/s] 99%|█████████▊| 204/207 [00:37<00:01,  2.60it/s]100%|█████████▉| 206/207 [00:37<00:00,  3.85it/s]100%|██████████| 207/207 [00:38<00:00,  5.44it/s]
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=26344.0710, 496/496 bins active (100.0%), mean_active=53.1130
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0116, 496/496 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 496/496 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/496 bins active (0.0%)
+  [scorer] Raw score: 26344.082667
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=53389.1033, 976/976 bins active (100.0%), mean_active=54.7020
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=32.5882, 976/976 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 976/976 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/976 bins active (0.0%)
+  [scorer] Raw score: 53421.691488
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=612.3105, 16/16 bins active (100.0%), mean_active=38.2694
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0072, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 612.316284
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=45.0423, 16/16 bins active (100.0%), mean_active=2.8151
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 45.042335
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=49.0212, 16/16 bins active (100.0%), mean_active=3.0638
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 49.021189
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=30.1891, 16/16 bins active (100.0%), mean_active=1.8868
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 30.189140
+  [info] 'dnase': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_histone': using scaled_predictions_128bp (requested resolution_128)
+  [info] 'chip_tf': using scaled_predictions_128bp (requested resolution_128)
+  [scorer] DNase (ES-CJ7 ch[23]): mass=54.9924, 16/16 bins active (100.0%), mean_active=3.4370
+  [scorer] H3K27ac (ES-Bruce4 ch[50]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] H3K4me1 (ES-Bruce4 ch[51]): mass=0.0000, 16/16 bins active (100.0%)
+  [scorer] EP300 (ES-Bruce4 ch[89]): mass=0.0000, 0/16 bins active (0.0%)
+  [scorer] Raw score: 54.992382
+
+============================================================
+Scoring complete
+Reference PL018 raw score: 2496.742546
+Normalized reference score: 1.000000
+Score range (raw): 0.0000 — 53421.6915
+Score range (norm): 0.0000 — 21.3966
+============================================================
+
+Saved to /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot:
+  zero_shot_scores.csv
+  zero_shot_normalized_scores.npy
+  zero_shot_raw_scores.npy
+  zero_shot_summary.json
