@@ -1,0 +1,93 @@
+
+     active environment : sox2-alphagenome
+    active env location : /gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome
+            shell level : 2
+       user config file : /gpfs/data/shenhavlab/users/ca3261/.condarc
+ populated config files : 
+          conda version : 24.1.0
+    conda-build version : 24.1.1
+         python version : 3.11.5.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake_avx512
+                          __conda=24.1.0=0
+                          __cuda=12.9=0
+                          __glibc=2.28=0
+                          __linux=4.18.0=0
+                          __unix=0=0
+       base environment : /gpfs/share/apps/anaconda3/gpu/2023.09  (read only)
+      conda av data dir : /gpfs/share/apps/anaconda3/gpu/2023.09/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /gpfs/share/apps/anaconda3/gpu/2023.09/pkgs
+                          /gpfs/data/shenhavlab/users/ca3261/.conda/pkgs
+       envs directories : /gpfs/data/shenhavlab/users/ca3261/.conda/envs
+                          /gpfs/share/apps/anaconda3/gpu/2023.09/envs
+               platform : linux-64
+             user-agent : conda/24.1.0 requests/2.31.0 CPython/3.11.5 Linux/4.18.0-477.27.1.el8_8.x86_64 rhel/8.8 glibc/2.28 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.2 c/BBWx9H1I3PF_IylHJcfT0w s/QdesdfkgYjGwGhtItuZ-4Q e/uOXDcn5R0pE3aUHU75YGeQ
+                UID:GID : 1024291498:1024304291
+             netrc file : None
+           offline mode : False
+
+
+conda activated
+Loading data...
+DHS fine-tuned test predictions: 33 samples
+Sub-DHS fine-tuned test predictions: 11 samples
+Zero-shot scores (total): 229 samples
+
+Matching zero-shot predictions to test sets...
+  DHS test set: 33 samples, matched with zero-shot: 33 samples
+  Sub-DHS test set: 11 samples, matched with zero-shot: 11 samples
+
+Computing metrics...
+
+Summary statistics written to: /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results/evaluation_summary.txt
+
+Generating plots...
+  Saved: dhs_test_scatter_comparison.png
+  Saved: sub_dhs_test_scatter_comparison.png
+  Saved: metrics_bar_comparison.png
+  Saved: residual_plots.png
+  Saved: distribution_comparison.png
+  Saved: cumulative_error_comparison.png
+  Saved: error_boxplot_comparison.png
+  Saved: rank_comparison.png
+  Saved: combined_summary_figure.png
+
+============================================================
+EVALUATION COMPLETE
+============================================================
+
+All results saved to: /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results/
+
+Files generated:
+  - evaluation_summary.txt
+  - dhs_test_scatter_comparison.png
+  - sub_dhs_test_scatter_comparison.png
+  - metrics_bar_comparison.png
+  - residual_plots.png
+  - distribution_comparison.png
+  - cumulative_error_comparison.png
+  - error_boxplot_comparison.png
+  - rank_comparison.png
+  - combined_summary_figure.png
+
+────────────────────────────────────────────────────────────
+QUICK SUMMARY
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+DHS Test Set (33 matched samples):
+  Model                          RMSE     R²        Pearson   Spearman 
+  DHS Fine-tuned                 0.2917   0.2209    0.5518    0.3281   
+  Zero-shot                      4.0104   -145.4586 0.5521    0.4238   
+
+────────────────────────────────────────────────────────────
+Sub-DHS Test Set (11 matched samples):
+  Model                          RMSE     R²        Pearson   Spearman 
+  Sub-DHS Fine-tuned             0.2361   0.0819    0.3192    0.3273   
+  Zero-shot                      0.3508   -1.0265   0.7645    0.5455   
+────────────────────────────────────────────────────────────
