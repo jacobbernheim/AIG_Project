@@ -451,35 +451,111 @@ def evaluate(
     return mean_loss, r
 
 
+# def train_head(
+#     model: Sox2RegressionHead,
+#     train_loader: DataLoader,
+#     val_loader: DataLoader,
+#     device: torch.device,
+#     n_epochs: int    = 200,
+#     lr: float        = 1e-3,
+#     weight_decay: float = 0.05,
+#     patience: int    = 30,
+#     grad_clip: float = 1.0,
+# ) -> dict:
+#     model.to(device)
+#     criterion = nn.MSELoss()
+#     optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+#     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
+#         optimizer, mode="min", factor=0.5, patience=patience // 2, verbose=True,
+#     )
+
+#     best_val_loss   = float("inf")
+#     best_state: dict = {}
+#     epochs_no_improve = 0
+
+#     history: dict[str, list] = {
+#         "train_losses": [], "val_losses": [],
+#         "train_rs":     [], "val_rs":     [],
+#     }
+
+#     log.info("Training — max_epochs=%d | lr=%.2e | patience=%d",
+#              n_epochs, lr, patience)
+
+#     for epoch in range(1, n_epochs + 1):
+#         train_loss, train_r = train_one_epoch(
+#             model, train_loader, optimizer, criterion, device, grad_clip,
+#         )
+#         val_loss, val_r = evaluate(model, val_loader, criterion, device)
+#         scheduler.step(val_loss)
+
+#         history["train_losses"].append(train_loss)
+#         history["val_losses"].append(val_loss)
+#         history["train_rs"].append(train_r)
+#         history["val_rs"].append(val_r)
+
+#         if epoch % 10 == 0 or epoch == 1:
+#             log.info(
+#                 "Epoch %3d/%d | train loss=%.4f r=%.3f | val loss=%.4f r=%.3f",
+#                 epoch, n_epochs, train_loss, train_r, val_loss, val_r,
+#             )
+
+#         if val_loss < best_val_loss - 1e-6:
+#             best_val_loss     = val_loss
+#             best_state        = {k: v.clone() for k, v in model.state_dict().items()}
+#             epochs_no_improve = 0
+#         else:
+#             epochs_no_improve += 1
+#             if epochs_no_improve >= patience:
+#                 log.info("Early stopping at epoch %d", epoch)
+#                 break
+
+#     if best_state:
+#         model.load_state_dict(best_state)
+
+#     best_epoch = int(np.argmin(history["val_losses"])) + 1
+#     history["best_epoch"]     = best_epoch
+#     history["best_val_loss"]  = best_val_loss
+#     log.info("Best epoch: %d | best val loss: %.4f", best_epoch, best_val_loss)
+#     return history
+
 def train_head(
     model: Sox2RegressionHead,
     train_loader: DataLoader,
     val_loader: DataLoader,
     device: torch.device,
-    n_epochs: int    = 200,
-    lr: float        = 1e-3,
+    n_epochs: int       = 200,
+    lr: float           = 1e-3,
     weight_decay: float = 0.05,
-    patience: int    = 30,
-    grad_clip: float = 1.0,
+    patience: int       = 30,
+    grad_clip: float    = 1.0,
+    rank_margin: float  = 0.0,
 ) -> dict:
     model.to(device)
-    criterion = nn.MSELoss()
+    mse_criterion  = nn.MSELoss()
+    rank_criterion = nn.MarginRankingLoss(margin=rank_margin)
     optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
         optimizer, mode="min", factor=0.5, patience=patience // 2, verbose=True,
     )
-
-    best_val_loss   = float("inf")
-    best_state: dict = {}
+    best_val_loss     = float("inf")
+    best_state: dict  = {}
     epochs_no_improve = 0
-
     history: dict[str, list] = {
         "train_losses": [], "val_losses": [],
         "train_rs":     [], "val_rs":     [],
     }
+    log.info(
+        "Training — max_epochs=%d | lr=%.2e | patience=%d | rank_margin=%.2f",
+        n_epochs, lr, patience, rank_margin,
+    )
 
-    log.info("Training — max_epochs=%d | lr=%.2e | patience=%d",
-             n_epochs, lr, patience)
+    # bundle criteria so train_one_epoch / evaluate signatures are unchanged
+    def criterion(pred: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
+        pred_i   = pred.unsqueeze(1).expand(-1, pred.size(0))
+        pred_j   = pred.unsqueeze(0).expand(pred.size(0), -1)
+        mask     = (target.unsqueeze(1) - target.unsqueeze(0)) > 0
+        labels   = torch.ones(mask.sum(), device=pred.device)
+        return mse_criterion(pred, target) + rank_criterion(pred_i[mask], pred_j[mask], labels)
 
     for epoch in range(1, n_epochs + 1):
         train_loss, train_r = train_one_epoch(
@@ -487,18 +563,15 @@ def train_head(
         )
         val_loss, val_r = evaluate(model, val_loader, criterion, device)
         scheduler.step(val_loss)
-
         history["train_losses"].append(train_loss)
         history["val_losses"].append(val_loss)
         history["train_rs"].append(train_r)
         history["val_rs"].append(val_r)
-
         if epoch % 10 == 0 or epoch == 1:
             log.info(
                 "Epoch %3d/%d | train loss=%.4f r=%.3f | val loss=%.4f r=%.3f",
                 epoch, n_epochs, train_loss, train_r, val_loss, val_r,
             )
-
         if val_loss < best_val_loss - 1e-6:
             best_val_loss     = val_loss
             best_state        = {k: v.clone() for k, v in model.state_dict().items()}
@@ -508,13 +581,11 @@ def train_head(
             if epochs_no_improve >= patience:
                 log.info("Early stopping at epoch %d", epoch)
                 break
-
     if best_state:
         model.load_state_dict(best_state)
-
     best_epoch = int(np.argmin(history["val_losses"])) + 1
-    history["best_epoch"]     = best_epoch
-    history["best_val_loss"]  = best_val_loss
+    history["best_epoch"]    = best_epoch
+    history["best_val_loss"] = best_val_loss
     log.info("Best epoch: %d | best val loss: %.4f", best_epoch, best_val_loss)
     return history
 

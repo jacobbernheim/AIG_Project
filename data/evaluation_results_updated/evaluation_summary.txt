@@ -1,0 +1,111 @@
+======================================================================
+EVALUATION SUMMARY: Fine-tuned vs Zero-shot Predictions
+(Zero-shot evaluated ONLY on matching test set samples)
+======================================================================
+Date: 2026-05-11 18:12:02
+
+Files:
+  DHS Fine-tuned:     /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune_updated/test_predictions.csv
+  Sub-DHS Fine-tuned: /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/test_predictions.csv
+  Zero-shot:          /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/zero_shot_scores.csv
+
+══════════════════════════════════════════════════════════════════════
+COMPARISON 1: DHS Fine-tuned vs Zero-shot
+(Evaluated on 33 matched test samples)
+══════════════════════════════════════════════════════════════════════
+
+  Model: DHS Fine-tuned
+  Number of samples: 33
+  ──────────────────────────────────────────────────
+  MSE:              218.728571
+  RMSE:             14.789475
+  MAE:              3.286848
+  Median AE:        0.223574
+  Max Error:        84.452545
+  R²:               -2002.054719
+  Pearson r:        0.402931 (p=2.01e-02)
+  Spearman ρ:       0.590123 (p=3.01e-04)
+  ──────────────────────────────────────────────────
+  Actual    - Mean: 0.324123, Std: 0.330450
+  Predicted - Mean: 3.464834, Std: 14.582129
+
+  Model: Zero-shot (on DHS test samples)
+  Number of samples: 33
+  ──────────────────────────────────────────────────
+  MSE:              16.083026
+  RMSE:             4.010365
+  MAE:              1.670147
+  Median AE:        0.146986
+  Max Error:        18.490126
+  R²:               -145.458627
+  Pearson r:        0.552062 (p=8.66e-04)
+  Spearman ρ:       0.423832 (p=1.40e-02)
+  ──────────────────────────────────────────────────
+  Actual    - Mean: 0.313690, Std: 0.331380
+  Predicted - Mean: 1.777398, Std: 3.906414
+
+  IMPROVEMENT (Fine-tuned over Zero-shot):
+  ──────────────────────────────────────────────────
+  RMSE:      14.7895 vs 4.0104  (-268.8% reduction)
+  MAE:       3.2868 vs 1.6701  (-96.8% reduction)
+  R²:        -2002.0547 vs -145.4586  (-1276.4% improvement)
+  Pearson r: 0.4029 vs 0.5521  (-27.0% improvement)
+  Spearman:  0.5901 vs 0.4238  (+39.2% improvement)
+
+══════════════════════════════════════════════════════════════════════
+COMPARISON 2: Sub-DHS Fine-tuned vs Zero-shot
+(Evaluated on 11 matched test samples)
+══════════════════════════════════════════════════════════════════════
+
+  Model: Sub-DHS Fine-tuned
+  Number of samples: 11
+  ──────────────────────────────────────────────────
+  MSE:              0.055761
+  RMSE:             0.236138
+  MAE:              0.215496
+  Median AE:        0.186139
+  Max Error:        0.396744
+  R²:               0.081856
+  Pearson r:        0.319233 (p=3.39e-01)
+  Spearman ρ:       0.327273 (p=3.26e-01)
+  ──────────────────────────────────────────────────
+  Actual    - Mean: 0.347203, Std: 0.246439
+  Predicted - Mean: 0.375463, Std: 0.099149
+
+  Model: Zero-shot (on Sub-DHS test samples)
+  Number of samples: 11
+  ──────────────────────────────────────────────────
+  MSE:              0.123074
+  RMSE:             0.350820
+  MAE:              0.282875
+  Median AE:        0.293652
+  Max Error:        0.626204
+  R²:               -1.026507
+  Pearson r:        0.764461 (p=6.14e-03)
+  Spearman ρ:       0.545455 (p=8.27e-02)
+  ──────────────────────────────────────────────────
+  Actual    - Mean: 0.347203, Std: 0.246439
+  Predicted - Mean: 0.064851, Std: 0.053815
+
+  IMPROVEMENT (Fine-tuned over Zero-shot):
+  ──────────────────────────────────────────────────
+  RMSE:      0.2361 vs 0.3508  (+32.7% reduction)
+  MAE:       0.2155 vs 0.2829  (+23.8% reduction)
+  R²:        0.0819 vs -1.0265  (+108.0% improvement)
+  Pearson r: 0.3192 vs 0.7645  (-58.2% improvement)
+  Spearman:  0.3273 vs 0.5455  (-40.0% improvement)
+
+══════════════════════════════════════════════════════════════════════
+OVERALL SUMMARY TABLE
+══════════════════════════════════════════════════════════════════════
+
+  Model                                    N      RMSE     MAE      R²        Pearson   Spearman 
+  ─────────────────────────────────────────────────────────────────────────────────────────
+  DHS Fine-tuned                           33     14.7895  3.2868   -2002.0547 0.4029    0.5901   
+  Zero-shot (on DHS test samples)          33     4.0104   1.6701   -145.4586 0.5521    0.4238   
+  Sub-DHS Fine-tuned                       11     0.2361   0.2155   0.0819    0.3192    0.3273   
+  Zero-shot (on Sub-DHS test samples)      11     0.3508   0.2829   -1.0265   0.7645    0.5455   
+
+======================================================================
+END OF EVALUATION
+======================================================================

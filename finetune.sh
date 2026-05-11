@@ -16,6 +16,6 @@ echo "conda activated"
 
 python finetune.py \
     --data-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv" \
-    --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/ \
-    --category "Sub-DHS Level"
+    --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune_updated/ \
+    --category "DHS Level"
 # Sub-DHS Level, DHS Level
