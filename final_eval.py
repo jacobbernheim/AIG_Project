@@ -30,7 +30,7 @@ DHS_PRED_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/d
 SUB_DHS_PRED_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/test_predictions.csv"
 ZERO_SHOT_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/zero_shot_scores.csv"
 
-OUTPUT_DIR = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results"
+OUTPUT_DIR = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/final_evaluation_results"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ============================================================

@@ -2,7 +2,7 @@
 EVALUATION SUMMARY: Fine-tuned vs Zero-shot Predictions
 (Zero-shot evaluated ONLY on matching test set samples)
 ======================================================================
-Date: 2026-05-11 23:51:37
+Date: 2026-05-11 23:59:44
 
 Files:
   DHS Fine-tuned:     /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/test_predictions.csv

@@ -1,0 +1,173 @@
+
+     active environment : sox2-alphagenome
+    active env location : /gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome
+            shell level : 2
+       user config file : /gpfs/data/shenhavlab/users/ca3261/.condarc
+ populated config files : 
+          conda version : 24.1.0
+    conda-build version : 24.1.1
+         python version : 3.11.5.final.0
+                 solver : libmamba (default)
+       virtual packages : __archspec=1=skylake_avx512
+                          __conda=24.1.0=0
+                          __cuda=12.9=0
+                          __glibc=2.28=0
+                          __linux=4.18.0=0
+                          __unix=0=0
+       base environment : /gpfs/share/apps/anaconda3/gpu/2023.09  (read only)
+      conda av data dir : /gpfs/share/apps/anaconda3/gpu/2023.09/etc/conda
+  conda av metadata url : None
+           channel URLs : https://repo.anaconda.com/pkgs/main/linux-64
+                          https://repo.anaconda.com/pkgs/main/noarch
+                          https://repo.anaconda.com/pkgs/r/linux-64
+                          https://repo.anaconda.com/pkgs/r/noarch
+          package cache : /gpfs/share/apps/anaconda3/gpu/2023.09/pkgs
+                          /gpfs/data/shenhavlab/users/ca3261/.conda/pkgs
+       envs directories : /gpfs/data/shenhavlab/users/ca3261/.conda/envs
+                          /gpfs/share/apps/anaconda3/gpu/2023.09/envs
+               platform : linux-64
+             user-agent : conda/24.1.0 requests/2.31.0 CPython/3.11.5 Linux/4.18.0-477.27.1.el8_8.x86_64 rhel/8.8 glibc/2.28 solver/libmamba conda-libmamba-solver/24.1.0 libmambapy/1.5.6 aau/0.4.2 c/BBWx9H1I3PF_IylHJcfT0w s/9GDAxePHT83ci64Zlam3dw e/uOXDcn5R0pE3aUHU75YGeQ
+                UID:GID : 1024291498:1024304291
+             netrc file : None
+           offline mode : False
+
+
+conda activated
+23:59:18 | INFO | Device: cuda
+23:59:18 | INFO | Forcing resolution → 128 bp
+23:59:18 | INFO | Loading data from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv …
+23:59:18 | INFO | Kept 207 / 213 rows after dropping NA
+23:59:18 | INFO | Category 'DHS Level': 158 rows
+23:59:18 | INFO | Split (seed=22): train=94 | val=31 | test=33
+23:59:18 | INFO | Initialising AlphaGenome (mouse)…
+  Using device: cuda (CUDA available: True)
+Creating AlphaGenome model on cuda...
+  Loaded via: constructor_no_args
+adding mouse reference heads
+23:59:22 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/feature_cache/features_dhs_level_seed22_train.npy
+23:59:22 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/feature_cache/features_dhs_level_seed22_val.npy
+23:59:22 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/feature_cache/features_dhs_level_seed22_test.npy
+23:59:22 | INFO | Sox2RegressionHead — 193 trainable parameters
+/gpfs/data/shenhavlab/users/ca3261/.conda/envs/sox2-alphagenome/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+23:59:22 | INFO | Training — max_epochs=200 | lr=5.00e-04 | patience=9999 | rank_margin=0.00
+23:59:23 | INFO | Epoch   1/200 | train loss=1.3115 r=-0.273 | val loss=15.5107 r=-0.194
+23:59:23 | INFO | Epoch  10/200 | train loss=1.1798 r=-0.154 | val loss=9.8999 r=-0.190
+23:59:23 | INFO | Epoch  20/200 | train loss=0.6633 r=0.146 | val loss=5.8890 r=-0.186
+23:59:23 | INFO | Epoch  30/200 | train loss=1.6453 r=-0.063 | val loss=3.2418 r=-0.184
+23:59:23 | INFO | Epoch  40/200 | train loss=0.6432 r=-0.136 | val loss=1.8407 r=-0.178
+23:59:24 | INFO | Epoch  50/200 | train loss=0.9101 r=0.201 | val loss=1.4422 r=-0.174
+23:59:24 | INFO | Epoch  60/200 | train loss=0.4365 r=0.096 | val loss=1.0303 r=-0.170
+23:59:24 | INFO | Epoch  70/200 | train loss=0.2930 r=0.342 | val loss=0.5594 r=-0.154
+23:59:24 | INFO | Epoch  80/200 | train loss=0.1886 r=0.349 | val loss=0.3641 r=-0.116
+23:59:25 | INFO | Epoch  90/200 | train loss=0.3772 r=0.124 | val loss=0.2412 r=-0.027
+23:59:25 | INFO | Epoch 100/200 | train loss=0.2730 r=0.245 | val loss=0.2466 r=-0.041
+23:59:25 | INFO | Epoch 110/200 | train loss=0.3578 r=0.139 | val loss=0.2604 r=-0.063
+23:59:25 | INFO | Epoch 120/200 | train loss=0.2015 r=0.141 | val loss=0.2097 r=0.050
+23:59:26 | INFO | Epoch 130/200 | train loss=0.1405 r=0.217 | val loss=0.2073 r=0.036
+23:59:26 | INFO | Epoch 140/200 | train loss=0.1657 r=0.270 | val loss=0.1914 r=0.108
+23:59:26 | INFO | Epoch 150/200 | train loss=0.2240 r=0.161 | val loss=0.1984 r=0.136
+23:59:26 | INFO | Epoch 160/200 | train loss=0.2442 r=0.043 | val loss=0.2399 r=0.161
+23:59:27 | INFO | Epoch 170/200 | train loss=0.1672 r=0.286 | val loss=0.2119 r=0.155
+23:59:27 | INFO | Epoch 180/200 | train loss=0.2742 r=-0.057 | val loss=0.2381 r=0.168
+23:59:27 | INFO | Epoch 190/200 | train loss=0.1618 r=0.122 | val loss=0.2088 r=0.167
+23:59:27 | INFO | Epoch 200/200 | train loss=0.2503 r=0.046 | val loss=0.1775 r=0.154
+23:59:27 | INFO | Best epoch: 200 | best val loss: 0.1775
+23:59:27 | INFO | ============================================================
+23:59:27 | INFO | TEST RESULTS  (category='DHS Level', seed=22)
+23:59:27 | INFO |   MSE (log1p space)      : 0.1145
+23:59:27 | INFO |   Pearson r (log1p space): 0.5597
+23:59:27 | INFO |   Pearson r (orig scale) : 0.4741
+23:59:27 | INFO |   RMSE log1p (orig scale): 0.3328
+23:59:27 | INFO |   R² (orig scale)        : -5.1977
+23:59:27 | INFO | ============================================================
+23:59:27 | INFO | Saved artefacts to /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune
+23:59:27 | INFO |   test_predictions.csv
+23:59:27 | INFO |   training_history.csv
+23:59:27 | INFO |   fine_tune_summary.json
+Model loaded successfully
+23:59:35 | INFO | Device: cuda
+23:59:35 | INFO | Forcing resolution → 128 bp
+23:59:35 | INFO | Loading data from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv …
+23:59:35 | INFO | Kept 207 / 213 rows after dropping NA
+23:59:35 | INFO | Category 'Sub-DHS Level': 49 rows
+23:59:35 | INFO | Split (seed=22): train=29 | val=9 | test=11
+23:59:35 | INFO | Initialising AlphaGenome (mouse)…
+  Using device: cuda (CUDA available: True)
+Creating AlphaGenome model on cuda...
+  Loaded via: constructor_no_args
+adding mouse reference heads
+23:59:40 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/feature_cache/features_sub-dhs_level_seed22_train.npy
+23:59:40 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/feature_cache/features_sub-dhs_level_seed22_val.npy
+23:59:40 | INFO | Loading cached features from /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/feature_cache/features_sub-dhs_level_seed22_test.npy
+23:59:40 | INFO | RidgeCV selected alpha = 10.0000
+23:59:40 | INFO | Calibration (val): slope=0.5658  intercept=-0.0140
+23:59:40 | INFO | ============================================================
+23:59:40 | INFO | RIDGE TEST RESULTS (with val recalibration)
+23:59:40 | INFO |   Pearson r : 0.9033
+23:59:40 | INFO |   RMSE log1p: 0.1660
+23:59:40 | INFO |   R²        : 0.3259
+23:59:40 | INFO | ============================================================
+23:59:40 | INFO | Saved artefacts to /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune
+23:59:40 | INFO |   test_predictions.csv
+23:59:40 | INFO |   training_history.csv
+23:59:40 | INFO |   fine_tune_summary.json
+Model loaded successfully
+Loading data...
+DHS fine-tuned test predictions: 33 samples
+Sub-DHS fine-tuned test predictions: 11 samples
+Zero-shot scores (total): 229 samples
+
+Matching zero-shot predictions to test sets...
+  DHS test set: 33 samples, matched with zero-shot: 33 samples
+  Sub-DHS test set: 11 samples, matched with zero-shot: 11 samples
+
+Computing metrics...
+
+Summary statistics written to: /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results/evaluation_summary.txt
+
+Generating plots...
+  Saved: dhs_test_scatter_comparison.png
+  Saved: sub_dhs_test_scatter_comparison.png
+  Saved: metrics_bar_comparison.png
+  Saved: residual_plots.png
+  Saved: distribution_comparison.png
+  Saved: cumulative_error_comparison.png
+  Saved: error_boxplot_comparison.png
+  Saved: rank_comparison.png
+  Saved: combined_summary_figure.png
+
+============================================================
+EVALUATION COMPLETE
+============================================================
+
+All results saved to: /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results/
+
+Files generated:
+  - evaluation_summary.txt
+  - dhs_test_scatter_comparison.png
+  - sub_dhs_test_scatter_comparison.png
+  - metrics_bar_comparison.png
+  - residual_plots.png
+  - distribution_comparison.png
+  - cumulative_error_comparison.png
+  - error_boxplot_comparison.png
+  - rank_comparison.png
+  - combined_summary_figure.png
+
+────────────────────────────────────────────────────────────
+QUICK SUMMARY
+────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────
+DHS Test Set (33 matched samples):
+  Model                          RMSE     R²        Pearson   Spearman 
+  DHS Fine-tuned                 0.7481   -5.1977   0.4741    0.4255   
+  Zero-shot                      6.4120   -454.3144 0.4264    0.4181   
+
+────────────────────────────────────────────────────────────
+Sub-DHS Test Set (11 matched samples):
+  Model                          RMSE     R²        Pearson   Spearman 
+  Sub-DHS Fine-tuned             0.2079   0.3259    0.9033    0.9636   
+  Zero-shot                      0.3095   -0.4941   0.9065    0.5727   
+────────────────────────────────────────────────────────────
