@@ -38,6 +38,16 @@ from torch.utils.data import DataLoader, Dataset
 from src.genome_model import GenomeModel
 from src.model_utils import ZeroShotScorer, ZeroShotScoreWeights
 
+import random
+
+def _set_seeds(seed: int) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
 # ---------------------------------------------------------------------------
 # Logging
 # ---------------------------------------------------------------------------
@@ -821,7 +831,10 @@ def run_fine_tuning(
     val_dataset   = Sox2Dataset(X_val,   y_val,   log_transform=log_transform)
     test_dataset  = Sox2Dataset(X_test,  y_test,  log_transform=log_transform)
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    generator = torch.Generator()
+    generator.manual_seed(split_seed)
+
+    train_loader = DataLoader(train_dataset, batch_size=batch_size, generator=generator, shuffle=True)
     val_loader   = DataLoader(val_dataset,   batch_size=batch_size, shuffle=False)
     test_loader  = DataLoader(test_dataset,  batch_size=batch_size, shuffle=False)
 
@@ -973,11 +986,15 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    split_seed = args.split_seed
+
+    _set_seeds(split_seed)
+
     run_fine_tuning(
         data_path     = args.data_file,
         category      = args.category,
         category_col  = args.category_col,
-        split_seed    = args.split_seed,
+        split_seed    = split_seed,
         config_path   = args.config,
         output_dir    = args.output_dir,
         log_transform = not args.no_log_transform,

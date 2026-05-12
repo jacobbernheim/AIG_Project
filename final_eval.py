@@ -26,11 +26,11 @@ warnings.filterwarnings('ignore')
 # ============================================================
 # File paths
 # ============================================================
-DHS_PRED_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune_updated/test_predictions.csv"
+DHS_PRED_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/dhs_finetune/test_predictions.csv"
 SUB_DHS_PRED_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/sub_dhs_finetune/test_predictions.csv"
 ZERO_SHOT_FILE = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/zero_shot_scores.csv"
 
-OUTPUT_DIR = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results_updated"
+OUTPUT_DIR = "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/evaluation_results"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ============================================================
