@@ -1,17 +1,5 @@
 """
-Fine-tuning AlphaGenome with a Sox2 expression regression head.
-
-For categories with n_train >= N_RIDGE_THRESHOLD (default 40):
-    MLP head  — single hidden layer, dropout regularisation
-
-For categories with n_train < N_RIDGE_THRESHOLD:
-    Ridge regression with LOO-CV alpha selection — no MLP, no early stopping
-
-Both paths write identical output files so eval_fine_tune.py works unchanged:
-    test_predictions.csv
-    training_history.csv   (empty for Ridge — one row of NaN)
-    fine_tune_summary.json
-    feature_mean.npy / feature_std.npy
+fine-tuning alphagenome with a sox2 expression regression head
 """
 
 from __future__ import annotations
@@ -41,6 +29,7 @@ from src.model_utils import ZeroShotScorer, ZeroShotScoreWeights
 import random
 
 def _set_seeds(seed: int) -> None:
+    """ sets seed """
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -48,9 +37,7 @@ def _set_seeds(seed: int) -> None:
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
 
-# ---------------------------------------------------------------------------
-# Logging
-# ---------------------------------------------------------------------------
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s",
@@ -58,9 +45,7 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
+
 DEFAULT_ORGANISM    = "mouse"
 DEFAULT_TRACKS      = ["dnase", "chip_histone", "chip_tf"]
 DEFAULT_ACTIVITY_COL = "Activity"
@@ -69,16 +54,13 @@ FEATURE_NAMES       = ["dnase", "h3k27ac", "h3k4me1", "ep300"]
 
 TRAIN_FRAC      = 0.60
 VAL_FRAC        = 0.20
-N_RIDGE_THRESHOLD = 40   # use Ridge when n_train < this value
+N_RIDGE_THRESHOLD = 40
 
 RIDGE_ALPHAS = [0.01, 0.1, 1.0, 10.0, 100.0, 1000.0]
 
 
-# ---------------------------------------------------------------------------
-# Data loading
-# ---------------------------------------------------------------------------
-
 def _load_data(csv_path: str) -> pd.DataFrame:
+    """ loads the data """
     df = pd.read_csv(csv_path)
     df["PL"] = df["PL"].astype(str)
 
@@ -106,16 +88,13 @@ def _load_data(csv_path: str) -> pd.DataFrame:
     return df
 
 
-# ---------------------------------------------------------------------------
-# Category filtering + deterministic split
-# ---------------------------------------------------------------------------
-
 def filter_and_split(
     df: pd.DataFrame,
     category: str,
     category_col: str = DEFAULT_CATEGORY_COL,
     seed: int = 42,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """ filters to category and creats train/val/test split """
     if category_col not in df.columns:
         raise ValueError(
             f"Category column '{category_col}' not found. "
@@ -156,10 +135,6 @@ def filter_and_split(
     return train_df, val_df, test_df
 
 
-# ---------------------------------------------------------------------------
-# Feature extraction
-# ---------------------------------------------------------------------------
-
 def extract_features(
     genome_model: GenomeModel,
     scorer: ZeroShotScorer,
@@ -167,6 +142,7 @@ def extract_features(
     tracks: list[str],
     resolution: int = 128,
 ) -> np.ndarray:
+    """ get the raw_outputs """
     raw_outputs = genome_model.predict_on_sequence_raw(
         sequence, tracks=tracks, resolution=resolution,
     )
@@ -185,6 +161,7 @@ def build_feature_matrix(
     resolution: int = 128,
     cache_path: Optional[Path] = None,
 ) -> np.ndarray:
+    """ create a matrix to train head on """
     if cache_path is not None and cache_path.exists():
         log.info("Loading cached features from %s", cache_path)
         return np.load(cache_path)
@@ -211,11 +188,8 @@ def build_feature_matrix(
     return features
 
 
-# ---------------------------------------------------------------------------
-# Dataset
-# ---------------------------------------------------------------------------
-
 class Sox2Dataset(Dataset):
+    """ dataset to train head on """
     def __init__(
         self,
         features: np.ndarray,
@@ -236,13 +210,8 @@ class Sox2Dataset(Dataset):
         return self.X[idx], self.y[idx]
 
 
-# ---------------------------------------------------------------------------
-# MLP head
-# ---------------------------------------------------------------------------
-
 class Sox2RegressionHead(nn.Module):
-    """Single hidden layer MLP for n_train >= N_RIDGE_THRESHOLD."""
-
+    """ simple MLP """
     def __init__(
         self,
         n_features: int = 4,
@@ -269,15 +238,11 @@ class Sox2RegressionHead(nn.Module):
         return self.net(x).squeeze(-1)
 
 
-# ---------------------------------------------------------------------------
-# Ridge path
-# ---------------------------------------------------------------------------
-
 def _ridge_metrics(
     y_true_orig: np.ndarray,
     y_pred_orig: np.ndarray,
 ) -> dict[str, float]:
-    """Compute the same metric set as eval_fine_tune.compute_metrics."""
+    """ compute metrics """
     y_true_log = np.log1p(np.clip(y_true_orig, 0.0, None))
     y_pred_log = np.log1p(np.clip(y_pred_orig, 0.0, None))
     res        = y_true_log - y_pred_log
@@ -322,9 +287,8 @@ def run_ridge(
     log_transform: bool = True,
     output_dir: Path = Path("."),
 ) -> dict:
-    """RidgeCV + val-set linear recalibration."""
+    """runs ridge regression with cross validation and uses val for linear recalibration """
 
-    # ── 1. prepare targets ──────────────────────────────────────────────
     if log_transform:
         yt_train = np.log1p(np.clip(y_train, 0.0, None))
         yt_val   = np.log1p(np.clip(y_val,   0.0, None))
@@ -332,19 +296,14 @@ def run_ridge(
         yt_train = y_train.copy()
         yt_val   = y_val.copy()
 
-    # ── 2. fit Ridge with LOO-CV ─────────────────────────────────────────
     ridge = RidgeCV(alphas=RIDGE_ALPHAS, scoring="r2", cv=None)
     ridge.fit(X_train, yt_train)
     log.info("RidgeCV selected alpha = %.4f", ridge.alpha_)
 
-    # raw predictions in log1p space
     raw_train_log = ridge.predict(X_train)
     raw_val_log   = ridge.predict(X_val)
     raw_test_log  = ridge.predict(X_test)
 
-    # ── 3. linear recalibration on val set ──────────────────────────────
-    # fits  pred_calibrated = a * pred_raw + b  using val labels
-    # this corrects systematic scale / offset without seeing test
     calibrator = LinearRegression()
     calibrator.fit(raw_val_log.reshape(-1, 1), yt_val)
 
@@ -354,6 +313,7 @@ def run_ridge(
     )
 
     def _predict_calibrated(raw_log: np.ndarray) -> np.ndarray:
+        """ predicts on calibrated """
         cal_log = calibrator.predict(raw_log.reshape(-1, 1))
         return np.expm1(cal_log) if log_transform else cal_log
 
@@ -361,7 +321,6 @@ def run_ridge(
     pred_val   = _predict_calibrated(raw_val_log)
     pred_test  = _predict_calibrated(raw_test_log)
 
-    # ── 4. metrics ───────────────────────────────────────────────────────
     train_metrics = _ridge_metrics(y_train, pred_train)
     val_metrics   = _ridge_metrics(y_val,   pred_val)
     test_metrics  = _ridge_metrics(y_test,  pred_test)
@@ -373,7 +332,6 @@ def run_ridge(
     log.info("  R²        : %.4f", test_metrics["r2"])
     log.info("=" * 60)
 
-    # ── 5. save ──────────────────────────────────────────────────────────
     joblib.dump(
         {"ridge": ridge, "calibrator": calibrator},
         output_dir / "ridge_model.pkl",
@@ -392,11 +350,9 @@ def run_ridge(
         "pred_test":      pred_test,
     }
 
-# ---------------------------------------------------------------------------
-# MLP training helpers
-# ---------------------------------------------------------------------------
 
 def _pearson_r(pred: torch.Tensor, target: torch.Tensor) -> float:
+    """ calculates pearson r """
     p = pred.detach().cpu().numpy()
     t = target.detach().cpu().numpy()
     if p.std() < 1e-8 or t.std() < 1e-8:
@@ -412,6 +368,7 @@ def train_one_epoch(
     device: torch.device,
     grad_clip: float = 1.0,
 ) -> tuple[float, float]:
+    """ trains one epoch of MLP"""
     model.train()
     total_loss = 0.0
     all_pred:   list[torch.Tensor] = []
@@ -442,6 +399,7 @@ def evaluate(
     criterion: nn.Module,
     device: torch.device,
 ) -> tuple[float, float]:
+    """ evaluates MLP on val set """
     model.eval()
     total_loss = 0.0
     all_pred:   list[torch.Tensor] = []
@@ -461,85 +419,19 @@ def evaluate(
     return mean_loss, r
 
 
-# def train_head(
-#     model: Sox2RegressionHead,
-#     train_loader: DataLoader,
-#     val_loader: DataLoader,
-#     device: torch.device,
-#     n_epochs: int    = 200,
-#     lr: float        = 1e-3,
-#     weight_decay: float = 0.05,
-#     patience: int    = 30,
-#     grad_clip: float = 1.0,
-# ) -> dict:
-#     model.to(device)
-#     criterion = nn.MSELoss()
-#     optimizer = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
-#     scheduler = optim.lr_scheduler.ReduceLROnPlateau(
-#         optimizer, mode="min", factor=0.5, patience=patience // 2, verbose=True,
-#     )
-
-#     best_val_loss   = float("inf")
-#     best_state: dict = {}
-#     epochs_no_improve = 0
-
-#     history: dict[str, list] = {
-#         "train_losses": [], "val_losses": [],
-#         "train_rs":     [], "val_rs":     [],
-#     }
-
-#     log.info("Training — max_epochs=%d | lr=%.2e | patience=%d",
-#              n_epochs, lr, patience)
-
-#     for epoch in range(1, n_epochs + 1):
-#         train_loss, train_r = train_one_epoch(
-#             model, train_loader, optimizer, criterion, device, grad_clip,
-#         )
-#         val_loss, val_r = evaluate(model, val_loader, criterion, device)
-#         scheduler.step(val_loss)
-
-#         history["train_losses"].append(train_loss)
-#         history["val_losses"].append(val_loss)
-#         history["train_rs"].append(train_r)
-#         history["val_rs"].append(val_r)
-
-#         if epoch % 10 == 0 or epoch == 1:
-#             log.info(
-#                 "Epoch %3d/%d | train loss=%.4f r=%.3f | val loss=%.4f r=%.3f",
-#                 epoch, n_epochs, train_loss, train_r, val_loss, val_r,
-#             )
-
-#         if val_loss < best_val_loss - 1e-6:
-#             best_val_loss     = val_loss
-#             best_state        = {k: v.clone() for k, v in model.state_dict().items()}
-#             epochs_no_improve = 0
-#         else:
-#             epochs_no_improve += 1
-#             if epochs_no_improve >= patience:
-#                 log.info("Early stopping at epoch %d", epoch)
-#                 break
-
-#     if best_state:
-#         model.load_state_dict(best_state)
-
-#     best_epoch = int(np.argmin(history["val_losses"])) + 1
-#     history["best_epoch"]     = best_epoch
-#     history["best_val_loss"]  = best_val_loss
-#     log.info("Best epoch: %d | best val loss: %.4f", best_epoch, best_val_loss)
-#     return history
-
 def train_head(
     model: Sox2RegressionHead,
     train_loader: DataLoader,
     val_loader: DataLoader,
     device: torch.device,
     n_epochs: int       = 200,
-    lr: float           = 1e-3,
+    lr: float           = 1e-2,
     weight_decay: float = 0.05,
-    patience: int       = 30,
+    patience: int       = 10,
     grad_clip: float    = 1.0,
-    rank_margin: float  = 0.0,
+    rank_margin: float  = 0.01,
 ) -> dict:
+    """ trains MLP head """
     model.to(device)
     mse_criterion  = nn.MSELoss()
     rank_criterion = nn.MarginRankingLoss(margin=rank_margin)
@@ -559,13 +451,12 @@ def train_head(
         n_epochs, lr, patience, rank_margin,
     )
 
-    # bundle criteria so train_one_epoch / evaluate signatures are unchanged
     def criterion(pred: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
         pred_i   = pred.unsqueeze(1).expand(-1, pred.size(0))
         pred_j   = pred.unsqueeze(0).expand(pred.size(0), -1)
         mask     = (target.unsqueeze(1) - target.unsqueeze(0)) > 0
         labels   = torch.ones(mask.sum(), device=pred.device)
-        return mse_criterion(pred, target) + rank_criterion(pred_i[mask], pred_j[mask], labels)
+        return 2 * mse_criterion(pred, target) + rank_criterion(pred_i[mask], pred_j[mask], labels)
 
     for epoch in range(1, n_epochs + 1):
         train_loss, train_r = train_one_epoch(
@@ -600,16 +491,14 @@ def train_head(
     return history
 
 
-# ---------------------------------------------------------------------------
-# Config helpers
-# ---------------------------------------------------------------------------
-
 def load_config(config_path: str = "config/default_config.yaml") -> dict:
+    """ loads config """
     with open(config_path) as f:
         return yaml.safe_load(f)
 
 
 def _build_zero_shot_weights(config: dict) -> ZeroShotScoreWeights:
+    """ gets the zero-shot weights """
     zs = config.get("zero_shot", {})
     w  = zs.get("weights", {})
     return ZeroShotScoreWeights(
@@ -621,15 +510,12 @@ def _build_zero_shot_weights(config: dict) -> ZeroShotScoreWeights:
 
 
 def _resolve_device(config: dict) -> torch.device:
+    """ determines if using cuda device """
     requested = config.get("model", {}).get("device", None)
     if requested is not None:
         return torch.device(requested)
     return torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
-# ---------------------------------------------------------------------------
-# Shared output writers
-# ---------------------------------------------------------------------------
 
 def _write_outputs(
     output_dir: Path,
@@ -639,12 +525,7 @@ def _write_outputs(
     summary_extra: dict,
     log_transform: bool,
 ) -> None:
-    """Write test_predictions.csv, training_history.csv, fine_tune_summary.json.
-
-    Called by both the MLP and Ridge paths so eval_fine_tune.py always
-    finds the same files in the same format.
-    """
-    # --- test predictions ---
+    """ save outputs """
     pred_df = test_df[["PL", "mendel_name", "activity"]].copy()
     if log_transform:
         pred_df["pred_log1p_activity"] = pred_test
@@ -653,7 +534,6 @@ def _write_outputs(
         pred_df["pred_activity"] = pred_test
     pred_df.to_csv(output_dir / "test_predictions.csv", index=False)
 
-    # --- training history (Ridge → single NaN row so file always exists) ---
     if history:
         history_df = pd.DataFrame({
             "epoch":      range(1, len(history["train_losses"]) + 1),
@@ -663,8 +543,6 @@ def _write_outputs(
             "val_r":      history["val_rs"],
         })
     else:
-        # Ridge has no epoch-level history — write a single placeholder row
-        # so eval_fine_tune.py can always pd.read_csv("training_history.csv")
         history_df = pd.DataFrame([{
             "epoch": 1, "train_loss": float("nan"),
             "val_loss": float("nan"),
@@ -672,7 +550,6 @@ def _write_outputs(
         }])
     history_df.to_csv(output_dir / "training_history.csv", index=False)
 
-    # --- summary JSON ---
     (output_dir / "fine_tune_summary.json").write_text(
         json.dumps(summary_extra, indent=2, default=str) + "\n"
     )
@@ -682,10 +559,6 @@ def _write_outputs(
     log.info("  training_history.csv")
     log.info("  fine_tune_summary.json")
 
-
-# ---------------------------------------------------------------------------
-# Main entry point
-# ---------------------------------------------------------------------------
 
 def run_fine_tuning(
     data_path: str,
@@ -704,7 +577,7 @@ def run_fine_tuning(
     dropout: float      = 0.3,
     cache_features: bool = True,
 ) -> dict:
-    # ---------------------------------------------------------------- setup
+    """ run fine-tuning """
     output_dir_path = Path(output_dir)
     output_dir_path.mkdir(parents=True, exist_ok=True)
     config  = load_config(config_path)
@@ -720,14 +593,13 @@ def run_fine_tuning(
         resolution = 128
     signal_threshold = float(zs_config.get("signal_threshold", 0.0))
 
-    # ---------------------------------------------------------------- data
     log.info("Loading data from %s …", data_path)
     df = _load_data(data_path)
     train_df, val_df, test_df = filter_and_split(
         df, category=category, category_col=category_col, seed=split_seed,
     )
 
-    # --------------------------------------------------------- AlphaGenome
+    # is this a s or z?
     log.info("Initialising AlphaGenome (%s)…", organism)
     genome_model = GenomeModel(
         organism=organism,
@@ -739,7 +611,6 @@ def run_fine_tuning(
         signal_threshold=signal_threshold,
     )
 
-    # --------------------------------------------------------- features
     safe_cat  = category.strip().lower().replace(" ", "_")
     cache_dir = output_dir_path / "feature_cache"
 
@@ -761,7 +632,6 @@ def run_fine_tuning(
     y_val   = val_df["activity"].to_numpy(dtype=np.float32)
     y_test  = test_df["activity"].to_numpy(dtype=np.float32)
 
-    # --------------------------------------------------- feature normalisation
     feat_mean = X_train.mean(axis=0)
     feat_std  = X_train.std(axis=0) + 1e-8
     X_train = (X_train - feat_mean) / feat_std
@@ -770,7 +640,6 @@ def run_fine_tuning(
     np.save(output_dir_path / "feature_mean.npy", feat_mean)
     np.save(output_dir_path / "feature_std.npy",  feat_std)
 
-    # ------------------------------------------------ base summary fields
     base_summary = {
         "category":        category,
         "category_col":    category_col,
@@ -787,9 +656,6 @@ def run_fine_tuning(
         "log_transform":   log_transform,
     }
 
-    # ==================================================================
-    # RIDGE path  (small n)
-    # ==================================================================
     if len(train_df) < N_RIDGE_THRESHOLD:
         ridge_results = run_ridge(
             X_train, y_train,
@@ -806,14 +672,13 @@ def run_fine_tuning(
             "val_metrics":    ridge_results["val_metrics"],
             "test_metrics":   ridge_results["test_metrics"],
         }
-        # Ridge already returns predictions on the original activity scale
         _write_outputs(
             output_dir    = output_dir_path,
             test_df       = test_df,
-            pred_test     = ridge_results["pred_test"],  # original scale
-            history       = {},                          # → placeholder CSV row
+            pred_test     = ridge_results["pred_test"],
+            history       = {},
             summary_extra = summary,
-            log_transform = False,                       # do NOT apply expm1 again
+            log_transform = False,
         )
         return {
             "model":               ridge_results["model"],
@@ -824,9 +689,6 @@ def run_fine_tuning(
             "output_dir":          str(output_dir_path),
         }
 
-    # ==================================================================
-    # MLP path  (sufficient n)
-    # ==================================================================
     train_dataset = Sox2Dataset(X_train, y_train, log_transform=log_transform)
     val_dataset   = Sox2Dataset(X_val,   y_val,   log_transform=log_transform)
     test_dataset  = Sox2Dataset(X_test,  y_test,  log_transform=log_transform)
@@ -857,12 +719,11 @@ def run_fine_tuning(
         patience=patience,
     )
 
-    # ── collect predictions for all splits on the original activity scale ──
     model.eval()
     model.to(device)
 
     def _mlp_predict_orig(X: np.ndarray) -> np.ndarray:
-        """Run MLP inference and invert log1p transform exactly once."""
+        """ run MLP inference and invert log1p transform """
         with torch.no_grad():
             log_preds = (
                 model(torch.tensor(X, dtype=torch.float32).to(device))
@@ -874,7 +735,6 @@ def run_fine_tuning(
     pred_val_orig   = _mlp_predict_orig(X_val)
     pred_test_orig  = _mlp_predict_orig(X_test)
 
-    # ── metrics on original scale (consistent with eval_fine_tune.py) ──
     train_metrics = _ridge_metrics(
         y_train.astype(np.float64), pred_train_orig.astype(np.float64)
     )
@@ -885,20 +745,13 @@ def run_fine_tuning(
         y_test.astype(np.float64),  pred_test_orig.astype(np.float64)
     )
 
-    # ── internal log1p-space diagnostic (not used downstream) ──────────
-    criterion         = nn.MSELoss()
-    test_loss, test_r = evaluate(model, test_loader, criterion, device)
-
     log.info("=" * 60)
     log.info("TEST RESULTS  (category='%s', seed=%d)", category, split_seed)
-    log.info("  MSE (log1p space)      : %.4f", test_loss)
-    log.info("  Pearson r (log1p space): %.4f", test_r)
     log.info("  Pearson r (orig scale) : %.4f", test_metrics["pearson_r"])
     log.info("  RMSE log1p (orig scale): %.4f", test_metrics["rmse_log1p"])
     log.info("  R² (orig scale)        : %.4f", test_metrics["r2"])
     log.info("=" * 60)
 
-    # ── checkpoint ─────────────────────────────────────────────────────
     torch.save(
         {
             "model_state_dict": model.state_dict(),
@@ -940,15 +793,13 @@ def run_fine_tuning(
         "test_metrics":  test_metrics,
     }
 
-    # pred_test_orig is already on the original scale — pass log_transform=False
-    # so _write_outputs does NOT apply expm1 a second time
     _write_outputs(
         output_dir    = output_dir_path,
         test_df       = test_df,
-        pred_test     = pred_test_orig,  # original scale — no further transform needed
+        pred_test     = pred_test_orig,
         history       = history,
         summary_extra = summary,
-        log_transform = False,           # expm1 already applied above
+        log_transform = False,
     )
 
     return {
@@ -960,9 +811,6 @@ def run_fine_tuning(
         "output_dir":          str(output_dir_path),
     }
 
-# ---------------------------------------------------------------------------
-# CLI
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(

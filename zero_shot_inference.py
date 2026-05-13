@@ -1,21 +1,7 @@
 """
-Zero-shot inference for Sox2 expression prediction using AlphaGenome.
-
-Uses mESC-specific tracks from the mouse AlphaGenome model:
-  - DNase: ES-CJ7 (EFO:0005916) track_index 23 in 'dnase' head
-  - H3K27ac: ES-Bruce4 (EFO:0005483) track_index 50 in 'chip_histone' head
-  - H3K4me1: ES-Bruce4 (EFO:0005483) track_index 51 in 'chip_histone' head
-  - EP300: ES-Bruce4 (EFO:0005483) track_index 89 in 'chip_tf' head
-
-Scoring uses SIGNAL MASS (sum of positive signal across all bins),
-which naturally scales with sequence length — three enhancers score
-~3x a single enhancer.
-
-Usage:
-    python zero_shot_inference.py \
-        --sequences-file data/raw/example_subset_sequences.csv \
-        --output-dir results/zero_shot/
+zero-shot inference for sox2 expression prediction using alphagenome
 """
+
 import argparse
 import json
 from pathlib import Path
@@ -28,22 +14,28 @@ import tqdm
 from src.model_utils import ZeroShotScorer, ZeroShotScoreWeights
 from src.genome_model import GenomeModel
 
+import random
+import torch
+
 
 DEFAULT_ORGANISM = "mouse"
 DEFAULT_TRACKS = ["dnase", "chip_histone", "chip_tf"]
 DEFAULT_REFERENCE_PL = "PL018"
 
 
+def _set_seeds(seed: int) -> None:
+    """ sets seed """
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+
+_set_seeds(22)
+
 def _load_data(csv_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
-    """Load CSV once and return both sequences_df and activities_df.
-    
-    The CSV contains PL, MenDel.Name, and activity columns.
-    Sequences are joined from the FASTA file.
-    
-    Returns:
-        (sequences_df, activities_df) — sequences with FASTA joined,
-        and the full table for activity lookup.
-    """
+    """ loads sequence and activities data """
     df = pd.read_csv(csv_path)
     df["PL"] = df["PL"].astype(str)
     mendel_col = "MenDel.Name"
@@ -76,15 +68,18 @@ def _load_data(csv_path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 def _extract_score_components(prefix: str, component_values: dict[str, float]) -> dict[str, float]:
+    """ gets the score components """
     return {f"{prefix}_{name}": float(value) for name, value in component_values.items()}
 
 
 def load_config(config_path: str = "config/default_config.yaml") -> dict:
+    """ loads the config """
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
 
 
 def _build_zero_shot_weights(config: dict) -> ZeroShotScoreWeights:
+    """ gets the zero-shot weights """
     zs = config.get("zero_shot", {})
     w = zs.get("weights", {})
     return ZeroShotScoreWeights(
@@ -100,7 +95,7 @@ def run_zero_shot_prediction(
     config_path: str = "config/default_config.yaml",
     output_dir: str = "results/",
 ) -> dict:
-    """Run zero-shot Sox2 expression prediction."""
+    """ run zero-shot xox2 expression prediction """
 
     if data_path is None:
         data_path = "data/processed/merged_payloads.csv"
@@ -283,10 +278,9 @@ def run_zero_shot_prediction(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="zero-shot sox2 expression prediction using alphaGenome"
+        description="zero-shot sox2 expression prediction using alphagenome"
     )
-    parser.add_argument("--data-file", type=str, default=None,
-                        help="CSV with PL, MenDel.Name, Activity, and Sequence columns")
+    parser.add_argument("--data-file", type=str, default=None)
     parser.add_argument("--output-dir", type=str, default="results/")
     parser.add_argument("--config", type=str, default="config/default_config.yaml")
 

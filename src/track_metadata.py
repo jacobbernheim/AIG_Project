@@ -34,7 +34,7 @@ OUTPUT_TYPE_TO_TRACK_KEY = {
 
 
 class TrackMetadata:
-    """Loads and queries track-to-cell-type mapping from parquet or CSV."""
+    """ loads and queries track-to-cell-type mapping from parquet or CSV """
 
     def __init__(self, csv_path: str | Path | None = None, organism: str = "human"):
         self.organism = organism.lower()

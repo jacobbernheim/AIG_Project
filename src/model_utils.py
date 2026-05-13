@@ -1,8 +1,5 @@
 """
-AlphaGenome model utilities for genomic predictions.
-
-Uses the raw model() forward pass to get resolution-keyed dicts.
-Cell-type filtering uses track metadata parquet/CSV files.
+scoring utils for the model
 """
 
 from dataclasses import dataclass
@@ -16,13 +13,7 @@ import pandas as pd
 
 @dataclass(frozen=True)
 class ZeroShotScoreWeights:
-    """Weights for the zero-shot scoring formula.
-
-    ATAC dropped (no mESC ATAC in mouse model).
-    DNase uses ES-CJ7 (EFO:0005916) track_index 23, weight 1.0.
-    Histone marks and EP300 use ES-Bruce4 (EFO:0005483).
-    TF reduced to EP300 only (track_index 89) — no entropy.
-    """
+    """ weights for channels """
     dnase: float = 1.0
     h3k27ac: float = 1.0
     h3k4me1: float = 0.8
@@ -31,33 +22,24 @@ class ZeroShotScoreWeights:
 
 @dataclass(frozen=True)
 class ZeroShotScore:
-    """Container for the raw score and its component breakdown."""
+    """ score with breakdown """
     raw_score: float
     component_values: Dict[str, float]
 
 
-# mESC channel indices from track_metadata_mouse.parquet
-MESC_DNASE_INDICES = [23]      # ES-CJ7 DNase
-MESC_H3K27AC_INDICES = [50]    # ES-Bruce4 chip_histone H3K27ac
-MESC_H3K4ME1_INDICES = [51]    # ES-Bruce4 chip_histone H3K4me1
-MESC_EP300_INDICES = [89]      # ES-Bruce4 chip_tf EP300
+# mESC channel indices
+# ES-CJ7 DNase
+MESC_DNASE_INDICES = [23]
+# ES-Bruce4 chip_histone H3K27ac    
+MESC_H3K27AC_INDICES = [50]
+# ES-Bruce4 chip_histone H3K4me1
+MESC_H3K4ME1_INDICES = [51]
+# ES-Bruce4 chip_tf EP300
+MESC_EP300_INDICES = [89]
 
 
 class ZeroShotScorer:
-    """mESC-specific Sox2 scorer using explicit channel indices.
-
-    Scoring uses SIGNAL MASS (sum of positive signal across all bins), which
-    naturally scales with sequence length:
-    - A 30kb sequence with three enhancers scores ~3x a 10kb single enhancer
-    - N-padded regions produce near-zero signal and contribute minimally
-    - An optional signal_threshold can exclude low background noise
-
-    Components:
-    - DNase: ES-CJ7 channel 23 (chromatin accessibility)
-    - H3K27ac: ES-Bruce4 channel 50 (active enhancer/promoter mark)
-    - H3K4me1: ES-Bruce4 channel 51 (enhancer mark)
-    - EP300: ES-Bruce4 channel 89 (enhancer-associated coactivator)
-    """
+    """ scores using specific channels """
 
     def __init__(
         self,
@@ -68,18 +50,6 @@ class ZeroShotScorer:
         ep300_indices: Optional[List[int]] = None,
         signal_threshold: float = 0.0,
     ):
-        """
-        Args:
-            weights: Component weights for the scoring formula.
-            dnase_indices: Channel indices for DNase (default: ES-CJ7 ch 23).
-            h3k27ac_indices: Channel indices for H3K27ac (default: ES-Bruce4 ch 50).
-            h3k4me1_indices: Channel indices for H3K4me1 (default: ES-Bruce4 ch 51).
-            ep300_indices: Channel indices for EP300 (default: ES-Bruce4 ch 89).
-            signal_threshold: Minimum signal value to count as "active".
-                Bins below this are treated as zero. Set to 0.0 (default) to
-                count all positive signal. Set higher (e.g. 0.01) to ignore
-                low-level background from N-padded regions.
-        """
         self.weights = weights or ZeroShotScoreWeights()
         self.dnase_indices = dnase_indices or MESC_DNASE_INDICES
         self.h3k27ac_indices = h3k27ac_indices or MESC_H3K27AC_INDICES
@@ -89,7 +59,7 @@ class ZeroShotScorer:
 
     @staticmethod
     def _slice_channels(tensor_or_array, indices: List[int]) -> np.ndarray:
-        """Slice specific channel indices from the last dimension."""
+        """ slice specific channel indices from the last dimension """
         if torch.is_tensor(tensor_or_array):
             arr = tensor_or_array.detach().cpu().float().numpy()
         else:
@@ -104,26 +74,14 @@ class ZeroShotScorer:
         return arr[..., valid]
 
     def _signal_mass(self, array: np.ndarray) -> float:
-        """Compute total signal mass: sum of all values above threshold.
-
-        This is the key metric that scales with sequence length:
-        - Each 128bp bin contributes its signal value to the sum
-        - More bins with active signal = higher mass
-        - Three enhancers produce ~3x the mass of one enhancer
-        - N-padded regions contribute near-zero (below threshold if set)
-
-        Returns:
-            Total positive signal summed across all bins.
-        """
+        """compute total signal mass: sum of all values above threshold """
         flat = array.ravel().astype(float)
-        # Apply threshold: zero out bins below threshold
         flat = np.where(flat >= self.signal_threshold, flat, 0.0)
-        # Clip negatives (shouldn't happen after threshold but be safe)
         flat = np.clip(flat, 0.0, None)
         return float(flat.sum())
 
     def _signal_stats(self, array: np.ndarray) -> Dict[str, float]:
-        """Compute signal statistics for logging."""
+        """ compute signal statistics for logging """
         flat = array.ravel().astype(float)
         positive = flat[flat > self.signal_threshold]
         return {
@@ -136,23 +94,11 @@ class ZeroShotScorer:
         }
 
     def score(self, raw_track_outputs: Dict[str, Any]) -> ZeroShotScore:
-        """Compute the mESC-specific Sox2 score from raw AlphaGenome outputs.
-
-        The score uses SIGNAL MASS (total sum of positive signal) for each
-        component, which naturally rewards sequences with more enhancer
-        content spread over more bins.
-
-        Args:
-            raw_track_outputs: Dict from predict_on_sequence_raw() containing
-                full (unfiltered) tensors for 'dnase', 'chip_histone', 'chip_tf'.
-
-        Returns:
-            ZeroShotScore with raw_score and component breakdown.
-        """
+        """ compute the mESC-specific Sox2 score from raw AlphaGenome outputs """
         if self.signal_threshold > 0:
             print(f"  [scorer] Signal threshold: {self.signal_threshold}")
 
-        # --- DNase: ES-CJ7 channel 23 ---
+        # DNase: ES-CJ7 channel 23
         dnase_raw = raw_track_outputs.get("dnase")
         if dnase_raw is not None:
             dnase_arr = self._slice_channels(dnase_raw, self.dnase_indices)
@@ -167,7 +113,7 @@ class ZeroShotScorer:
             dnase_mass = 0.0
             print("  [scorer] DNase: not available")
 
-        # --- H3K27ac: ES-Bruce4 channel 50 ---
+        # H3K27ac: ES-Bruce4 channel 50
         histone_raw = raw_track_outputs.get("chip_histone")
         if histone_raw is not None:
             h3k27ac_arr = self._slice_channels(histone_raw, self.h3k27ac_indices)
@@ -181,7 +127,7 @@ class ZeroShotScorer:
             h3k27ac_mass = 0.0
             print("  [scorer] H3K27ac: not available")
 
-        # --- H3K4me1: ES-Bruce4 channel 51 ---
+        # H3K4me1: ES-Bruce4 channel 51
         if histone_raw is not None:
             h3k4me1_arr = self._slice_channels(histone_raw, self.h3k4me1_indices)
             h3k4me1_stats = self._signal_stats(h3k4me1_arr)
@@ -194,7 +140,7 @@ class ZeroShotScorer:
             h3k4me1_mass = 0.0
             print("  [scorer] H3K4me1: not available")
 
-        # --- EP300: ES-Bruce4 channel 89 ---
+        # EP300: ES-Bruce4 channel 89
         tf_raw = raw_track_outputs.get("chip_tf")
         if tf_raw is not None:
             ep300_arr = self._slice_channels(tf_raw, self.ep300_indices)

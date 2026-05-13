@@ -1,3 +1,7 @@
+"""
+wrapper for alphagenome
+"""
+
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Optional, List, Mapping, Any
@@ -20,7 +24,7 @@ except ImportError:
 
 
 class GenomeModel:
-    """Wrapper for AlphaGenome using raw model() forward pass."""
+    """ wrapper for AlphaGenome using raw model() forward pass """
 
     AVAILABLE_TRACKS = {
         "atac": "ATAC-seq peaks",
@@ -112,7 +116,7 @@ class GenomeModel:
         print("Model loaded successfully")
 
     def get_model_info(self) -> dict:
-        """Return basic model information."""
+        """ return basic model information """
         info = {
             "organism": self.organism,
             "device": str(self.device),
@@ -123,28 +127,13 @@ class GenomeModel:
         return info
 
     def encode_sequence(self, sequence: str, pad_to_multiple_of: int = 2048) -> torch.Tensor:
-        """Encode DNA sequence to integer tensor with padding.
-        
-        A=0, C=1, G=2, T=3, N=-1 (masked to zero internally by model).
-        Pads sequence to nearest multiple of pad_to_multiple_of using N (-1).
-        
-        Args:
-            sequence: DNA string
-            pad_to_multiple_of: Pad length to be divisible by this value.
-                            2048 is safe for the transformer_unet architecture
-                            (accounts for multiple downsampling stages of 2x, 4x, 8x, 16x).
-        
-        Returns:
-            Integer tensor of shape (padded_seq_len,)
-        """
+        """ encode DNA sequence to integer tensor with padding """
         mapping = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
         encoded = [mapping.get(base.upper(), -1) for base in sequence]
         
-        # Pad to nearest multiple
         seq_len = len(encoded)
         if seq_len % pad_to_multiple_of != 0:
             pad_len = pad_to_multiple_of - (seq_len % pad_to_multiple_of)
-            # Pad with -1 (N) — model clamps to 0 then one-hots, so these become zero vectors
             encoded.extend([-1] * pad_len)
         
         return torch.tensor(encoded, dtype=torch.long)
@@ -155,39 +144,24 @@ class GenomeModel:
         tracks: list[str] = None,
         resolution: int = 128,
     ) -> dict[str, np.ndarray]:
-        """
-        Run AlphaGenome on a DNA sequence and return raw predictions.
-
-        Args:
-            sequence: DNA string (ACGT characters)
-            tracks: List of assay types to return, e.g. ["dnase", "chip_histone", "chip_tf"]
-            resolution: Prediction resolution (128 for chip_histone/chip_tf)
-
-        Returns:
-            Dict mapping track names to numpy arrays of shape (n_bins, n_tracks_per_assay)
-        """
+        """ run AlphaGenome on a DNA sequence and return raw predictions """
         if self.model is None:
             raise RuntimeError("Model not loaded. Call load_model() first.")
 
         if tracks is None:
             tracks = ["dnase", "chip_histone", "chip_tf"]
 
-        # Encode and prepare input
         input_tensor = self.encode_sequence(sequence).unsqueeze(0).to(self.device)
 
-        # Organism index: 0=human, 1=mouse
         organism_idx = 1 if self.organism == "mouse" else 0
         organism_tensor = torch.tensor([organism_idx], dtype=torch.long).to(self.device)
 
-        # Run inference
         with torch.no_grad():
             self.model.eval()
             output = self.model(input_tensor, organism_tensor)
 
-        # Output is nested under organism key
         organism_output = output[self.organism]
 
-        # Extract requested tracks at the desired resolution
         results = {}
         for track_name in tracks:
             if track_name not in organism_output:

@@ -16,4 +16,4 @@ echo "conda activated"
 
 python zero_shot_inference.py \
     --data-file "/gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/processed/merged_payloads.csv" \
-    --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/zero_shot/
+    --output-dir /gpfs/scratch/ca3261/ai_in_genomics/final_project/AIG_Project/data/results/zero_shot/
