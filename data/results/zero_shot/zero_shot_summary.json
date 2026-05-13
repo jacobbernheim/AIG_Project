@@ -1,0 +1,50 @@
+{
+  "mesc_channels": {
+    "dnase": {
+      "cell_line": "ES-CJ7",
+      "curie": "EFO:0005916",
+      "indices": [
+        23
+      ]
+    },
+    "ep300": {
+      "cell_line": "ES-Bruce4",
+      "curie": "EFO:0005483",
+      "indices": [
+        89
+      ]
+    },
+    "h3k27ac": {
+      "cell_line": "ES-Bruce4",
+      "curie": "EFO:0005483",
+      "indices": [
+        50
+      ]
+    },
+    "h3k4me1": {
+      "cell_line": "ES-Bruce4",
+      "curie": "EFO:0005483",
+      "indices": [
+        51
+      ]
+    }
+  },
+  "n_sequences_scored": 229,
+  "organism": "mouse",
+  "reference_pl": "PL018",
+  "reference_raw_score": 33224.358770751955,
+  "requested_tracks": [
+    "dnase",
+    "chip_histone",
+    "chip_tf"
+  ],
+  "resolution": 128,
+  "scoring_method": "signal_mass (sum of positive signal, scales with length)",
+  "signal_threshold": 0.0,
+  "weights": {
+    "dnase": 1.0,
+    "ep300": 0.6,
+    "h3k27ac": 1.0,
+    "h3k4me1": 0.8
+  }
+}
